@@ -6,16 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="temas/temaClaro.css">
+    <link rel="stylesheet" href="../temas/temaClaro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Configuração </title>
 </head>
 <body>
-
+    <header>
+        <h1>Gerenciador de processos</h1>
+    </header>
     <main>
-        <h1>Configurações da Tarefa</h1>
+        <h2>Configurações da Tarefa</h2>
+        <label for="tarefa">Nome:</label>
+        <input type="text" id="tarefa">
         <label for="prazo">Prazo:</label>
         <input type="date" id="prazo">
         <label for="urgencia">Urgência:</label>
@@ -29,8 +33,11 @@
         <button onclick="salvarConfiguracoes()">Salvar</button>
         <a href="../index.html">Voltar</a>
         <div id="confirmacao" style="display: none;">Configurações salvas com sucesso!</div>
-
     </main>
+    <footer>
+        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+        <p>Criado de Leonardo Martinez.</p>
+    </footer>
     <script src="config.js"></script>
 </body>
 </html>

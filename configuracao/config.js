@@ -4,6 +4,7 @@ const posicao = urlParams.get('posicao');
 
 function salvarConfiguracoes() {
     const tarefa = minhaListaDeItens[posicao]
+    tarefa.tarefa = document.getElementById(`tarefa`).value
     tarefa.prazo = document.getElementById(`prazo`).value
     tarefa.urgencia = document.getElementById(`urgencia`).value
     tarefa.obs = document.getElementById(`obs`).value
@@ -18,6 +19,7 @@ function salvarConfiguracoes() {
 // Carregar as configurações da tarefa quando a página for carregada
 window.onload = function() {
   const tarefa = minhaListaDeItens[posicao]
+  document.getElementById(`tarefa`).value = tarefa.tarefa
   document.getElementById(`prazo`).value = tarefa.prazo
   document.getElementById(`urgencia`).value = tarefa.urgencia
   document.getElementById(`obs`).value = tarefa.obs
