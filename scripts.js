@@ -39,10 +39,10 @@ function mostrarTarefas() {
       `
         <li class="task ${item.concluida && 'done'}">
             <img class="icone" src="./assets/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})">
-            <p>${item.tarefa}</p>
-            <p>Prazo: ${item.prazo || 'Não definido'}</p>
-            <p>Urgência: ${item.urgencia || 'Não definido'}</p>
-            <p>Obs: ${item.obs || 'Nenhuma'}</p>
+            <p class="nome">${item.tarefa}</p>
+            <p class="prazo"> ${item.prazo || 'Vazio'}</p>
+            <p class="urgencia"> ${item.urgencia || 'Vazio'}</p>
+            <p class="obs"> ${item.obs || 'Nenhuma'}</p>
             <img class="icone" src="./assets/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
             <a href="configuracao/config.html?posicao=${posicao}" target="_self">
               <img class="icone" src="./assets/config.png" alt="configurar-tarefa">

@@ -5,6 +5,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
 }
+a {
+    text-decoration: underline;
+}
 body {
     margin: 0px;
     padding: 0px;
@@ -25,7 +28,30 @@ header {
 header > h1 {
     font-size: 1.5rem;
     width: auto;
-    margin: 10px auto;
+    margin: 0 auto ;
+    margin-top: 1.2rem;
+}
+#containerJson {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    float: right;
+
+    width: auto;
+
+    /*position: fixed;
+    right: 2rem;
+    bottom: 2rem;*/
+    
+    margin: 0;
+}
+#containerJson > button {
+    height: 2rem;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid;
+    margin: 0.2rem;
 }
 main {
     width: 100%;
@@ -37,16 +63,18 @@ main {
 
 }
 .input-task {
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
-    width: 300px;
-    height: 40px;
+    width: 70%;
+    height: 3rem;
     padding-left: 10px;
 }
 .button-add-task {
     border: none;
     border-radius: 5px;
-    height: 40px;
+    height: 3rem;
+    width: 25.5%;
     font-size: 17px;
     padding: 0 15px;
     float: right;
@@ -59,60 +87,106 @@ main {
 .button-add-task:active {
     opacity: 0.6;
 }
+#titulo {
+    font-size: 1rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin: 10px 0 5px 0;
+    cursor: none;
+}
+#titulo > p {
+    border: 0.1px solid black;
+}
+#null1 {
+    width: 25px;
+}
+#tNome {
+    margin-left: 30px;
+}
+#tObs {
+    margin-right: 59px;
+    width: 48%;
+    max-width: 300px;
+}
+#null2 {
+    width: 25px;
+}
 .list-tasks {
     width: 100%;
     list-style: none;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .task {
+    font-size: 1rem;
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0 15px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     cursor: pointer;
 }
 .icone {
     height: 25px;
+    width: 25px;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+
+    border: 0.1px solid black;
 }
-.task:hover img {
+.task > p {
+    border: 0.1px solid black;
+    margin: 0px 2px;
+}
+.nome, .urgencia {
+    width: 15%;
+}
+.prazo {
+    width: 10%;
+}
+.obs {
+    overflow: hidden;
+    width: 48%;
+    max-width: 300px;
+}
+.task > a {
+    height: 25px;
+    width: 25px;
+}
+.task:hover .icone {
     opacity: 1;
 }
 footer {
     text-align: center;
-    height: 15vh;
+    height: 5rem;
     width: 100%;
 
-    padding: 1rem 0 0 0;
+    padding: 1.2rem 0;
     margin: 0;
 }
-#containerJson {
-    display: block;
-    width: auto;
-
-    /*position: fixed;
-    right: 2rem;
-    bottom: 2rem;*/
-    
-    float: right;
-
-    padding: 0.5rem;
-    border-radius: 10px;
-    margin: 0;
-}
-#containerJson > button {
-    font-weight: 600;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid;
+footer > p {
+    font-size: 0.8rem;
 }
 @media screen and (max-width: 900px){
     main {
         border-radius: 0;
+    }
+}
+@media screen and (max-width: 600px){
+    #titulo {
+        font-size: 0.8rem;
+    }
+    .task {
+        font-size: 0.8rem;
+    }
+    .obs {
+        overflow: scroll;
+        max-width: 200px;
     }
 }
 @media screen and (max-width: 340px){

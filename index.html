@@ -11,22 +11,28 @@
 <body>
     <header>
         <h1>Gerenciador de processos</h1>
+        <div id="containerJson">
+            <button class="button-download-task">Baixar Tarefas</button>
+            <button class="button-download-task">Importar Tarefas</button>
+        </div>
     </header>
     <main>
         <input class="input-task" placeholder="Nome da tarefa aqui">
         <button class="button-add-task">Adicionar</button>
+        <div id="titulo">
+            <p id="tNome" class="nome">Nome</p>
+            <p id="tPrazo" class="prazo">Prazo</p>
+            <p id="tUrgencia" class="urgencia">Urgência</p>
+            <p id="tObs" >Obs.</p>
+
+        </div>
         <ul class="list-tasks">
 
         </ul>
     </main>
     <footer>
         <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-        <p>Criado de Leonardo Martinez.</p>
-        
-        <div id="containerJson">
-            <button class="button-download-task">Baixar Tarefas</button>
-            <button class="button-download-task">Importar Tarefas</button>
-        </div>
+        <p><a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">https://github.com/LeoMartinez013/Gerenciador-de-Processos</a></p>
     </footer>
 </body>
 <script src="scripts.js"></script>

@@ -14,6 +14,14 @@ header {
     color: var(--branco);
     background-color: var(--forte);
 }
+#containerJson > button {
+    color: var(--branco);
+    background-color: var(--forte);
+}
+#containerJson > button:hover {
+    color: var(--branco);
+    background-color: #0e46b6;
+}
 main {
     background-color: var(--cinza);
 }
@@ -21,21 +29,22 @@ main {
     background-color: var(--forte);
     color: var(--branco);
 }
+#titulo {
+    background-color: var(--branco);
+    
+}
 .task {
-    background-color: #F2F2F2;
+    background-color: var(--branco);
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .done {
     background-color: var(--concluida);
 }
-#containerJson {
-    background-color: var(--cinza);
-}
-#containerJson > button {
-    color: var(--branco);
-    background-color: var(--forte);
-}
+
 footer {
     color: var(--branco);
     background-color: var(--forte);
+}
+footer > p > a{
+    color: var(--branco);
 }
