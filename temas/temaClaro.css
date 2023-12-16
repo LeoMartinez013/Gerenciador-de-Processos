@@ -1,0 +1,41 @@
+:root {
+    --marinho:  #070C26;
+    --forte: #07338C;
+    --claro: #5F49F2;
+    --cinza: #69788C;
+    --branco: #F2F2F2;
+    --preto: #000000;
+    --concluida: #b5d673;
+}
+body{
+    background-color: var(--branco);
+}
+header {
+    color: var(--branco);
+    background-color: var(--forte);
+}
+main {
+    background-color: var(--cinza);
+}
+.button-add-task {
+    background-color: var(--forte);
+    color: var(--branco);
+}
+.task {
+    background-color: #F2F2F2;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.done {
+    background-color: var(--concluida);
+}
+#containerJson {
+    background-color: var(--cinza);
+}
+#containerJson > button {
+    color: var(--branco);
+    background-color: var(--forte);
+}
+footer {
+    color: var(--branco);
+    background-color: var(--forte);
+}
