@@ -54,6 +54,7 @@ header > h1 {
     border-radius: 10px;
     border: 2px solid;
     margin: 0.2rem;
+    cursor: pointer;
 }
 /*CORPO*/
 main {
@@ -67,7 +68,6 @@ main {
 }
 /*CAIXA NOME*/
 .input-task {
-    
     font-size: 1rem;
     height: 2.5rem;
     padding-left: 0.7rem;
@@ -133,8 +133,8 @@ th, td {
     opacity: 1;
 }
 .icone {
-    height: 25px;
-    width: 25px;
+    height: 1.7rem;
+    width: 1.7rem;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
@@ -143,6 +143,7 @@ th, td {
     max-width: 300px;
 }
 .c1 {
+    align-items: center;
     width: 25px;
     max-width: 25px;
 }
@@ -160,8 +161,13 @@ th, td {
     word-wrap: break-word;
 }
 .c6 {
-    width: 25px;
-    max-width: 25px;
+    align-items: center;
+
+    width: 1.7;
+    max-width: 1.7;
+
+    height: 1.7rem;
+    width: 1.7rem;
 }
 /*RODAPÉ*/
 footer {

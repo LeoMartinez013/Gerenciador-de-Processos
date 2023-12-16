@@ -24,6 +24,7 @@ function adicionarNovaTarefa() {
   minhaListaDeItens.push({
     tarefa: input.value,
     concluida: false,
+    obs: '',
   })
 
   input.value = ''
@@ -50,7 +51,7 @@ function mostrarTarefas() {
             <td class="nome c2">${item.tarefa}</td>
             <td class="prazo c3"> ${item.prazo || 'Vazio'}</td>
             <td class="urgencia c4"> ${item.urgencia || 'Vazio'}</td>
-            <td class="obs c5"> ${item.obs || 'Nenhuma'}</td>
+            <td class="obs c5"> ${item.obs || 'Vazio'}</td>
             <td class="c6"><img class="icone" src="./assets/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
             <a href="configuracao/config.html?posicao=${posicao}" target="_self">
               <img class="icone" src="./assets/config.png" alt="configurar-tarefa">

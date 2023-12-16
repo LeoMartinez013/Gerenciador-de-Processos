@@ -6,6 +6,11 @@
     --branco: #F2F2F2;
     --preto: #000000;
     --concluida: #b5d673;
+    --salva: #043b01;
+}
+main > p {
+    color: var(--branco);
+    background-color: var(--marinho);
 }
 body{
     background-color: var(--branco);
@@ -19,6 +24,14 @@ header {
     background-color: var(--forte);
 }
 #containerJson > button:hover {
+    color: var(--branco);
+    background-color: #0e46b6;
+}
+#bSalvar, #bVoltar {
+    color: var(--branco);
+    background-color: var(--forte);
+}
+#bSalvar:hover, #bVoltar:hover {
     color: var(--branco);
     background-color: #0e46b6;
 }
@@ -40,7 +53,9 @@ th {
 .done {
     background-color: var(--concluida);
 }
-
+#confirmacao {
+    color: var(--salva);
+}
 footer {
     color: var(--branco);
     background-color: var(--forte);

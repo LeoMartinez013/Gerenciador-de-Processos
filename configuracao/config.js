@@ -13,7 +13,7 @@ function salvarConfiguracoes() {
   
     const confirmacao = document.getElementById('confirmacao')
     confirmacao.style.display = 'block'
-    setTimeout(() => confirmacao.style.display = 'none', 3000)
+    //setTimeout(() => confirmacao.style.display = 'none', 3000)
 }
 
 // Carregar as configurações da tarefa quando a página for carregada
