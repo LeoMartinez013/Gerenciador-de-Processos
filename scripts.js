@@ -32,22 +32,30 @@ function adicionarNovaTarefa() {
 }
 
 function mostrarTarefas() {
-  let novaLi = ''
+  let novaLi = `
+    <tr id="titulo">
+      <th class="c1"></th>
+      <th class="c2">Nome</th>
+      <th class="c3">Prazo</th>
+      <th class="c4">Urgência</th>
+      <th class="c5">Obs.</th>
+      <th class="c6"></th>
+    </tr>`
   minhaListaDeItens.forEach((item, posicao) => {
     novaLi =
       novaLi +
       `
-        <li class="task ${item.concluida && 'done'}">
-            <img class="icone" src="./assets/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})">
-            <p class="nome">${item.tarefa}</p>
-            <p class="prazo"> ${item.prazo || 'Vazio'}</p>
-            <p class="urgencia"> ${item.urgencia || 'Vazio'}</p>
-            <p class="obs"> ${item.obs || 'Nenhuma'}</p>
-            <img class="icone" src="./assets/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
+        <tr class="task ${item.concluida && 'done'}">
+            <td class="c1"><img class="icone" src="./assets/checked.png" alt="check-na-tarefa" onclick="concluirTarefa(${posicao})"></td>
+            <td class="nome c2">${item.tarefa}</td>
+            <td class="prazo c3"> ${item.prazo || 'Vazio'}</td>
+            <td class="urgencia c4"> ${item.urgencia || 'Vazio'}</td>
+            <td class="obs c5"> ${item.obs || 'Nenhuma'}</td>
+            <td class="c6"><img class="icone" src="./assets/trash.png" alt="tarefa-para-o-lixo" onclick="deletarItem(${posicao})">
             <a href="configuracao/config.html?posicao=${posicao}" target="_self">
               <img class="icone" src="./assets/config.png" alt="configurar-tarefa">
-            </a>
-        </li>
+            </a></td>
+        </tr>
       `
   })
   listaCompleta.innerHTML = novaLi

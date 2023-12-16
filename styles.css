@@ -18,6 +18,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+/*CABEÇALHO*/
 header {
     text-align: center;
     justify-content: center;
@@ -31,6 +32,7 @@ header > h1 {
     margin: 0 auto ;
     margin-top: 1.2rem;
 }
+/*BOTÕES BAIXAR-IMPORTAR*/
 #containerJson {
     height: auto;
     display: flex;
@@ -53,6 +55,7 @@ header > h1 {
     border: 2px solid;
     margin: 0.2rem;
 }
+/*CORPO*/
 main {
     width: 100%;
     max-width: 900px;
@@ -62,21 +65,23 @@ main {
     flex-grow: 1;
 
 }
+/*CAIXA NOME*/
 .input-task {
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 5px;
     width: 70%;
     height: 3rem;
-    padding-left: 10px;
+    padding-left: 0.7rem;
 }
+/*BOTÃO ADICIONAR*/
 .button-add-task {
     border: none;
     border-radius: 5px;
     height: 3rem;
     width: 25.5%;
-    font-size: 17px;
-    padding: 0 15px;
+    font-size: 1rem;
+    padding: 0 0.1rem;
     float: right;
     cursor: pointer;
     font-weight: 700;
@@ -87,80 +92,75 @@ main {
 .button-add-task:active {
     opacity: 0.6;
 }
-#titulo {
-    font-size: 1rem;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 15px;
-    border-radius: 5px;
-    margin: 10px 0 5px 0;
-    cursor: none;
-}
-#titulo > p {
-    border: 0.1px solid black;
-}
-#null1 {
-    width: 25px;
-}
-#tNome {
-    margin-left: 30px;
-}
-#tObs {
-    margin-right: 59px;
-    width: 48%;
-    max-width: 300px;
-}
-#null2 {
-    width: 25px;
-}
+/*TABELA*/
 .list-tasks {
+    table-layout: fixed;
     width: 100%;
-    list-style: none;
-    margin-top: 0px;
+    max-width: 100%;
+    margin-top: 10px;
 }
+table, th, td {
+    border-collapse: collapse;
+    border-style: hidden;
+}
+th, td {
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 0 0.1rem;
+}
+/*TITULO TABELA*/
+#titulo{
+    font-size: 1rem;
+    text-align: center;
+    height: 30px;
+    padding: 0 15px;
+}
+/*TAREFAS*/
 .task {
     font-size: 1rem;
+    text-align: center;
     height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 15px;
+    padding: 0;
     border-radius: 5px;
     margin-bottom: 6px;
     cursor: pointer;
+}
+.task:hover .icone {
+    opacity: 1;
 }
 .icone {
     height: 25px;
     width: 25px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-
-    border: 0.1px solid black;
-}
-.task > p {
-    border: 0.1px solid black;
-    margin: 0px 2px;
-}
-.nome, .urgencia {
-    width: 15%;
-}
-.prazo {
-    width: 10%;
 }
 .obs {
     overflow: hidden;
-    width: 48%;
     max-width: 300px;
 }
-.task > a {
-    height: 25px;
+.c1 {
     width: 25px;
+    max-width: 25px;
 }
-.task:hover .icone {
-    opacity: 1;
+.c2 {
+    width: 17%;
 }
+.c3 {
+    width: 12%;
+}
+.c4 {
+    width: 10%;
+}
+.c5 {
+    width: 40%;
+    word-wrap: break-word;
+}
+.c6 {
+    width: 25px;
+    max-width: 25px;
+}
+/*RODAPÉ*/
 footer {
     text-align: center;
     height: 5rem;
@@ -189,6 +189,12 @@ footer > p {
         max-width: 200px;
     }
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 400px){
+    .c5 {
+        overflow-x: scroll;
+    }
+    tr {
+        height: auto;
+    }
     
 }
