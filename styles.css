@@ -64,10 +64,9 @@ main {
     border-radius: 10px;
     margin: 0.5rem auto;
     flex-grow: 1;
-
 }
 /*CAIXA NOME*/
-.input-task {
+.input-processo {
     font-size: 1rem;
     height: 2.5rem;
     padding-left: 0.7rem;
@@ -77,7 +76,7 @@ main {
     width: 70%;
 }
 /*BOTÃO ADICIONAR*/
-.button-add-task {
+.button-add-processo {
     border: none;
     border-radius: 5px;
     height: 3rem;
@@ -89,14 +88,14 @@ main {
     cursor: pointer;
     font-weight: 700;
 }
-.button-add-task:hover {
+.button-add-processo:hover {
     opacity: 0.8;
 }
-.button-add-task:active {
+.button-add-processo:active {
     opacity: 0.6;
 }
 /*TABELA*/
-.list-tasks {
+.list-processos {
     table-layout: fixed;
     width: 100%;
     max-width: 100%;
@@ -120,7 +119,7 @@ th, td {
     padding: 0 15px;
 }
 /*TAREFAS*/
-.task {
+.processo {
     font-size: 0.9rem;
     text-align: center;
     height: 1rem;
@@ -129,7 +128,7 @@ th, td {
     margin-bottom: 6px;
     cursor: pointer;
 }
-.task:hover .icone {
+.processo:hover .icone {
     opacity: 1;
 }
 .icone {

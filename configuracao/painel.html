@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="painel.css">
+    <link rel="stylesheet" href="../temas/temaClaro.css">
+    <title>Configuração</title>
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de processos</h1>
+    </header>
+    <main>
+        <h2>Configurações da Tarefa</h2>
+        <form action="">
+            <div id="caixa1">
+                <div class="campos linha1">
+                    <!--PO-->
+                    <label for="po">PO:</label><input type="text" id="po">
+                    <!--MODAL-->
+                    <label for="modal">Modal:</label>
+                    <select id="modal">
+                        <option value="Marítimo">Marítimo</option>
+                        <option value="Aéreo">Aéreo</option>
+                        <option value="Terrestre">Terrestre</option>
+                    </select>
+                    <!--FILIAL-->
+                    <label for="filial">Filial:</label>
+                    <select id="filial">
+                        <option value="São Paulo" selected>São Paulo</option>
+                        <option value="Filial 2">Filial 2</option>
+                        <option value="Filial 3">Filial 3</option>
+                    </select>
+                    <!--QUANTIDADE TM/KG-->
+                    <label for="quantidade">Quantidade - TM/KG:</label><input type="text" id="quantidade">
+                </div>
+                <div class="campos linha2">
+                    <!--PRODUTO-->
+                    <label for="produto">Produto:</label>
+                    <select id="produto">
+                        <option value="Produto 1">Produto 1</option>
+                        <option value="Produto 2">Produto 2</option>
+                        <option value="Produto 3">Produto 3</option>
+                    </select>
+                    <!--ETB-->
+                    <label for="etb">ETB:</label> <input type="date" id="etb">
+                    <!--NAVIO/VÔO-->
+                    <label for="navio">Navio/Vôo:</label>
+                    <input type="text" list="navio" id="navio">
+                    <datalist id="navio">
+                        <option value="XIN NAN TONG">
+                        <option value="SAN LORENZO MAERSK">
+                        <option value="SAN MARCO MAERSK">
+                        <option value="MSC CHLOE">
+                        <option value="XIN WEI HAI">
+                        <option value="BROOKLIN BRIDE">
+                        <option value="MSC SOFIA CELESTE">
+                    </datalist>
+                </div>
+                <div class="campos linha3">
+                    <!--CONTAINER/VOLUME-->
+                    <label for="container">Container/Volume:</label>
+                    <input type="text" id="container">
+                    <!--BL-->
+                    <label for="bl">BL:</label> <input type="text" id="bl">
+                    <!--LI-->
+                    <label for="li">L.I:</label> <input type="text" id="li" value="S/LI">
+                </div>
+                <div class="campos linha4">
+                    <!--LCPO-->
+                    <label for="lcpo">LCPO:</label> <input type="text" id="lcpo" value="S/LCPO">
+                    <!--DESCARGA-->
+                    <label for="descarga">Descarga:</label><input type="date" id="descarga">
+                    <!--APRES. DOCTS-->
+                    <label for="apresDcts">Apres. Dcts:</label><input type="date" id="apresDcts">
+                </div>
+                <div class="campos linha5">
+                    <!--INSPEÇÃO MAPA-->
+                    <label for="inspecaoMAPA">Inspeção MAPA:</label> <input type="text" id="inspecaoMAPA" value="S/INSP">
+                    <!--DEFERIMENTO-->
+                    <label for="deferimento">Deferimento:</label><input type="date" id="deferimento">
+                    <!--REGISTRO DI-->
+                    <label for="registroDI">Registro DI:</label> <input type="date" id="registroDI">
+                </div>
+                <div class="campos linha6">
+                    <!--NÚMERO D.I.-->
+                    <label for="numDI">Número da D.I:</label> <input type="text" id="numDI">
+                    <!--DSEMBARAÇO-->
+                    <label for="desembaraco">Desembaraço:</label> <input type="date" id="desembaraco">
+                    <!--ENVIO NF'S-->
+                    <label for="envNFs">Envio NF's:</label> <input type="date" id="envNFs">
+                </div>
+                <div class="campos linha7">
+                    <!--DOCTS TRANSPORTES-->
+                    <label for="dctsTransporte">Dcts p/ transporte:</label> <input type="date" id="dctsTransporte">
+                    <!---MÊS OPERAÇÃO-->
+                    <label for="mesOperacao">Mês Operação:</label> <input type="month" id="mesOperacao">
+                    <!--ETAPA-->
+                    <!--SE DESEMBARAÇADO = CONCLUIDO-->
+                    <label for="etapa">Etapa:</label>
+                    <select id="etapa">
+                        <option value="Desembaraçado">Desembaraçado</option>
+                        <option value="AG. Atração" selected>AG. Atração</option>
+                    </select>
+                </div>
+            </div>
+            <div id="caixa2">
+                <!--HISTÓRICO-->
+                <p>Histórico</p> <button type="button" id="adicionarHistorico">Adicionar Histórico</button>
+                <div id="historico1" class="historicos">
+                    <label for="hist1">1º:</label>
+                    <input type="date" id="dateH1" class="hist1">
+                    <input type="text" id="textH1" class="hist1">
+                </div>
+                
+            </div>
+            <div id="caixa3">
+                <button id="bSalvar" onclick="salvarConfiguracoes() ">Salvar</button>
+                <a id="bVoltar" href="../index.html">Voltar</a>
+            </div>
+        </form>
+        
+        <div id="confirmacao" style="display: none;">Configurações salvas com sucesso!</div>
+    </main>
+    <footer>
+        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+        <p><a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">https://github.com/LeoMartinez013/Gerenciador-de-Processos</a></p>
+    </footer>
+    <script src="painel.js"></script>
+</body>
+</html>
