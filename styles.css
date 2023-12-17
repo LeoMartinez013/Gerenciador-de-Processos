@@ -189,9 +189,13 @@ footer > p {
     #titulo {
         font-size: 0.8rem;
     }
-    .task {
+    .processo {
         font-size: 0.8rem;
     }
+.icone {
+    opacity: 1;
+
+}
     .obs {
         overflow: scroll;
         max-width: 200px;
@@ -208,7 +212,7 @@ footer > p {
         height: 1.6rem;
         font-size: 0.6rem;
     }
-    .input-task {
+    .input-processo {
         font-size: 0.8rem;
         height: 1.7rem;
     }
@@ -219,7 +223,7 @@ footer > p {
     #titulo {
         font-size: 0.5rem;
     }
-    .task {
+    .processo {
         height: auto;
         font-size: 0.6rem;
     }
