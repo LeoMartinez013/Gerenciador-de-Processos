@@ -17,49 +17,27 @@ function adicionarHistorico() {
 
 function salvarConfiguracoes() {
   const processo = meusProcessos[posicao];
-
-  // Atualiza as propriedades do processo com os valores dos inputs
-  /*const poValue = document.getElementById(`po`).value;
-  processo.po = poValue !== "" && poValue !== "undefined" ? poValue : "vazio";*/
-
-  processo.po = document.getElementById(`po`).value
+  
+  processo.po = document.getElementById(`po`).value;
   processo.filial = document.getElementById(`filial`).value
   processo.quantidade = document.getElementById(`quantidade`).value
   processo.produto = document.getElementById(`produto`).value
   processo.etb = document.getElementById(`etb`).value
   processo.navio = document.getElementById(`navio`).value
   processo.container = document.getElementById(`container`).value
-  
   processo.bl = document.getElementById(`bl`).value
-  
   processo.li = document.getElementById(`li`).value
-  
   processo.lcpo = document.getElementById(`lcpo`).value
-  
-  processo.descarga = document.getElementById(`descarga`).value
-
   processo.inspecaoMAPA = document.getElementById(`inspecaoMAPA`).value
-  
   processo.apresDcts = document.getElementById(`apresDcts`).value
-  
   processo.deferimento = document.getElementById(`deferimento`).value
-  
   processo.registroDI = document.getElementById(`registroDI`).value
-  
   processo.numDI = document.getElementById(`numDI`).value
-  
   processo.desembaraco = document.getElementById(`desembaraco`).value
-  
   processo.envNFs = document.getElementById(`envNFs`).value
-  
   processo.dctsTransporte = document.getElementById(`dctsTransporte`).value
-  
   processo.mesOperacao = document.getElementById(`mesOperacao`).value
-  
-  processo.etapa = document.getElementById(`etapa`).value
-  /*const etapaValue = document.getElementById(`etapa`).value;
-  processo.etapa = etapaValue !== "" && etapaValue !== "undefined" ? etapaValue : "vazio";*/
-
+  processo.etapa = document.getElementById(`etapa`).value;
   const historicosDiv = document.getElementById('historico1').parentNode;
   const historicos = historicosDiv.getElementsByClassName('historicos');
   processo.historico = [];
@@ -74,6 +52,10 @@ function salvarConfiguracoes() {
   const confirmacao = document.getElementById('confirmacao');
   confirmacao.style.display = 'block';
   setTimeout(() => confirmacao.style.display = 'none', 3000);
+
+  console.log(processo.etapa.value);
+
+  window.location.search = `?posicao=${posicao}`;
 }
 
 window.onload = function() {
@@ -125,17 +107,17 @@ window.onload = function() {
     localStorage.setItem('posicao', posicao);
   }
 
-  // Adiciona a classe aos campos de entrada
+  // Adicionando a classe aos campos de entrada
   const inputs = document.getElementsByTagName('input');
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value !== "" && inputs[i].value !== "undefined") {
+    if (inputs[i].value !== "" && inputs[i].value !== "undefined" && inputs[i].value !== null) {
       inputs[i].classList.add('preenchido');
-    } else {
+    } else if (inputs[i].value === null) {
       inputs[i].classList.add('nao_preenchido');
     }
   }
 
-  // Altera os valores das propriedades do objeto `processo`
+  // Alterando os valores das propriedades do objeto `processo`
   for (let prop in processo) {
     if (processo[prop] === "" || processo[prop] === "undefined") {
       processo[prop] = "vazio";
@@ -158,3 +140,5 @@ if (document.readyState === "complete" || (document.readyState !== "loading" && 
 } else {
   document.addEventListener("DOMContentLoaded", window.onload);
 }
+
+//====================================================================

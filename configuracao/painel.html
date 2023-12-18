@@ -15,15 +15,14 @@
     </header>
     <main>
         <h2>Configurações da Tarefa</h2>
-        <form action="">
             <div id="caixa1">
                 <div class="campos linha1">
                     <!--PO-->
-                    <label for="po">PO:</label><input type="text" id="po">
+                    <label for="po">PO:</label><input type="text" id="po" onfocus="this.select();">
                     <!--MODAL-->
                     <label for="modal">Modal:</label>
                     <select id="modal">
-                        <option value="Marítimo">Marítimo</option>
+                        <option value="Marítimo" selected>Marítimo</option>
                         <option value="Aéreo">Aéreo</option>
                         <option value="Terrestre">Terrestre</option>
                     </select>
@@ -35,22 +34,26 @@
                         <option value="Filial 3">Filial 3</option>
                     </select>
                     <!--QUANTIDADE TM/KG-->
-                    <label for="quantidade">Quantidade - TM/KG:</label><input type="text" id="quantidade">
+                    <label for="quantidade">Quantidade - TM/KG:</label><input type="text" id="quantidade" onfocus="this.select();">
                 </div>
                 <div class="campos linha2">
                     <!--PRODUTO-->
                     <label for="produto">Produto:</label>
+                    <input type="text" list="produtoDataList" id="produto">
+                    <datalist id="produtoDataList">
+                        <option value="Produto 1">
+                        <option value="Produto 2">
+                        <option value="Produto 3">
+                    </datalist>
                     <select id="produto">
-                        <option value="Produto 1">Produto 1</option>
-                        <option value="Produto 2">Produto 2</option>
-                        <option value="Produto 3">Produto 3</option>
+                        
                     </select>
                     <!--ETB-->
-                    <label for="etb">ETB:</label> <input type="date" id="etb">
+                    <label for="etb">ETB:</label> <input type="date" id="etb" onfocus="this.select();">
                     <!--NAVIO/VÔO-->
                     <label for="navio">Navio/Vôo:</label>
-                    <input type="text" list="navio" id="navio">
-                    <datalist id="navio">
+                    <input type="text" list="navioDatalist" id="navio" onfocus="this.select();">
+                    <datalist id="navioDatalist">
                         <option value="XIN NAN TONG">
                         <option value="SAN LORENZO MAERSK">
                         <option value="SAN MARCO MAERSK">
@@ -58,20 +61,29 @@
                         <option value="XIN WEI HAI">
                         <option value="BROOKLIN BRIDE">
                         <option value="MSC SOFIA CELESTE">
+                        <option value="CAP SAN ARTEMISSIO"></option>
+                        <option value="CAP SAN LORENZO"></option>
+                        <option value="CAP SAN NICOLAS"></option>
+                        <option value="CAP SAN TAINARO"></option>
+                        <option value="XIN CHONG QING"></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
                     </datalist>
                 </div>
                 <div class="campos linha3">
                     <!--CONTAINER/VOLUME-->
                     <label for="container">Container/Volume:</label>
-                    <input type="text" id="container">
+                    <input type="text" id="container" onfocus="this.select();">
                     <!--BL-->
-                    <label for="bl">BL:</label> <input type="text" id="bl">
+                    <label for="bl">BL:</label> <input type="text" id="bl" onfocus="this.select();">
                     <!--LI-->
-                    <label for="li">L.I:</label> <input type="text" id="li" value="S/LI">
+                    <label for="li">L.I:</label> <input type="text" id="li" value="S/LI" onfocus="this.select();">
                 </div>
                 <div class="campos linha4">
                     <!--LCPO-->
-                    <label for="lcpo">LCPO:</label> <input type="text" id="lcpo" value="S/LCPO">
+                    <label for="lcpo">LCPO:</label> <input type="text" id="lcpo" onfocus="this.select();">
                     <!--DESCARGA-->
                     <label for="descarga">Descarga:</label><input type="date" id="descarga">
                     <!--APRES. DOCTS-->
@@ -79,7 +91,7 @@
                 </div>
                 <div class="campos linha5">
                     <!--INSPEÇÃO MAPA-->
-                    <label for="inspecaoMAPA">Inspeção MAPA:</label> <input type="text" id="inspecaoMAPA" value="S/INSP">
+                    <label for="inspecaoMAPA">Inspeção MAPA:</label> <input type="text" id="inspecaoMAPA" onfocus="this.select();">
                     <!--DEFERIMENTO-->
                     <label for="deferimento">Deferimento:</label><input type="date" id="deferimento">
                     <!--REGISTRO DI-->
@@ -87,7 +99,7 @@
                 </div>
                 <div class="campos linha6">
                     <!--NÚMERO D.I.-->
-                    <label for="numDI">Número da D.I:</label> <input type="text" id="numDI">
+                    <label for="numDI">Número da D.I:</label> <input type="text" id="numDI" onfocus="this.select();">
                     <!--DSEMBARAÇO-->
                     <label for="desembaraco">Desembaraço:</label> <input type="date" id="desembaraco">
                     <!--ENVIO NF'S-->
@@ -121,7 +133,6 @@
                 <button id="bSalvar" onclick="salvarConfiguracoes() ">Salvar</button>
                 <a id="bVoltar" href="../index.html">Voltar</a>
             </div>
-        </form>
         
         <div id="confirmacao" style="display: none;">Configurações salvas com sucesso!</div>
     </main>

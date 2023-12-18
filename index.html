@@ -11,9 +11,19 @@
 <body>
     <header>
         <h1>Gerenciador de processos</h1>
+        <div>
+            <div id="containerEmail">
+                <form action="https://formspree.io/seuemail" method="POST">
+                    <input type="text" name="name">
+                    <input type="email" name="_replyto">
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
         <div id="containerJson">
             <button class="button-download-task">Baixar</button>
-            <button class="button-download-task">Importar</button>
+            <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
+            <button class="button-import-task" onclick="document.getElementById('importFile').click()">Importar</button>
         </div>
     </header>
     <main>
