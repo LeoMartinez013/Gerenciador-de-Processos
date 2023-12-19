@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="temas/temaClaro.css">
+
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/menu.css' rel='stylesheet'>
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/close.css' rel='stylesheet'>
     <title>Processos</title>
 </head>
 <body>
     <header>
         <h1>Gerenciador de processos</h1>
-        <div>
-            <div id="containerEmail">
-                <form action="https://formspree.io/seuemail" method="POST">
-                    <input type="text" name="name">
-                    <input type="email" name="_replyto">
-                    <input type="submit" value="Send">
-                </form>
+        <div id="subHeader">
+            <nav id="nav-header">
+                <div id="nav-button" onclick="botaoNav()"
+                    aria-controls="nav"
+                    aria-expanded="false"
+                    aria-label="menu">
+                    <i id="nav-button-icon" class="gg-menu"></i>
+                </div>
+                <ul 
+                    id="nav-ul"
+                    data-visible="false">
+                    <li>
+                        <a href="#">Ajuda</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="baixar-importar">
+                <button class="button-download-task">Baixar</button>
+                <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
+                <button class="button-import-task" onclick="document.getElementById('importFile').click()">Importar</button>
             </div>
-        </div>
-        <div id="containerJson">
-            <button class="button-download-task">Baixar</button>
-            <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
-            <button class="button-import-task" onclick="document.getElementById('importFile').click()">Importar</button>
         </div>
     </header>
     <main>

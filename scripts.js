@@ -17,6 +17,39 @@ window.onload = function() {
   mostrarProcessos()
 }
 
+// NAV
+
+//navButton.addEventListener('click', botaoNav())
+const navButton = document.querySelector('#nav-button')
+const navUl = document.querySelector('#nav-ul')
+
+function botaoNav(){
+  const visibility = navButton.getAttribute('aria-expanded')
+  if (visibility == 'false'){
+    navButton.setAttribute('aria-expanded', true)
+    navUl.setAttribute('data-visible', true)
+  } else {
+    navButton.setAttribute('aria-expanded', false)
+    navUl.setAttribute('data-visible', false)
+  }
+}
+
+/*const nav = document.querySelector('#nav-ul')
+
+function botaoNav(){
+  const visibility = document.getAttribute('#nav-ul')
+  if (nav.style.display == 'none') {
+    nav.style.display = 'block'
+    nav.setAttribute('data-visible', true)
+    console.log('nav aberta')
+  } else {
+    nav.style.display = 'none'
+    nav.setAttribute('data-visible', false)
+    console.log('nav fechada')
+  }
+}*/
+
+
 // Baixar como .json
 function baixarProcessosJson() {
   const data = JSON.stringify(meusProcessos, null, 2);
