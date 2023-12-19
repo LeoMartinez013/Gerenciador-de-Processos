@@ -9,24 +9,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="temas/temaClaro.css">
 
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/menu.css' rel='stylesheet'>
-    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/close.css' rel='stylesheet'>
     <title>Processos</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <h1>Gerenciador de processos</h1>
-        <div id="subHeader">
-            <nav id="nav-header">
-                <div id="nav-button" onclick="botaoNav()"
-                    aria-controls="nav"
-                    aria-expanded="false"
-                    aria-label="menu">
-                    <i id="nav-button-icon" class="gg-menu"></i>
-                </div>
-                <ul 
-                    id="nav-ul"
-                    data-visible="false">
+        <nav id="nav">
+                <!--<button id="nav-button" class="menu"></button>
+                <ul id="nav-ul">
+                    
                     <li>
                         <a href="#">Ajuda</a>
                     </li>
@@ -36,14 +27,13 @@
                     <li>
                         <a href="#">Sobre</a>
                     </li>
-                </ul>
-            </nav>
+                </ul>-->
             <div id="baixar-importar">
                 <button class="button-download-task">Baixar</button>
                 <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
                 <button class="button-import-task" onclick="document.getElementById('importFile').click()">Importar</button>
             </div>
-        </div>
+        </nav>
     </header>
     <main>
         <input class="input-processo" placeholder="Nome da tarefa aqui">
@@ -55,7 +45,8 @@
     </main>
     <footer>
         <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-        <p><a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">https://github.com/LeoMartinez013/Gerenciador-de-Processos</a></p>
+        <p><a href="ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
+        <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013">Leonardo Martinez Almeida</a></p>
     </footer>
 </body>
 <script src="scripts.js"></script>

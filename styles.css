@@ -23,7 +23,7 @@ header {
     text-align: center;
     justify-content: center;
     min-height: 3rem;
-    height: 5.6rem; 
+    height: auto; 
     width: 100%;
 }
 header > h1 {
@@ -32,37 +32,14 @@ header > h1 {
     margin: 0 auto ;
     margin-top: 1.2rem;
 }
-/*
-<div id="subHeader">
-    <nav>
-        <ul id="nav" data-visible="false">
-            <li>
-                <a href="#">Ajuda</a>
-            </li>
-            <li>
-                <a href="#">Contato</a>
-            </li>
-            <li>
-                <a href="#">Sobre</a>
-            </li>
-        </ul>
-    </nav>
-    <div id="baixar-importar">
-        <button class="button-download-task">Baixar</button>
-        <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
-        <button class="button-import-task"></button>
-    </div>
-</div>
-*/
-#subHeader {
-    
-}
-#nav-header {
-    display: flex;
-    float: left;
-}
+#nav {
+    width: 100%;
+    height: auto;
+}/*
 #nav-button {
     cursor: pointer;
+    float: left;
+    display: flex;
 
     font-weight: 600;
 
@@ -78,108 +55,51 @@ header > h1 {
     border-color: #000;
 
 }
-#nav-button-icon {
-
-}
-/*MENU ICON*/
-.gg-menu {
-    transform: scale(var(--ggs,1))
-}  
-.gg-menu,
-.gg-menu::after,
-.gg-menu::before {
-    position: relative;
-    display: block;
-    width: 20px;
-    height: 2px;
-    border-radius: 3px;
-    background: currentColor
-}
-.gg-menu::after,
-.gg-menu::before {
-    content: "";
-    position: absolute;
-    top: -6px
-}
-.gg-menu::after {
-    top: 6px
-} 
-/*CLOSE ICON*/
-.gg-close {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    transform: scale(var(--ggs,1));
-    width: 22px;
-    height: 22px;
-    border: 2px solid transparent;
-    border-radius: 40px
-}
-.gg-close::after,
-.gg-close::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    width: 16px;
-    height: 2px;
-    background: currentColor;
-    transform: rotate(45deg);
-    border-radius: 5px;
-    top: 8px;
-    left: 1px
-}
-.gg-close::after {
-    transform: rotate(-45deg)
-} 
-/*#nav-button > div {
-    background: #000;
-    width: 20px;
-    height: 2px;
-    border-radius: 5px;
-}
-#nav-button[aria-expanded='true'] > div:nth-child(1) {
-    transform: rotate(46deg);
-}
-#nav-button[aria-expanded='true'] > div:nth-child(2) {
-    transform: rotate(-46deg);
-}*/
-#nav-ul {
+.menu {
     display: none;
-    /*position: fixed;
-    inset: 0 0 0 0;*/
-
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+}
+.menu::after,
+.menu::before {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+#nav-ul {
+    display: flex;
+    gap: 32px;
     list-style: none;
+
     opacity: 0;
     transform: translateY(-120%);
     transition: all 500ms ease-out;
 
-    margin-top: 4.85rem;
 
     background: #000;
 }
-#nav-ul[data-visible="true"] {
-    transform: translateY(0%);
-    opacity: 1;
-    display: block;
-}
+
 #nav-ul > a {
-    padding: 0.64rem 3rem;
-    display: block;
-
-    text-decoration: none;
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    padding-block: 16px;
 }
-
+*/
 /*BOTÕES BAIXAR-IMPORTAR*/
 #baixar-importar {
     display: flex;
-    float: right;
-
+    float: right
 }
 #baixar-importar > button {
     height: 2rem;
+    width: 6rem;
     font-weight: 600;
     padding: 5px;
     border-radius: 10px;
@@ -307,7 +227,7 @@ footer {
     width: 100%;
 
     padding: 1.2rem 0;
-    margin: 0;
+    margin: 50px 0 0 0;
 }
 footer > p {
     font-size: 0.8rem;
@@ -324,10 +244,6 @@ footer > p {
     .processo {
         font-size: 0.8rem;
     }
-.icone {
-    opacity: 1;
-
-}
     .obs {
         overflow: scroll;
         max-width: 200px;
@@ -340,23 +256,24 @@ footer > p {
     header > h1 {
         font-size: 1rem;
     }
-    #nav-header {
-
-    }
-    #nav-button {
-        
+    #baixar-importar {
+        display: block;
+        float: none;
+        text-align: center;
     }
     #baixar-importar > button {
         height: 1.6rem;
+        width: 4rem;
         font-size: 0.6rem;
     }
     .input-processo {
         font-size: 0.8rem;
         height: 1.7rem;
     }
-    .button-add-task {
-        height: 1.8rem;
+    .button-add-processo {
         font-size: 0.8rem;
+        overflow: hidden;
+        height: 1.7rem;  
     }
     #titulo {
         font-size: 0.5rem;
@@ -364,12 +281,6 @@ footer > p {
     .processo {
         height: auto;
         font-size: 0.6rem;
-    }
-    .c5 {
-        overflow-x: scroll;
-    }
-    tr {
-        height: auto;
     }
     
 }
