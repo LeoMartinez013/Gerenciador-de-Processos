@@ -157,21 +157,16 @@ table {
     border-collapse: collapse;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    overflow: hidden;
-    
-}
-tr {
-    
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    overflow: hidden;   
 }
 th, td {
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
 
-    padding: 0.2rem;
-    
+    padding: 0.2rem
 }
 /*TITULO TABELA*/
 #titulo{
@@ -280,5 +275,4 @@ footer > p {
         height: auto;
         font-size: 0.6rem;
     }
-    
 }
