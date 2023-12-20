@@ -17,13 +17,6 @@ window.onload = function() {
   mostrarProcessos()
 }
 
-// NAV
-const menu = document.querySelector(".menu");
-const nav = document.querySelector("#nav");
-
-menu.addEventListener("click", () => nav.classList.toggle("active"));
-
-
 // Baixar como .json
 function baixarProcessosJson() {
   const data = JSON.stringify(meusProcessos, null, 2);
@@ -122,7 +115,8 @@ function mostrarProcessos() {
       <th class="c1">PO</th>
       <th class="c2">BL</th>
       <th class="c3">Etapa</th>
-      <th class="c4"></th>
+      <th class="c4">Mês Operação</th>
+      <th class="c5"></th>
     </tr>`
     meusProcessos.forEach((item, posicao) => {
     novaLi =
@@ -140,11 +134,12 @@ function mostrarProcessos() {
         </tr>
       `*/
       `
-      <tr class="processo ${item.concluido && 'done'}" onclick="window.location='configuracao/painel.html?posicao=${posicao}'">
+      <tr class="processo ${item.concluido && 'concluido'}" onclick="window.location='configuracao/painel.html?posicao=${posicao}'">
         <td class="po c1">${item.po}</td>
         <td class="bl c2"> ${item.bl || 'Vazio'}</td>
         <td class="etapa c3"> ${item.etapa || 'Vazio'}</td>
-        <td class="c4">
+        <td class="c4 mesOperacao"> ${item.mesOperacao || 'Vazio'}</td>
+        <td class="c5">
           <img class="icone" src="./assets/trash.png" alt="excluir-processo" onclick="event.stopPropagation(); deletarProcesso(${posicao})">
         </td>
       </tr>

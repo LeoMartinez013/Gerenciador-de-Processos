@@ -153,15 +153,25 @@ main {
     max-width: 100%;
     margin-top: 10px;
 }
-table, th, td {
+table {
     border-collapse: collapse;
-    border-style: hidden;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    
+}
+tr {
+    
 }
 th, td {
-    text-align: left;
+    text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    padding: 0 0.1rem;
+
+    padding: 0.2rem;
+    
 }
 /*TITULO TABELA*/
 #titulo{
@@ -169,6 +179,7 @@ th, td {
     text-align: center;
     height: 30px;
     padding: 0 15px;
+    margin-bottom: 10px;
 }
 /*TAREFAS*/
 .processo {
@@ -176,8 +187,7 @@ th, td {
     text-align: center;
     height: 1rem;
     padding: 0;
-    border-radius: 5px;
-    margin-bottom: 6px;
+    margin: 6px 0;
     cursor: pointer;
 }
 .processo:hover .icone {
@@ -194,31 +204,19 @@ th, td {
     max-width: 300px;
 }
 .c1 {
-    align-items: center;
-    width: 25px;
-    max-width: 25px;
+    width: 30%;
 }
 .c2 {
-    width: 15%;
+    width: 20%;
 }
 .c3 {
-    width: 12%;
+    width: 20%;
 }
 .c4 {
-    width: 15%;
+    width: 20%;
 }
 .c5 {
-    width: 40%;
-    word-wrap: break-word;
-}
-.c6 {
-    align-items: center;
-
-    width: 1.7;
-    max-width: 1.7;
-
-    height: 1.7rem;
-    width: 1.7rem;
+    width: 10%;
 }
 /*RODAPÉ*/
 footer {
