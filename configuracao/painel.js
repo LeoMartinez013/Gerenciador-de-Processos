@@ -11,6 +11,7 @@ function adicionarHistorico() {
   const novoHistoricoInputs = novoHistoricoDiv.getElementsByTagName('input');
   for (let i = 0; i < novoHistoricoInputs.length; i++) {
     novoHistoricoInputs[i].value = '';
+    console.log(novoHistoricoInputs)
   }
   historicoDiv.parentNode.appendChild(novoHistoricoDiv);
 }
@@ -41,14 +42,16 @@ function salvarConfiguracoes() {
   
   const historicosDiv = document.getElementById('historico1').parentNode;
   const historicos = historicosDiv.getElementsByClassName('historicos');
-  processo.historico = [];
+  processo.historico = []; // Limpa o array historico
   for (let i = 0; i < historicos.length; i++) {
     const dateInput = historicos[i].getElementsByClassName('hist1')[0];
     const textInput = historicos[i].getElementsByClassName('hist1')[1];
     const result = dateInput.value + " " + textInput.value;
-    processo.historico.push(result);
-  }
+    console.log(result)
+    if (!processo.historico.includes(result)) {
+      processo.historico.push(result);
 
+  }
 
   // Alocação dos dados do processo no localStorage
   localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos));
@@ -173,3 +176,4 @@ if (document.readyState === "complete" || (document.readyState !== "loading" && 
   document.addEventListener("DOMContentLoaded", window.onload);
 }
 //==============================================
+
