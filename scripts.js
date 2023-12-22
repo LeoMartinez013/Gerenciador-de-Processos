@@ -102,6 +102,11 @@ function adicionarNovoProcesso() {
     dctsTransporte: "",
     mesOperacao: diaAtual,
     etapa: "vazio",
+    historico: [
+      "", "", "", "", "", "", "", "", "", "", 
+      "", "", "", "", "", "", "", "", "", "", 
+      "", "", "", "", "", "", "", "", "", ""
+    ],
   });
   
   input.value = '';

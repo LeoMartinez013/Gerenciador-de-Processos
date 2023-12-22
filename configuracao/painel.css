@@ -34,6 +34,7 @@ header > h1 {
 }
 /*CORPO*/
 main {
+    text-align: center;
     width: 100%;
     max-width: 900px;
     padding: 3% 3%;
@@ -46,6 +47,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 main > p {
+    
     font-size: 0.9rem;
     padding: 0.5rem;
     border-radius: 5px;
@@ -53,9 +55,6 @@ main > p {
 }
 #linha1 {
     text-align: center;
-}
-#linha2 {
-    align-items: ;
 }
 #linha2 > label {
     margin-right: 0.2rem;
@@ -68,7 +67,30 @@ main > p {
     display: flex;
     text-align: center;
 }
-#bSalvar, #bVoltar {
+#caixa1 {
+    max-width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.1rem;
+}
+.campos {
+    border: 0.1px solid;
+    border-radius: 10px;
+    padding: 0.1rem 0.5rem;
+    margin: 0.2px 0.2px;
+}
+.campos > input {
+    padding: 0.05rem 0.2rem;
+    border: 0.1rem solid;
+    border-radius: 5px;
+}
+.campos > select {
+    padding: 0.05rem 0.2rem;
+    border: 0.1rem solid;
+    border-radius: 5px;
+}
+.bSalvar, .bVoltar {
     text-align: center;
 
     cursor: pointer;
@@ -89,6 +111,20 @@ main > p {
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
+}
+.button-ver-hists {
+    
+}
+#button-ver-hists2, #button-ver-hists3 {
+    display: none;
+}
+#caixa3, #caixa4, #caixa5 {
+    text-align: left;
+    border: 1px solid black;
+    display: none;
+}
+.historicos > input:nth-of-type(2) {
+    width: 300px;
 }
 /*RODAPÉ*/
 footer {

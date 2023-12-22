@@ -1,25 +1,85 @@
+// Recupera os processos do armazenamento local e os parâmetros da URL
 let meusProcessos = JSON.parse(localStorage.getItem('meusProcessos'));
 const urlParams = new URLSearchParams(window.location.search);
 const posicao = urlParams.get('posicao');
 let contadorHistorico = 1;
 
-function adicionarHistorico() {
-  contadorHistorico++;
-  const historicoDiv = document.getElementById('historico1');
-  const novoHistoricoDiv = historicoDiv.cloneNode(true);
-  novoHistoricoDiv.id = 'historico' + contadorHistorico;
-  const novoHistoricoInputs = novoHistoricoDiv.getElementsByTagName('input');
-  for (let i = 0; i < novoHistoricoInputs.length; i++) {
-    novoHistoricoInputs[i].value = '';
-    novoHistoricoInputs[i].id = 'hist' + contadorHistorico + '-' + i; // Adiciona um ID único para cada entrada
-    novoHistoricoInputs[i].className = 'hist' + contadorHistorico + ' preenchido'; // Adiciona uma classe única para cada entrada
+function verHists1() {
+  let caixa1 = document.getElementById('caixa3')
+  let caixa2 = document.getElementById('caixa4')
+  let caixa3 = document.getElementById('caixa5')
+  let botao1 = document.getElementById('button-ver-hists1')
+  let botao2 = document.getElementById('button-ver-hists2')
+  let botao3 = document.getElementById('button-ver-hists3')
+  
+  // Verifica se a caixa está sendo exibida
+  if (botao1.innerText === "Mostrar históricos...") {
+    // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
+    caixa1.style.display = "block"
+    botao1.innerText = "Ocultar históricos"
+    botao2.style.display = "block"
+    botao2.innerText = "Mostrar mais..."
+    console.log("mostrando caixa 1")
+  } else {
+    // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
+    caixa1.style.display = "none"
+    caixa2.style.display = "none"
+    caixa3.style.display = "none"
+    botao1.innerText = "Mostrar históricos..."
+    botao2.innerText = "Mostrar mais..."
+    botao2.style.display = "none"
+    botao3.innerText = "Mostrar mais..."
+    botao3.style.display = "none"
+    console.log("escondendo caixa 1, 2 e 3")
   }
-  historicoDiv.parentNode.appendChild(novoHistoricoDiv);
+}
+function verHists2() {
+  let caixa2 = document.getElementById('caixa4')
+  let caixa3 = document.getElementById('caixa5')
+  let botao2 = document.getElementById('button-ver-hists2')
+  let botao3 = document.getElementById('button-ver-hists3')
+  
+  // Verifica se a caixa está sendo exibida
+  if (botao2.innerText === "Mostrar mais...") {
+    // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
+    caixa2.style.display = "block"
+    botao2.innerText = "Ocultar históricos"
+    botao3.style.display = "block"
+    botao3.innerText = "Mostrar mais..."
+    console.log("mostrando caixa 2")
+  } else {
+    // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
+    caixa2.style.display = "none"
+    caixa3.style.display = "none"
+    botao2.innerText = "Mostrar mais..."
+    botao3.innerText = "Mostrar mais..."
+    botao3.style.display = "none" 
+    console.log("escondendo caixa 2 e 3")
+  }
+}
+function verHists3() {
+  let caixa3 = document.getElementById('caixa5')
+  let botao3 = document.getElementById('button-ver-hists3')
+  
+  // Verifica se a caixa está sendo exibida
+  if (botao3.innerText === "Mostrar mais...") {
+    // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
+    caixa3.style.display = "block"
+    botao3.innerText = "Ocultar históricos"
+    console.log("mostrando caixa 3")
+  } else {
+    // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
+    caixa3.style.display = "none"
+    botao3.innerText = "Mostrar mais..."
+    console.log("escondendo caixa 3")
+  }
 }
 
+// Função para salvar as configurações do processo
 function salvarConfiguracoes() {
   const processo = meusProcessos[posicao];
-  processo.po = document.getElementById(`po`).value
+  // Atualiza as propriedades do processo com os valores dos campos de entrada
+  processo.po = document.getElementById(`po`).value;
   processo.filial = document.getElementById(`filial`).value
   processo.quantidade = document.getElementById(`quantidade`).value
   processo.produto = document.getElementById(`produto`).value
@@ -41,21 +101,17 @@ function salvarConfiguracoes() {
   processo.mesOperacao = document.getElementById(`mesOperacao`).value
   processo.etapa = document.getElementById(`etapa`).value
   
-  const historicosDiv = document.getElementById('historico1').parentNode;
-  const historicos = historicosDiv.getElementsByClassName('historicos');
-  processo.historico = []; // Limpa o array historico
-  for (let i = 0; i < historicos.length; i++) {
-    const dateInput = historicos[i].getElementsByClassName('hist' + (i + 1))[0];
-    const textInput = historicos[i].getElementsByClassName('hist' + (i + 1))[1];
-    const result = dateInput.value + " " + textInput.value;
-    console.log(result)
-    if (!processo.historico.includes(result)) {
-      processo.historico.push(result);
+  for (let i = 0; i < 30; i++) {
+    let historico = document.getElementById('historico' + (i + 1));
+    let dateInput = historico.querySelector('#dateH' + (i + 1));
+    let textInput = historico.querySelector('#textH' + (i + 1));
+    if (dateInput && textInput) {
+      let result = dateInput.value + " " + textInput.value;
+      processo.historico[i] = result;
+      console.log(result)
     }
-
   }
-
-  // Alocação dos dados do processo no localStorage
+  // Salva os processos atualizados no armazenamento local
   localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos));
 
   const confirmacao = document.getElementById('confirmacao');
@@ -63,11 +119,9 @@ function salvarConfiguracoes() {
   setTimeout(() => confirmacao.style.display = 'none', 3000);
 }
 
-// Quando a página é carregada, esta função é executada
+// Função para preencher os campos de entrada com os valores do processo quando a página é carregada
 window.onload = function() {
-  // A variável 'processo' é definida como um item específico do array 'meusProcessos'
   const processo = meusProcessos[posicao];
-  // Cada linha abaixo preenche um campo de entrada específico no formulário com um valor do objeto 'processo'
   document.getElementById(`po`).value = processo.po;
   document.getElementById(`modal`).value = processo.modal
   document.getElementById(`filial`).value = processo.filial
@@ -96,48 +150,25 @@ window.onload = function() {
   } else {
     processo.concluido = false;
   }
-  if (processo.historico) {
-    // Obtém o elemento pai de 'historico1'
-    const historicosDiv = document.getElementById('historico1').parentNode;
-    // Preenche o histórico com base no array 'historico' do objeto 'processo'
-    for (let i = 0; i < processo.historico.length; i++) {
-      let historico;
-      // Cria um novo elemento de histórico se necessário
-      if (i > 0) {
-        contadorHistorico++;
-        historico = document.getElementById('historico1').cloneNode(true);
-        historico.id = 'historico' + contadorHistorico;
-        // Limpa os valores dos campos de entrada do novo elemento de histórico
-        const novoHistoricoInputs = historico.getElementsByTagName('input');
-        for (let j = 0; j < novoHistoricoInputs.length; j++) {
-          novoHistoricoInputs[j].value = '';
-        }
-        // Adiciona o novo elemento de histórico ao elemento pai
-        historicosDiv.appendChild(historico);
-      } else {
-        // Obtém o primeiro elemento de histórico existente
-        historico = historicosDiv.getElementsByClassName('historicos')[0];
-      }
-      // Preenche os campos de data e texto do elemento de histórico
-      const dateInput = historico.getElementsByClassName('hist1')[0];
-      const textInput = historico.getElementsByClassName('hist1')[1];
 
-      // Divide a string de histórico em 'dateValue' e 'textValue'
-      const [dateValue, ...textArray] = processo.historico[i].split(' ');
-      const textValue = textArray.join(' ');
+  for (let i = 0; i < 30; i++) {
+    if(processo.historico[i]){
+      // Supondo que a data e o texto estejam separados por um espaço
+      let parts = processo.historico[i].split(" ")
+      
+      // Encontra os inputs correspondentes
+      let dateInput = document.getElementById('dateH' + (i + 1))
+      let textInput = document.getElementById('textH' + (i + 1))
 
-      dateInput.value = dateValue;
-      textInput.value = textValue;
+      // Preenche os inputs com os valores correspondentes
+      dateInput.value = parts[0];
+      textInput.value = parts.slice(1).join(' ');
     }
   }
-   // Atualiza o valor de 'contadorHistorico' para o número de itens no array 'historico'
-  contadorHistorico = processo.historico ? processo.historico.length : 0;
-  
-  // Se a variável 'posicao' estiver definida, armazena seu valor no armazenamento local do navegador
   if (posicao) {
     localStorage.setItem('posicao', posicao);
   }
-  // Adiciona a classe 'preenchido' ou 'nao_preenchido' a cada elemento de entrada na página, dependendo do valor do elemento
+
   const inputs = document.getElementsByTagName('input');
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].value !== "" && inputs[i].value !== "undefined") {
@@ -146,7 +177,6 @@ window.onload = function() {
       inputs[i].classList.add('nao_preenchido');
     }
   }
-  // Se o valor de uma propriedade do objeto 'processo' for vazio ou "undefined", define o valor da propriedade como "vazio"
   for (let prop in processo) {
     if (processo[prop] === "" || processo[prop] === "undefined") {
       processo[prop] = "vazio";
@@ -154,7 +184,7 @@ window.onload = function() {
   }
 }
 
-
+// Função para adicionar a posição ao parâmetro de consulta da URL antes da página ser descarregada
 window.onbeforeunload = function() {
   const posicao = localStorage.getItem('posicao');
   if (posicao) {
@@ -162,8 +192,8 @@ window.onbeforeunload = function() {
     console.log(`posicao`);
   }
 }
-document.getElementById('adicionarHistorico').addEventListener('click', adicionarHistorico);
 
+// Executa a função window.onload quando a página é carregada
 if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
   window.onload();
 } else {

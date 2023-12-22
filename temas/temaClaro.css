@@ -19,26 +19,26 @@ header {
     color: var(--branco);
     background-color: var(--forte);
 }
-#containerJson > button {
+#baixar-importar > button {
     color: var(--branco);
     background-color: var(--forte);
 }
-#containerJson > button:hover {
+#baixar-importar > button:hover {
     color: var(--branco);
     background-color: #0e46b6;
 }
-#bSalvar, #bVoltar {
+.bSalvar, .bVoltar {
     color: var(--branco);
     background-color: var(--forte);
 }
-#bSalvar:hover, #bVoltar:hover {
+.bSalvar:hover, .bVoltar:hover {
     color: var(--branco);
     background-color: #0e46b6;
 }
 main {
     background-color: var(--cinza);
 }
-.button-add-task {
+.button-add-processo {
     background-color: var(--forte);
     color: var(--branco);
 }
@@ -52,6 +52,29 @@ th {
 }
 .concluido {
     background-color: var(--concluida);
+}
+.campos {
+    border-color: var(--forte);
+    background-color: var(--marinho);
+}
+.campos > label {
+    color: var(--branco);
+}
+.campos > input {
+    color: var(--marinho);
+    background-color: var(--branco);
+
+}
+.campos > select {
+    color: var(--marinho);
+    background-color: var(--branco);
+}
+input:focus, button:focus, select:focus {
+    border: 2px solid var(--claro);  /* Altere para a cor desejada */
+    font-weight: 600;
+}
+option:focus {
+    background-color: var(--cinza);
 }
 #confirmacao {
     color: var(--salva);
