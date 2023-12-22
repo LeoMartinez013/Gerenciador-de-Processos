@@ -11,7 +11,8 @@ function adicionarHistorico() {
   const novoHistoricoInputs = novoHistoricoDiv.getElementsByTagName('input');
   for (let i = 0; i < novoHistoricoInputs.length; i++) {
     novoHistoricoInputs[i].value = '';
-    console.log(novoHistoricoInputs)
+    novoHistoricoInputs[i].id = 'hist' + contadorHistorico + '-' + i; // Adiciona um ID único para cada entrada
+    novoHistoricoInputs[i].className = 'hist' + contadorHistorico + ' preenchido'; // Adiciona uma classe única para cada entrada
   }
   historicoDiv.parentNode.appendChild(novoHistoricoDiv);
 }
@@ -44,12 +45,13 @@ function salvarConfiguracoes() {
   const historicos = historicosDiv.getElementsByClassName('historicos');
   processo.historico = []; // Limpa o array historico
   for (let i = 0; i < historicos.length; i++) {
-    const dateInput = historicos[i].getElementsByClassName('hist1')[0];
-    const textInput = historicos[i].getElementsByClassName('hist1')[1];
+    const dateInput = historicos[i].getElementsByClassName('hist' + (i + 1))[0];
+    const textInput = historicos[i].getElementsByClassName('hist' + (i + 1))[1];
     const result = dateInput.value + " " + textInput.value;
     console.log(result)
     if (!processo.historico.includes(result)) {
       processo.historico.push(result);
+    }
 
   }
 
@@ -65,7 +67,6 @@ function salvarConfiguracoes() {
 window.onload = function() {
   // A variável 'processo' é definida como um item específico do array 'meusProcessos'
   const processo = meusProcessos[posicao];
-
   // Cada linha abaixo preenche um campo de entrada específico no formulário com um valor do objeto 'processo'
   document.getElementById(`po`).value = processo.po;
   document.getElementById(`modal`).value = processo.modal
@@ -89,60 +90,53 @@ window.onload = function() {
   document.getElementById(`dctsTransporte`).value = processo.dctsTransporte
   document.getElementById(`mesOperacao`).value = processo.mesOperacao
   document.getElementById(`etapa`).value = processo.etapa;
-
   // Verifica se a etapa do processo é "Desembaraçado" e define a propriedade 'concluido' do objeto 'processo' de acordo
   if (processo.etapa == "Desembaraçado") {
     processo.concluido = true;
   } else {
     processo.concluido = false;
   }
-
-  // Obtém o elemento pai de 'historico1'
-  const historicosDiv = document.getElementById('historico1').parentNode;
-
-  // Preenche o histórico com base no array 'historico' do objeto 'processo'
-  for (let i = 0; i < processo.historico.length; i++) {
-    let historico;
-
-    // Cria um novo elemento de histórico se necessário
-    if (i > 0) {
-      contadorHistorico++;
-      historico = document.getElementById('historico1').cloneNode(true);
-      historico.id = 'historico' + contadorHistorico;
-
-      // Limpa os valores dos campos de entrada do novo elemento de histórico
-      const novoHistoricoInputs = historico.getElementsByTagName('input');
-      for (let j = 0; j < novoHistoricoInputs.length; j++) {
-        novoHistoricoInputs[j].value = '';
+  if (processo.historico) {
+    // Obtém o elemento pai de 'historico1'
+    const historicosDiv = document.getElementById('historico1').parentNode;
+    // Preenche o histórico com base no array 'historico' do objeto 'processo'
+    for (let i = 0; i < processo.historico.length; i++) {
+      let historico;
+      // Cria um novo elemento de histórico se necessário
+      if (i > 0) {
+        contadorHistorico++;
+        historico = document.getElementById('historico1').cloneNode(true);
+        historico.id = 'historico' + contadorHistorico;
+        // Limpa os valores dos campos de entrada do novo elemento de histórico
+        const novoHistoricoInputs = historico.getElementsByTagName('input');
+        for (let j = 0; j < novoHistoricoInputs.length; j++) {
+          novoHistoricoInputs[j].value = '';
+        }
+        // Adiciona o novo elemento de histórico ao elemento pai
+        historicosDiv.appendChild(historico);
+      } else {
+        // Obtém o primeiro elemento de histórico existente
+        historico = historicosDiv.getElementsByClassName('historicos')[0];
       }
+      // Preenche os campos de data e texto do elemento de histórico
+      const dateInput = historico.getElementsByClassName('hist1')[0];
+      const textInput = historico.getElementsByClassName('hist1')[1];
 
-      // Adiciona o novo elemento de histórico ao elemento pai
-      historicosDiv.appendChild(historico);
-    } else {
-      // Obtém o primeiro elemento de histórico existente
-      historico = historicosDiv.getElementsByClassName('historicos')[0];
+      // Divide a string de histórico em 'dateValue' e 'textValue'
+      const [dateValue, ...textArray] = processo.historico[i].split(' ');
+      const textValue = textArray.join(' ');
+
+      dateInput.value = dateValue;
+      textInput.value = textValue;
     }
-
-    // Preenche os campos de data e texto do elemento de histórico
-    const dateInput = historico.getElementsByClassName('hist1')[0];
-    const textInput = historico.getElementsByClassName('hist1')[1];
-
-    // Divide a string de histórico em 'dateValue' e 'textValue'
-    const [dateValue, ...textArray] = processo.historico[i].split(' ');
-    const textValue = textArray.join(' ');
-
-    dateInput.value = dateValue;
-    textInput.value = textValue;
   }
-
-  // Atualiza o valor de 'contadorHistorico' para o número de itens no array 'historico'
-  contadorHistorico = processo.historico.length;
-
+   // Atualiza o valor de 'contadorHistorico' para o número de itens no array 'historico'
+  contadorHistorico = processo.historico ? processo.historico.length : 0;
+  
   // Se a variável 'posicao' estiver definida, armazena seu valor no armazenamento local do navegador
   if (posicao) {
     localStorage.setItem('posicao', posicao);
   }
-
   // Adiciona a classe 'preenchido' ou 'nao_preenchido' a cada elemento de entrada na página, dependendo do valor do elemento
   const inputs = document.getElementsByTagName('input');
   for (let i = 0; i < inputs.length; i++) {
@@ -152,7 +146,6 @@ window.onload = function() {
       inputs[i].classList.add('nao_preenchido');
     }
   }
-
   // Se o valor de uma propriedade do objeto 'processo' for vazio ou "undefined", define o valor da propriedade como "vazio"
   for (let prop in processo) {
     if (processo[prop] === "" || processo[prop] === "undefined") {
@@ -160,6 +153,7 @@ window.onload = function() {
     }
   }
 }
+
 
 window.onbeforeunload = function() {
   const posicao = localStorage.getItem('posicao');
@@ -175,5 +169,3 @@ if (document.readyState === "complete" || (document.readyState !== "loading" && 
 } else {
   document.addEventListener("DOMContentLoaded", window.onload);
 }
-//==============================================
-
