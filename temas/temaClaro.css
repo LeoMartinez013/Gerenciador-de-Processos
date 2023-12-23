@@ -27,11 +27,11 @@ header {
     color: var(--branco);
     background-color: #0e46b6;
 }
-.bSalvar, .bVoltar {
+.bSalvar, .bVoltar, .button-ver-hists {
     color: var(--branco);
     background-color: var(--forte);
 }
-.bSalvar:hover, .bVoltar:hover {
+.bSalvar:hover, .bVoltar:hover, .button-ver-hists:hover{
     color: var(--branco);
     background-color: #0e46b6;
 }
@@ -71,7 +71,6 @@ th {
 }
 input:focus, button:focus, select:focus {
     border: 2px solid var(--claro);  /* Altere para a cor desejada */
-    font-weight: 600;
 }
 option:focus {
     background-color: var(--cinza);

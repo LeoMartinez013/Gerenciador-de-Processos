@@ -15,23 +15,46 @@
     <header id="header">
         <h1>Gerenciador de processos</h1>
         <nav id="nav">
-                <!--<button id="nav-button" class="menu"></button>
-                <ul id="nav-ul">
-                    
-                    <li>
-                        <a href="#">Ajuda</a>
-                    </li>
-                    <li>
-                        <a href="#">Contato</a>
-                    </li>
-                    <li>
-                        <a href="#">Sobre</a>
-                    </li>
-                </ul>-->
             <div id="baixar-importar">
-                <button class="button-download-task">Baixar</button>
-                <input type="file" id="importFile" accept=".json" onchange="importProcessosJson(event)" style="display: none">
-                <button class="button-import-task" onclick="document.getElementById('importFile').click()">Importar</button>
+                <!--BAIXAR-->
+                <button class="button-download-processo">Baixar</button>
+                <div id="opc_baixar">
+                    <!--TXT-->
+                    <button id="opc-baixar-txt" style="display: none;">
+                        Baixar em .txt
+                    </button>
+                    <!--JSON-->
+                    <button id="opc-baixar-json" style="display: none;">
+                        Baixar em .json
+                    </button>
+                </div>
+                <!--IMPORTAR-->
+                <button class="button-import-processo" >Importar</button>
+                <div id="opc_importar">
+                    <input 
+                        id="importFile"
+                        style="display: none"
+                        type="file"  
+                        accept=".json, .txt" 
+                        onchange="importProcessosJson(event)"
+                        >
+                    <!--TXT-->
+                    <button 
+                        id="opc-importar-txt" 
+                        style="display: none;" 
+                        onclick="document.getElementById('importFile').click()"
+                        >
+                        Importar em .txt
+                    </button>
+                    <!--JSON-->
+                    <button 
+                        id="opc-importar-json"
+                        style="display: none;"
+                        onclick="document.getElementById('importFile').click()"
+                        >
+                        Importar em .json
+                    </button>
+                </div>
             </div>
         </nav>
     </header>

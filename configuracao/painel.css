@@ -53,26 +53,12 @@ main > p {
     border-radius: 5px;
     margin: 0.3rem 0;
 }
-#linha1 {
-    text-align: center;
-}
-#linha2 > label {
-    margin-right: 0.2rem;
-}
-#linha2 > input {
-    width: 70%;
-    height: 2rem;
-}
-#linha3 {
-    display: flex;
-    text-align: center;
-}
 #caixa1 {
-    max-width: 100%;
     text-align: left;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 0.1rem;
+    margin: 2px 0;
 }
 .campos {
     border: 0.1px solid;
@@ -85,10 +71,19 @@ main > p {
     border: 0.1rem solid;
     border-radius: 5px;
 }
+.campos > input:nth-of-type(date) {
+    max-width: 30px;
+}
 .campos > select {
     padding: 0.05rem 0.2rem;
     border: 0.1rem solid;
     border-radius: 5px;
+}
+input:focus, button:focus, select:focus {
+    font-weight: 600;
+}
+#caixa2 {
+    margin: 2px;
 }
 .bSalvar, .bVoltar {
     text-align: center;
@@ -113,18 +108,44 @@ main > p {
     font-weight: 500;
 }
 .button-ver-hists {
+    text-align: center;
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+    
+    height: 2rem;
+    width: 10rem;
+    
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin: 0.3rem auto;
+}
+#caixa3 {
+    text-align: left;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));*/
     
 }
-#button-ver-hists2, #button-ver-hists3 {
-    display: none;
+.historicos > label {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: 10%;
 }
-#caixa3, #caixa4, #caixa5 {
-    text-align: left;
-    border: 1px solid black;
-    display: none;
+.historicos > input:nth-of-type(1) {
+    text-align: center;
+    width: 25%;
 }
 .historicos > input:nth-of-type(2) {
-    width: 300px;
+    padding: 0 0.5rem;
+    width: 60%;
+    overflow: scroll;
+}
+#caixa5 {
+    display: none;
 }
 /*RODAPÉ*/
 footer {
@@ -150,8 +171,12 @@ footer > p > a {
     #tarefa {
         width: 8rem;
     }
-    
+    #caixa3 {
+        grid-template-columns: 1fr;
+        /*grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));*/
+    }
 }
+    
 @media screen and (max-width: 400px){
     header {
         height: 4.6rem;

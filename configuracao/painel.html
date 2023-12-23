@@ -148,11 +148,17 @@
         </div>
         <!--HISTÓRICO-->
         <div id="caixa2">
-            <button class="bSalvar" onclick="salvarConfiguracoes() ">Salvar</button>
-            <a class="bVoltar" href="../index.html">Voltar</a>
+            <button class="bSalvar" onclick="salvarConfiguracoes() ">
+                Salvar
+            </button>
+            <button class="bVoltar" onclick="window.location='../index.html'">
+                Voltar
+            </button>
         </div>
+
         <div id="confirmacao" style="display: none;">
-            Configurações salvas com sucesso!</div>
+            Configurações salvas com sucesso!
+        </div>
 
         <p>Histórico</p> 
         <!--PRIMEIRA CAIXA DE HISTÓRICOS-->
@@ -161,118 +167,121 @@
         </button>
         <div id="caixa3" class="caixa-hist">
             <!--<button type="button" id="adicionarHistorico">Adicionar outra linha de histórico</button>-->
-            <div id="historico1" class="historicos">
-                <label for="hist1">01º:</label>
-                <input type="date" id="dateH1" class="hist1 ">
-                <input type="text" id="textH1" class="hist1 ">
+            <div id="coluna1">
+                <div id="historico1" class="historicos">
+                    <label for="hist1">01º:</label>
+                    <input type="date" id="dateH1" class="hist1 ">
+                    <input type="text" id="textH1" class="hist1 ">
+                </div>
+                <div id="historico2" class="historicos">
+                    <label for="hist2">02º:</label>
+                    <input type="date" id="dateH2" class="hist2">
+                    <input type="text" id="textH2" class="hist2">
+                </div>
+                <div id="historico3" class="historicos">
+                    <label for="hist3">03º:</label>
+                    <input type="date" id="dateH3" class="hist3">
+                    <input type="text" id="textH3" class="hist3">
+                </div>
+                <div id="historico4" class="historicos">
+                    <label for="hist4">04º:</label>
+                    <input type="date" id="dateH4" class="hist4">
+                    <input type="text" id="textH4" class="hist4">
+                </div>
+                <div id="historico5" class="historicos">
+                    <label for="hist5">05º:</label>
+                    <input type="date" id="dateH5" class="hist5">
+                    <input type="text" id="textH5" class="hist5">
+                </div>
+                <div id="historico6" class="historicos">
+                    <label for="hist6">06º:</label>
+                    <input type="date" id="dateH6" class="hist6">
+                    <input type="text" id="textH6" class="hist6">
+                </div>
+                <div id="historico7" class="historicos">
+                    <label for="hist7">07º:</label>
+                    <input type="date" id="dateH7" class="hist7">
+                    <input type="text" id="textH7" class="hist7">
+                </div>
+                <div id="historico8" class="historicos">
+                    <label for="hist8">08º:</label>
+                    <input type="date" id="dateH8" class="hist8">
+                    <input type="text" id="textH8" class="hist8">
+                </div>
+                <div id="historico9" class="historicos">
+                    <label for="hist9">09º:</label>
+                    <input type="date" id="dateH9" class="hist9">
+                    <input type="text" id="textH9" class="hist9">
+                </div>
+                <div id="historico10" class="historicos">
+                    <label for="hist10">10º:</label>
+                    <input type="date" id="dateH10" class="hist10">
+                    <input type="text" id="textH10" class="hist10">
+                </div>
             </div>
-            <div id="historico2" class="historicos">
-                <label for="hist2">02º:</label>
-                <input type="date" id="dateH2" class="hist2">
-                <input type="text" id="textH2" class="hist2">
-            </div>
-            <div id="historico3" class="historicos">
-                <label for="hist3">03º:</label>
-                <input type="date" id="dateH3" class="hist3">
-                <input type="text" id="textH3" class="hist3">
-            </div>
-            <div id="historico4" class="historicos">
-                <label for="hist4">04º:</label>
-                <input type="date" id="dateH4" class="hist4">
-                <input type="text" id="textH4" class="hist4">
-            </div>
-            <div id="historico5" class="historicos">
-                <label for="hist5">05º:</label>
-                <input type="date" id="dateH5" class="hist5">
-                <input type="text" id="textH5" class="hist5">
-            </div>
-            <div id="historico6" class="historicos">
-                <label for="hist6">06º:</label>
-                <input type="date" id="dateH6" class="hist6">
-                <input type="text" id="textH6" class="hist6">
-            </div>
-            <div id="historico7" class="historicos">
-                <label for="hist7">07º:</label>
-                <input type="date" id="dateH7" class="hist7">
-                <input type="text" id="textH7" class="hist7">
-            </div>
-            <div id="historico8" class="historicos">
-                <label for="hist8">08º:</label>
-                <input type="date" id="dateH8" class="hist8">
-                <input type="text" id="textH8" class="hist8">
-            </div>
-            <div id="historico9" class="historicos">
-                <label for="hist9">09º:</label>
-                <input type="date" id="dateH9" class="hist9">
-                <input type="text" id="textH9" class="hist9">
-            </div>
-            <div id="historico10" class="historicos">
-                <label for="hist10">10º:</label>
-                <input type="date" id="dateH10" class="hist10">
-                <input type="text" id="textH10" class="hist10">
-            </div>
-        </div>
-        <!--SEGUNDA CAIXA DE HISTÓRICOS-->
-        <button id="button-ver-hists2" class="button-ver-hists" onclick="verHists2()">
-            Mostrar mais...
-        </button>
-        <div id="caixa4" class="caixa-hist">
-            <div id="historico11" class="historicos">
-                <label for="hist11">11º:</label>
-                <input type="date" id="dateH11" class="hist11">
-                <input type="text" id="textH11" class="hist11">
-            </div>
-            <div id="historico12" class="historicos">
-                <label for="hist12">12º:</label>
-                <input type="date" id="dateH12" class="hist12">
-                <input type="text" id="textH12" class="hist12">
-            </div>
-            <div id="historico13" class="historicos">
-                <label for="hist13">13º:</label>
-                <input type="date" id="dateH13" class="hist13">
-                <input type="text" id="textH13" class="hist13">
-            </div>
-            <div id="historico14" class="historicos">
-                <label for="hist14">14º:</label>
-                <input type="date" id="dateH14" class="hist14">
-                <input type="text" id="textH14" class="hist14">
-            </div>
-            <div id="historico15" class="historicos">
-                <label for="hist15">15º:</label>
-                <input type="date" id="dateH15" class="hist15">
-                <input type="text" id="textH15" class="hist15">
-            </div>
-            <div id="historico16" class="historicos">
-                <label for="hist16">16º:</label>
-                <input type="date" id="dateH16" class="hist16">
-                <input type="text" id="textH16" class="hist16">
-            </div>
-            <div id="historico17" class="historicos">
-                <label for="hist17">17º:</label>
-                <input type="date" id="dateH17" class="hist17">
-                <input type="text" id="textH17" class="hist17">
-            </div>
-            <div id="historico18" class="historicos">
-                <label for="hist18">18º:</label>
-                <input type="date" id="dateH18" class="hist18">
-                <input type="text" id="textH18" class="hist18">
-            </div>
-            <div id="historico19" class="historicos">
-                <label for="hist19">19º:</label>
-                <input type="date" id="dateH19" class="hist19">
-                <input type="text" id="textH19" class="hist19">
-            </div>
-            <div id="historico20" class="historicos">
-                <label for="hist20">20º:</label>
-                <input type="date" id="dateH20" class="hist20">
-                <input type="text" id="textH20" class="hist20">
+            <div id="coluna2">
+                <div id="historico11" class="historicos">
+                    <label for="hist11">11º:</label>
+                    <input type="date" id="dateH11" class="hist11">
+                    <input type="text" id="textH11" class="hist11">
+                </div>
+                <div id="historico12" class="historicos">
+                    <label for="hist12">12º:</label>
+                    <input type="date" id="dateH12" class="hist12">
+                    <input type="text" id="textH12" class="hist12">
+                </div>
+                <div id="historico13" class="historicos">
+                    <label for="hist13">13º:</label>
+                    <input type="date" id="dateH13" class="hist13">
+                    <input type="text" id="textH13" class="hist13">
+                </div>
+                <div id="historico14" class="historicos">
+                    <label for="hist14">14º:</label>
+                    <input type="date" id="dateH14" class="hist14">
+                    <input type="text" id="textH14" class="hist14">
+                </div>
+                <div id="historico15" class="historicos">
+                    <label for="hist15">15º:</label>
+                    <input type="date" id="dateH15" class="hist15">
+                    <input type="text" id="textH15" class="hist15">
+                </div>
+                <div id="historico16" class="historicos">
+                    <label for="hist16">16º:</label>
+                    <input type="date" id="dateH16" class="hist16">
+                    <input type="text" id="textH16" class="hist16">
+                </div>
+                <div id="historico17" class="historicos">
+                    <label for="hist17">17º:</label>
+                    <input type="date" id="dateH17" class="hist17">
+                    <input type="text" id="textH17" class="hist17">
+                </div>
+                <div id="historico18" class="historicos">
+                    <label for="hist18">18º:</label>
+                    <input type="date" id="dateH18" class="hist18">
+                    <input type="text" id="textH18" class="hist18">
+                </div>
+                <div id="historico19" class="historicos">
+                    <label for="hist19">19º:</label>
+                    <input type="date" id="dateH19" class="hist19">
+                    <input type="text" id="textH19" class="hist19">
+                </div>
+                <div id="historico20" class="historicos">
+                    <label for="hist20">20º:</label>
+                    <input type="date" id="dateH20" class="hist20">
+                    <input type="text" id="textH20" class="hist20">
+                </div>
             </div>
         </div>
         <!--TERCEIRA CAIXA DE HISTÓRICOS-->
-        <button id="button-ver-hists3" class="button-ver-hists" onclick="verHists3()">
+        <!--<button id="button-ver-hists3" class="button-ver-hists" onclick="verHists3()">
             Mostrar mais...
         </button>
-        <div id="caixa5" class="caixa-hist">
+        <div id="caixa5" class="caixa-hist">-->
+        <!--SEGUNDA CAIXA DE HISTÓRICOS-->
+        <button id="button-ver-hists2" class="button-ver-hists" onclick="verHists2()" style="display: none;">
+            Mostrar mais...
+        </button>
+        <div id="caixa4" class="caixa-hist" style="display: none;">
             <div id="historico21" class="historicos">
                 <label for="hist21">21º:</label>
                 <input type="date" id="dateH21" class="hist21">
@@ -324,9 +333,13 @@
                 <input type="text" id="textH30" class="hist30">
             </div>
         </div>
-        <div id="caixa6">
-            <button class="bSalvar" onclick="salvarConfiguracoes() ">Salvar</button>
-            <a class="bVoltar" href="../index.html">Voltar</a>
+        <div id="caixa5" style="display: none;">
+            <button class="bSalvar" onclick="salvarConfiguracoes() ">
+                Salvar
+            </button>
+            <button class="bVoltar" onclick="window.location='../index.html'">
+                Voltar
+            </button>
         </div>
 </main>
 <footer>

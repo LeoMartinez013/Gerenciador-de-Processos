@@ -7,15 +7,15 @@ let contadorHistorico = 1;
 function verHists1() {
   let caixa1 = document.getElementById('caixa3')
   let caixa2 = document.getElementById('caixa4')
-  let caixa3 = document.getElementById('caixa5')
+  let salvar = document.getElementById('caixa5')
   let botao1 = document.getElementById('button-ver-hists1')
   let botao2 = document.getElementById('button-ver-hists2')
-  let botao3 = document.getElementById('button-ver-hists3')
   
   // Verifica se a caixa está sendo exibida
   if (botao1.innerText === "Mostrar históricos...") {
     // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
-    caixa1.style.display = "block"
+    caixa1.style.display = "grid"
+    salvar.style.display = "block"
     botao1.innerText = "Ocultar históricos"
     botao2.style.display = "block"
     botao2.innerText = "Mostrar mais..."
@@ -24,54 +24,28 @@ function verHists1() {
     // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
     caixa1.style.display = "none"
     caixa2.style.display = "none"
-    caixa3.style.display = "none"
+    salvar.style.display = "none"
     botao1.innerText = "Mostrar históricos..."
     botao2.innerText = "Mostrar mais..."
     botao2.style.display = "none"
-    botao3.innerText = "Mostrar mais..."
-    botao3.style.display = "none"
-    console.log("escondendo caixa 1, 2 e 3")
+    console.log("escondendo caixa 1 e 2")
   }
 }
 function verHists2() {
   let caixa2 = document.getElementById('caixa4')
-  let caixa3 = document.getElementById('caixa5')
   let botao2 = document.getElementById('button-ver-hists2')
-  let botao3 = document.getElementById('button-ver-hists3')
   
   // Verifica se a caixa está sendo exibida
   if (botao2.innerText === "Mostrar mais...") {
     // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
     caixa2.style.display = "block"
     botao2.innerText = "Ocultar históricos"
-    botao3.style.display = "block"
-    botao3.innerText = "Mostrar mais..."
     console.log("mostrando caixa 2")
   } else {
     // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
     caixa2.style.display = "none"
-    caixa3.style.display = "none"
     botao2.innerText = "Mostrar mais..."
-    botao3.innerText = "Mostrar mais..."
-    botao3.style.display = "none" 
-    console.log("escondendo caixa 2 e 3")
-  }
-}
-function verHists3() {
-  let caixa3 = document.getElementById('caixa5')
-  let botao3 = document.getElementById('button-ver-hists3')
-  
-  // Verifica se a caixa está sendo exibida
-  if (botao3.innerText === "Mostrar mais...") {
-    // Se a caixa estiver oculta, mostra a caixa e atualiza o texto do botão
-    caixa3.style.display = "block"
-    botao3.innerText = "Ocultar históricos"
-    console.log("mostrando caixa 3")
-  } else {
-    // Se a caixa estiver sendo exibida, oculta a caixa e atualiza o texto do botão
-    caixa3.style.display = "none"
-    botao3.innerText = "Mostrar mais..."
-    console.log("escondendo caixa 3")
+    console.log("escondendo caixa 2")
   }
 }
 

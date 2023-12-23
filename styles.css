@@ -8,6 +8,9 @@
 a {
     text-decoration: underline;
 }
+input:focus, button:focus, select:focus {
+    font-weight: 600;
+}
 body {
     margin: 0px;
     padding: 0px;
@@ -22,8 +25,8 @@ body {
 header {
     text-align: center;
     justify-content: center;
-    min-height: 3rem;
-    height: auto; 
+    min-height: 20px;
+    height: 90px; 
     width: 100%;
 }
 header > h1 {
@@ -33,69 +36,15 @@ header > h1 {
     margin-top: 1.2rem;
 }
 #nav {
+    display: block;
     width: 100%;
     height: auto;
-}/*
-#nav-button {
-    cursor: pointer;
-    float: left;
-    display: flex;
-
-    font-weight: 600;
-
-    height: 2rem;
-    width: 2rem;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid;
-    margin: 0.2rem;
-
-    background: #fff;
-    color: #000;
-    border-color: #000;
-
 }
-.menu {
-    display: none;
-    border: none;
-    background: none;
-    border-top: 3px solid #fff;
-    cursor: pointer;
-}
-.menu::after,
-.menu::before {
-    content: " ";
-    display: block;
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    margin-top: 5px;
-    position: relative;
-    transition: 0.3s;
-}
-#nav-ul {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-
-    opacity: 0;
-    transform: translateY(-120%);
-    transition: all 500ms ease-out;
-
-
-    background: #000;
-}
-
-#nav-ul > a {
-    font-size: 18px;
-    color: #fff;
-    padding-block: 16px;
-}
-*/
 /*BOTÕES BAIXAR-IMPORTAR*/
 #baixar-importar {
+    position: static;
     display: flex;
-    float: right
+    /*float: right*/
 }
 #baixar-importar > button {
     height: 2rem;
