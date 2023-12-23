@@ -8,9 +8,6 @@
 a {
     text-decoration: underline;
 }
-input:focus, button:focus, select:focus {
-    font-weight: 600;
-}
 body {
     margin: 0px;
     padding: 0px;
@@ -58,7 +55,7 @@ header > h1 {
     cursor: pointer;
 }
 #sessao-baixar {
-    background-color: blueviolet;
+    
     border-radius: 10px;
     flex-direction: column;
     z-index: 1;
@@ -68,8 +65,8 @@ header > h1 {
     font-size: 0.7rem;
     font-weight: 600;
     width: 90%;
-    padding: 5px 10%;
-    border: 0;
+    padding: 5px 9%;
+    border: 2px solid;
     border-radius: 20px;
     margin: 5%;
 }

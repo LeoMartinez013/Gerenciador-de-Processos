@@ -48,9 +48,9 @@ function baixarProcessosTXT() {
   link.click();
   URL.revokeObjectURL(url);
 }
+// Importar
 function importarProcessos(event) {
   let file = event.target.files[0];
-
   if (file) {
     let reader = new FileReader();
 
@@ -63,14 +63,12 @@ function importarProcessos(event) {
   }
 }
 
-
-
 function adicionarNovoProcesso() {
   let dataAtual = new Date();
   let year = dataAtual.getFullYear();
   let month = dataAtual.getMonth() + 1;
   if (month < 10) month = '0' + month;
-  let diaAtual = `${year}-${month}`;
+  let mesAtual = `${year}-${month}`;
 
   meusProcessos.push({
     po: input.value,
@@ -94,11 +92,11 @@ function adicionarNovoProcesso() {
     desembaraco: "",
     envNFs: "",
     dctsTransporte: "",
-    mesOperacao: diaAtual,
+    mesOperacao: mesAtual, // Mês atual
     etapa: "vazio",
     historico: [
       "", "", "", "", "", "", "", "", "", "", 
-      "", "", "", "", "", "", "", "", "", "", 
+      "", "", "", "", "",   "", "", "", "", "", 
       "", "", "", "", "", "", "", "", "", ""
     ],
   });

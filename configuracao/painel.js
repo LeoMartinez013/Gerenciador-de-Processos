@@ -96,6 +96,9 @@ function salvarConfiguracoes() {
 window.onload = function() {
   const processo = meusProcessos[posicao];
   document.getElementById(`po`).value = processo.po;
+  const insOP = document.getElementById('recebOP')
+  insOP.innerText = processo.po
+  
   document.getElementById(`modal`).value = processo.modal
   document.getElementById(`filial`).value = processo.filial
   document.getElementById(`quantidade`).value = processo.quantidade
