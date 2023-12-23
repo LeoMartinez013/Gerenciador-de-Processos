@@ -9,7 +9,6 @@ window.onload = function() {
   mostrarProcessos()
 }
 
-
 function esconderOpcsBaixar() {
   const bJSON = document.getElementById('opc-baixar-json')
   const bTXT = document.getElementById('opc-baixar-txt')
@@ -108,7 +107,7 @@ function adicionarNovoProcesso() {
     envNFs: "",
     dctsTransporte: "",
     mesOperacao: mesAtual, // Mês atual
-    etapa: "vazio",
+    etapa: "AG. Atração",
     historico: [
       "", "", "", "", "", "", "", "", "", "", 
       "", "", "", "", "",   "", "", "", "", "", 

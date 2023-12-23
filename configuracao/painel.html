@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../temas/temaClaro.css">
     <title>Configuração</title>
 </head>
-<body>
+<body id="painel" class="geral">
 <header>
     <h1>Gerenciador de processos</h1>
 </header>
@@ -47,9 +47,53 @@
                 <label for="produto">Produto:</label>
                 <input type="text" list="produtoDataList" id="produto">
                 <datalist id="produtoDataList">
-                    <option value="Produto 1">
-                    <option value="Produto 2">
-                    <option value="Produto 3">
+                    <option value="FARINHAS"></option>
+                    <option value="FARINHA DE TRIGO / SEMOLA"></option>
+                    <option value="FARINHA DE TRIGO / SARRACENO E FORMAS"></option>
+                    <option value="FARINHA DE TRIGO + FORMAS"></option>
+                    <option value="FARINHA DE TRIGO / SEMOLA / FORMAS / PAPEL"></option>
+                    <option value="FARINHA DE TRIGO / FORMAS + ACESSORIOS"></option>
+                    <option value="FARINHAS T65 E T55"></option>
+                    <option value="FARINHA INTEGRAL T150 / FARINHA T80, T45, T55 "></option>
+                    <option value="FARINHA DE TRIGO T65 , SARRACENO E FORMAS DE MADEIRA"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T45"></option>
+                    <option value="FARINHA DE TRIGO / FORMAS + PAPEL MANTEIGA"></option>
+                    <option value="FARINHA DE TRIGO / PAPEL SILICONIZADO"></option>
+                    <option value="FARINHA DE TRIGO T65 / SEMOLA DE TRIGO "></option>
+                    <option value="FARINHA DE TRIGO T65 + ACESSÓRIOS"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T65"></option>
+                    <option value="FARINHAS T45, T65, T55 E SEMOLA DE TRIGO"></option>
+                    <option value="FARINHAS T150, T110, T130 E T80"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T65 + ACESSÓRIOS"></option>
+                    <option value="FARINHA DE TRIGO T65"></option>
+                    <option value="FARINHA DE TRIGO T45"></option>
+                    <option value="FARINHA DE TRIGO / SEMOLA DE TRIGO "></option>
+                    <option value="FARINHAS T150, T110, T130, T80, T45 E T55"></option>
+                    <option value="FARINHA T45 E FORMAS DE MADEIRA"></option>
+                    <option value="FARINHA T65 E T55 + ACESSÓRIOS"></option>
+                    <option value="FARINHAS DE TRIGO + FARINHA DE CENTEIO"></option>
+                    <option value="FARINHA DE TRIGO + ACESSÓRIOS"></option>
+                    <option value="FARINHA BAGATELLE T45"></option>
+                    <option value="FARINHA T65 E PAPEL SILICONADO"></option>
+                    <option value="FARINHA T45 + ACESSÓRIOS"></option>
+                    <option value="FARINHAS T150, T130, T80, T110, T45 E T55"></option>
+                    <option value="FARINHAS T55, T65 / FARINHA DE SARRACENO"></option>
+                    <option value="FARINHA BAGATELLE T65 / ACESSORIOS"></option>
+                    <option value="FARINHA BAGATELLE T65"></option>
+                    <option value="FARINHAS T45, T55 E + ACESSORIOS"></option>
+                    <option value="FARINHAS T150, T80 E T110"></option>
+                    <option value="FARINHA BAGATELLE T45, FORMAS E PAPEL MANTEIGA"></option>
+                    <option value="FARINHA BAGATELLE T65 E PAPEL SILICONIZADO"></option>
+                    <option value="FARINHA BAGATELLE T65, FORMAS E PAPEL MANTEIGA"></option>
+                    <option value="BAGATELLE T65/ DIVERSOS"></option>
+                    <option value="FARINHAS T150/ T130/ T110/ T80"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T45 + ACESSÓRIOS"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T65 + SEMOLA DE TRIGO"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T45 E T55"></option>
+                    <option value="DIVERSOS"></option>
+                    <option value="FARINHA DE TRIGO BAGATELLE T65 + DIVERSOS"></option>
+                    <option value="FARINHAS T150, T80, T130, T110, T45, T55"></option>
+                    <option value="FARINHA DE TRIGO T65, SEMOLA DE TRIGO E FARINHA DE SARRACENO"></option>
                 </datalist>
             </div>
             <div class="campos">
@@ -73,10 +117,6 @@
                     <option value="CAP SAN NICOLAS"></option>
                     <option value="CAP SAN TAINARO"></option>
                     <option value="XIN CHONG QING"></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
                 </datalist>
             </div>
             <div class="campos">
@@ -160,7 +200,7 @@
             Configurações salvas com sucesso!
         </div>
 
-        <p>Histórico</p> 
+        <p>Históricos</p> 
         <!--PRIMEIRA CAIXA DE HISTÓRICOS-->
         <button id="button-ver-hists1" class="button-ver-hists" onclick="verHists1()" display="none">
             Mostrar históricos...
