@@ -43,18 +43,35 @@ header > h1 {
 /*BOTÕES BAIXAR-IMPORTAR*/
 #baixar-importar {
     position: static;
+    float: right;
     display: flex;
     /*float: right*/
+    margin: 0.2rem;
 }
-#baixar-importar > button {
+.baixar-importar-buttons {
     height: 2rem;
-    width: 6rem;
+    width: 7rem;
     font-weight: 600;
     padding: 5px;
     border-radius: 10px;
     border: 2px solid;
-    margin: 0.2rem;
     cursor: pointer;
+}
+#sessao-baixar {
+    background-color: blueviolet;
+    border-radius: 10px;
+    flex-direction: column;
+    z-index: 1;
+}
+.opcs-baixar {
+    display: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 90%;
+    padding: 5px 10%;
+    border: 0;
+    border-radius: 20px;
+    margin: 5%;
 }
 /*CORPO*/
 main {
@@ -199,8 +216,6 @@ footer > p {
         font-size: 1rem;
     }
     #baixar-importar {
-        display: block;
-        float: none;
         text-align: center;
     }
     #baixar-importar > button {

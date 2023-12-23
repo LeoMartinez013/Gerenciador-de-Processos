@@ -19,13 +19,20 @@ header {
     color: var(--branco);
     background-color: var(--forte);
 }
-#baixar-importar > button {
+.baixar-importar-buttons {
     color: var(--branco);
     background-color: var(--forte);
 }
-#baixar-importar > button:hover {
+.baixar-importar-buttons:hover {
     color: var(--branco);
     background-color: #0e46b6;
+}
+#sessao-baixar {
+    background-color: var(--forte);
+}
+.opcs-baixar {
+    background-color: var(--branco);
+    color: var(--marinho);
 }
 .bSalvar, .bVoltar, .button-ver-hists {
     color: var(--branco);

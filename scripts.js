@@ -9,8 +9,25 @@ window.onload = function() {
   mostrarProcessos()
 }
 
+
+function exibirOpcsBaixar() {
+  const bJSON = document.getElementById('opc-baixar-json')
+  const bTXT = document.getElementById('opc-baixar-txt')
+  const situacao = document.getElementById('button-download-processo')
+  console.log(situacao.value)
+
+  if (situacao.value === "exibir"){
+    situacao.value = "ocultar"
+    bJSON.style.display = "flex"
+    bTXT.style.display = "flex"
+  } else {
+    situacao.value = "exibir"
+    bJSON.style.display = "none"
+    bTXT.style.display = "none"
+  }
+}
 // Baixar como .json
-function baixarProcessosJson() {
+function baixarProcessosJSON() {
   const data = JSON.stringify(meusProcessos, null, 2);
   const blob = new Blob([data], {type: 'application/json'});
   const url = URL.createObjectURL(blob);
@@ -21,7 +38,7 @@ function baixarProcessosJson() {
   URL.revokeObjectURL(url);
 }
 // Baixar como .txt
-function baixarProcessosTxt() {
+function baixarProcessosTXT() {
   const data = JSON.stringify(meusProcessos, null, 2);
   const blob = new Blob([data], {type: 'text/plain'});
   const url = URL.createObjectURL(blob);
@@ -31,8 +48,7 @@ function baixarProcessosTxt() {
   link.click();
   URL.revokeObjectURL(url);
 }
-// Importar como .json
-function importProcessosJson(event) {
+function importarProcessos(event) {
   let file = event.target.files[0];
 
   if (file) {
@@ -46,21 +62,7 @@ function importProcessosJson(event) {
     reader.readAsText(file);
   }
 }
-// Importar como .txt
-function importProcessosTxt(event) {
-  let file = event.target.files[0];
 
-  if (file) {
-    let reader = new FileReader();
-
-    reader.onload = function(e) {
-      let processos = JSON.parse(e.target.result);
-      localStorage.setItem('meusProcessos', JSON.stringify(processos));
-      mostrarProcessos();
-    };
-    reader.readAsText(file);
-  }
-}
 
 
 function adicionarNovoProcesso() {
@@ -152,6 +154,8 @@ function irParaPainel(posicao) {
 button.addEventListener('click', adicionarNovoProcesso)
 
 document.addEventListener('DOMContentLoaded', function() {
-  const botaoBaixar = document.querySelector('.button-download-task');
-  botaoBaixar.addEventListener('click', baixarProcessosJson);
+  const botaoBaixarJSON = document.querySelector('#opc-baixar-json');
+  const botaoBaixarTXT = document.querySelector('#opc-baixar-txt')
+  botaoBaixarJSON.addEventListener('click', baixarProcessosJSON);
+  botaoBaixarTXT.addEventListener('click', baixarProcessosTXT);
 });

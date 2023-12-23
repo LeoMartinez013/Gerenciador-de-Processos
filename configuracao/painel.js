@@ -48,7 +48,6 @@ function verHists2() {
     console.log("escondendo caixa 2")
   }
 }
-
 // Função para salvar as configurações do processo
 function salvarConfiguracoes() {
   const processo = meusProcessos[posicao];
