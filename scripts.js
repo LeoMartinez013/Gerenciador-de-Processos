@@ -10,20 +10,29 @@ window.onload = function() {
 }
 
 
+function esconderOpcsBaixar() {
+  const bJSON = document.getElementById('opc-baixar-json')
+  const bTXT = document.getElementById('opc-baixar-txt')
+  const situacao = document.getElementById('button-download-processo')
+  situacao.value = "exibir"
+  bJSON.style.display = "none"
+  bTXT.style.display = "none"
+}
 function exibirOpcsBaixar() {
   const bJSON = document.getElementById('opc-baixar-json')
   const bTXT = document.getElementById('opc-baixar-txt')
   const situacao = document.getElementById('button-download-processo')
+  situacao.value = "ocultar"
+  bJSON.style.display = "flex"
+  bTXT.style.display = "flex"
+}
+function bottaoOpcsBaixar() {
+  const situacao = document.getElementById('button-download-processo')
   console.log(situacao.value)
-
   if (situacao.value === "exibir"){
-    situacao.value = "ocultar"
-    bJSON.style.display = "flex"
-    bTXT.style.display = "flex"
+    exibirOpcsBaixar()
   } else {
-    situacao.value = "exibir"
-    bJSON.style.display = "none"
-    bTXT.style.display = "none"
+    esconderOpcsBaixar()
   }
 }
 // Baixar como .json
@@ -55,13 +64,19 @@ function importarProcessos(event) {
     let reader = new FileReader();
 
     reader.onload = function(e) {
-      let processos = JSON.parse(e.target.result);
-      localStorage.setItem('meusProcessos', JSON.stringify(processos));
-      mostrarProcessos();
+      // Adicionar novos processos à lista existente
+      let novosProcessos = JSON.parse(e.target.result);
+      meusProcessos = meusProcessos.concat(novosProcessos);
+
+      // Armazenar a lista atualizada de volta no localStorage
+      localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos));
+
+      window.location.reload();
     };
     reader.readAsText(file);
   }
 }
+
 
 function adicionarNovoProcesso() {
   let dataAtual = new Date();

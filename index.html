@@ -17,12 +17,12 @@
         <nav id="nav">
             <div id="baixar-importar">
                 <!--BAIXAR-->
-                <div id="sessao-baixar">
+                <div id="sessao-baixar" onmouseleave="setTimeout(() => esconderOpcsBaixar(), 800) ">
                     <button 
                         id="button-download-processo" 
                         class="baixar-importar-buttons"
                         value="exibir"
-                        onclick="exibirOpcsBaixar()"
+                        onclick="bottaoOpcsBaixar()"
                     >
                         Baixar
                     </button>
