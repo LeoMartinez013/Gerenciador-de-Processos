@@ -87,6 +87,8 @@ function salvarConfiguracoes() {
   // Salva os processos atualizados no armazenamento local
   localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos));
 
+  console.groupCollapsed(meusProcessos[posicao])
+
   const confirmacao = document.getElementById('confirmacao');
   confirmacao.style.display = 'block';
   setTimeout(() => confirmacao.style.display = 'none', 3000);

@@ -143,8 +143,10 @@ function mostrarProcessos() {
         </td>
       </tr>
       `
+    console.groupCollapsed(meusProcessos)
   })
   listaCompleta.innerHTML = novaLi
+  
 }
 
 function concluirProcesso(posicao) {
