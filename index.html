@@ -54,15 +54,14 @@
             </div>
         </nav>
     </header>
-    
-    <main>
-        <style>
-            #container-filtros {
-                width: 100%;
-                background-color: blueviolet;
-                padding: 5px;
-            }
-        </style>
+    <style>
+        #container-filtros {
+            width: 100%;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <main>  
         <div id="container-filtros">
             <button id="button-filtros" value="fechado" class="button-filtros-aberto" onclick="buttonFiltros()">Selecionar Filtros</button>
             <div id="filtros" style="display: none;">
@@ -88,10 +87,10 @@
                 </div>
                 <div id="sec-mesOP" class="sec-filtros">
                     <label for="mesOP">Mês Operação</label>
-                    <select name="mesOP" id="mesOP" onselect="especMesOP()">
+                    <select name="mesOP" id="mesOP=" >
                         <option value="recentes" class="opt-mesOP">Mais recentes</option>
                         <option value="antigos" class="opt-mesOP">Mais antigos</option>
-                        <option value="especifico" class="opt-mesOP">Mês específico</option>
+                        <option value="especifico" class="opt-mesOP" onselect="especMesOP()">Mês específico</option>
                     </select>
                     <input type="month" id="mesOperacao" class="input-mesOP" style="display: none;">
                 </div>
@@ -100,37 +99,14 @@
                 </div>
             </div>
         </div>
-        <script>
-            function buttonFiltros() {
-                let botao = document.getElementById('button-filtros')
-                let filtros = document.getElementById('filtros')
-
-                if (botao.value == "fechado") {
-                    filtros.style.display = "flex"
-                    botao.innerText = "Fechar"
-                    botao.value = "aberto"
-                } else {
-                    filtros.style.display = "none"
-                    botao.innerText = "Selecionar Filtros"
-                    botao.value = "fechado"
-                }
-            }
-            function especMesOP(){
-                let inputMes = document.getElementById('mesOperacao')
-                let opcao = document.getElementById('mesOP')
-
-                console.log('funcionou')
-                if (opcao.value == "especifico") {
-                    inputMes.style.display = "flex"
-                } else {
-                    inputMes.style,display = "none"
-                }
-                
-            }
-        </script>
-        <input class="input-processo" placeholder="PO do processo aqui">
-        <button class="button-add-processo">Adicionar</button>
-        <table class="list-processos">
+        <select id="input-cliente">
+            <option id="Cliente-1" value="Cliente 1" class="clientes">Cliente 1</option>
+            <option id="Cliente-2" value="Cliente 2" class="clientes">Cliente 2</option>
+            <option id="Cliente-3" value="Cliente 3" class="clientes">Cliente 3</option>
+        </select>
+        <input id="input-processo" placeholder="PO do processo aqui">
+        <button id="button-add-processo">Adicionar</button>
+        <table id="list-processos">
 
         </table>
     </main>

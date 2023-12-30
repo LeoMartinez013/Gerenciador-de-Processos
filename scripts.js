@@ -1,6 +1,6 @@
-const button = document.querySelector('.button-add-processo')
-const input = document.querySelector('.input-processo')
-const listaCompleta = document.querySelector('.list-processos')
+const button = document.querySelector('#button-add-processo')
+const input = document.querySelector('#input-processo')
+const listaCompleta = document.querySelector('#list-processos')
 
 let meusProcessos = JSON.parse(localStorage.getItem('meusProcessos')) || {};
 
@@ -119,6 +119,23 @@ function adicionarNovoProcesso() {
   localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos));
   mostrarProcessos();
 }
+function filtrarProcessos() {
+  // Obtenha os valores dos filtros
+  let etapa = document.getElementById('etapa').value;
+  let modal = document.getElementById('modal').value;
+  let mesOP = document.getElementById('mesOP').value;
+
+  // Filtrar a lista de processos com base nos critérios selecionados
+  let processosFiltrados = meusProcessos.filter(function(processo) {
+    return (etapa === 'todos' || processo.etapa === etapa) &&
+           (modal === 'todos' || processo.modal === modal) &&
+           (mesOP === 'todos' || processo.mesOP === mesOP);
+  });
+
+  // Atualizar a lista de processos na página
+  mostrarProcessos(processosFiltrados);
+}
+
 
 function mostrarProcessos() {
   let novaLi = `
@@ -173,3 +190,33 @@ document.addEventListener('DOMContentLoaded', function() {
   botaoBaixarJSON.addEventListener('click', baixarProcessosJSON);
   botaoBaixarTXT.addEventListener('click', baixarProcessosTXT);
 });
+document.getElementById('etapa').addEventListener('change', filtrarProcessos);
+document.getElementById('modal').addEventListener('change', filtrarProcessos);
+document.getElementById('mesOP').addEventListener('change', filtrarProcessos);
+
+function buttonFiltros() {
+  let botao = document.getElementById('button-filtros')
+  let filtros = document.getElementById('filtros')
+
+  if (botao.value == "fechado") {
+      filtros.style.display = "flex"
+      botao.innerText = "Fechar"
+      botao.value = "aberto"
+  } else {
+      filtros.style.display = "none"
+      botao.innerText = "Selecionar Filtros"
+      botao.value = "fechado"
+  }
+}
+function especMesOP(){
+  let inputMes = document.getElementById('mesOperacao')
+  let opcao = document.getElementById('mesOP')
+
+  console.log('funcionou')
+  if (opcao.value == "especifico") {
+      inputMes.style.display = "flex"
+  } else {
+      inputMes.style,display = "none"
+  }
+  
+}
