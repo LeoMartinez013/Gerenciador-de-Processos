@@ -11,6 +11,7 @@
     <title>Processos</title>
 </head>
 <body id="index" class="geral">
+    
     <header id="header">
         <h1>Gerenciador de processos</h1>
         <nav id="nav">
@@ -36,7 +37,7 @@
                     <!--JSON-->
                     <button 
                         id="opc-baixar-json" 
-                        class="opcs-baixar" 
+                        class="opcs-baixar"
                     >
                         Baixar em .json
                     </button>
@@ -54,13 +55,6 @@
             </div>
         </nav>
     </header>
-    <style>
-        #container-filtros {
-            width: 100%;
-            border: 1px solid black;
-            padding: 5px;
-        }
-    </style>
     <main>  
         <div id="container-filtros">
             <button id="button-filtros" value="fechado" class="button-filtros-aberto" onclick="buttonFiltros()">Selecionar Filtros</button>
@@ -87,7 +81,7 @@
                 </div>
                 <div id="sec-mesOP" class="sec-filtros">
                     <label for="mesOP">Mês Operação</label>
-                    <select name="mesOP" id="mesOP=" >
+                    <select name="mesOP" id="mesOP" >
                         <option value="recentes" class="opt-mesOP">Mais recentes</option>
                         <option value="antigos" class="opt-mesOP">Mais antigos</option>
                         <option value="especifico" class="opt-mesOP" onselect="especMesOP()">Mês específico</option>
@@ -99,16 +93,30 @@
                 </div>
             </div>
         </div>
-        <select id="input-cliente">
-            <option id="Cliente-1" value="Cliente 1" class="clientes">Cliente 1</option>
-            <option id="Cliente-2" value="Cliente 2" class="clientes">Cliente 2</option>
-            <option id="Cliente-3" value="Cliente 3" class="clientes">Cliente 3</option>
-        </select>
-        <input id="input-processo" placeholder="PO do processo aqui">
-        <button id="button-add-processo">Adicionar</button>
-        <table id="list-processos">
+        <!--LISTAGEM-->
+        <div id="container-criar">
+            <select id="input-cliente">
+                <option id="Cliente-1" value="Cliente 1" class="clientes">Cliente 1</option>
+                <option id="Cliente-2" value="Cliente 2" class="clientes">Cliente 2</option>
+                <option id="Cliente-3" value="Cliente 3" class="clientes">Cliente 3</option>
+                <option value="Follow Up - France">Follow Up - France</option>
+            </select>
+            <input id="input-processo" placeholder="PO do processo aqui">
+            <button id="button-add-processo">Adicionar</button>
+        </div>
+        <dialog close></dialog>
+        <div id="titulo">
+            <div>PO</div>
+            <div>BL</div>
+            <div>Etapa</div>
+            <div>Mês de Operação</div>
+        </div>
+        <div id="list-processos">
 
-        </table>
+        </div>
+        <section id="processos-concluidos" style="border: 0.1rem solid black;">
+            <div>Processos desembaraçados</div>
+        </section>
     </main>
     <footer>
         <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
@@ -116,5 +124,7 @@
         <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
     </footer>
 </body>
-<script src="scripts.js"></script>
+<script src="javascript/scripts.js"></script>
+<script src="javascript/compart.js"></script>
+<script src="javascript/concluidos.js"></script>
 </html>
