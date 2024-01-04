@@ -113,7 +113,7 @@ function mostrarProcessos(clienteNome) {
     novaLi =
       novaLi +
       `
-      <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../configuracao/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
+      <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../painel/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
         <div class="po c1">${item.po}</div>
         <div class="bl c2"> ${item.bl || 'Vazio'}</div>
         <div class="etapa c3"> ${item.etapa || 'Vazio'}</div>
@@ -187,7 +187,7 @@ function mostrarProcessosConcluidos(clienteNome) {
     novaLi =
       novaLi +
       `
-      <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../configuracao/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
+      <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../painel/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
         <div class="po c1">${item.po}</div>
         <div class="bl c2"> ${item.bl || 'Vazio'}</div>
         <div class="etapa c3"> ${item.etapa || 'Vazio'}</div>
