@@ -34,15 +34,27 @@ header > h1 {
 }
 #nav {
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-direction: row;
+    justify-content: space-between;
 
     width: 100%;
+
+    max-width: 900px;
+    margin: 0 auto;
     height: auto;
 }
 #temas {
     height: auto;
     margin: 0.2rem;
+}
+#temas > select {
+    height: 2rem;
+    width: 6rem;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid;
+    cursor: pointer;
 }
 /*BOTÕES BAIXAR-IMPORTAR*/
 #baixar-importar {

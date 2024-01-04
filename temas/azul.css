@@ -1,7 +1,7 @@
 :root {
     --marinho:  #070C26;
     --forte: #07338C;
-    --claro: #a2b2fc;
+    --claro: #bbc7fd;
     --cinza: #818e9e;
     --branco: #F2F2F2;
     --preto: #000000;
@@ -34,7 +34,7 @@
     }
 }
 #index {
-    .baixar-importar-buttons {
+    .baixar-importar-buttons, #temas > select {
         color: var(--branco);
         background-color: var(--forte);
     }
@@ -100,6 +100,11 @@
     }
     #confirmacao {
         color: var(--salva);
+    }
+    #sub-confirmacao {
+        background-color: var(--claro);
+        color: var(--marinho);
+        border-color: var(--marinho);
     }
     .bSalvar, .bVoltar, .button-ver-hists {
         color: var(--branco);

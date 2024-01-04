@@ -106,8 +106,8 @@ function salvarConfiguracoes() {
   console.groupCollapsed(processo)
 
   const confirmacao = document.getElementById('confirmacao')
-  confirmacao.style.display = 'block'
-  setTimeout(() => confirmacao.style.display = 'none', 3000)
+  confirmacao.style.display = 'flex'
+  setTimeout(() => confirmacao.style.display = 'none', 2000)
 }
 
 // Função para preencher os campos de entrada com os valores do processo quando a página é carregada

@@ -1,19 +1,27 @@
 :root {
-    --marinho:  #082607;
-    --forte: #0b5a03;
-    --claro: #b9fcb2;
-    --cinza: #7d9b7a;
-    --branco: #F2F2F2;
+    --marinho: #181717;
+    --forte: #3a3a3a;
+    --claro: #fa938e;
+    --cinza: #b8b6a2;
+    --branco: #FFFFFF;
     --preto: #000000;
     --concluida: #b5d673;
     --salva: #043b01;
-    --buttonsHover: #2ab60e;
+    --buttonsHover: #575656;
+
+    --vermelho: #e1251b;
+    --amarelo: #da941d;
+    --amarelo-claro: #fff172;
 }
 .geral {
-    background-color: var(--branco);
+    background-image: url(../assets/vasco-banner.png);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: 100% 100%;
     header {
         color: var(--branco);
-        background-color: var(--forte);
+        background-color: transparent;
+        backdrop-filter: blur(20px);
     }
     main {
         background-color: var(--cinza);
@@ -24,22 +32,23 @@
     }
     footer {
         color: var(--branco);
-        background-color: var(--forte);
+        background-color: transparent;
+        backdrop-filter: blur(20px);
     }
     footer > p > a{
         color: var(--branco);
     }
     input:focus, button:focus, select:focus {
-        border-color: var(--claro);  /* Altere para a cor desejada */
+        border-color: var(--amarelo);  /* Altere para a cor desejada */
     }
 }
 #index {
     .baixar-importar-buttons, #temas > select {
-        color: var(--branco);
+        color: var(--amarelo);
         background-color: var(--forte);
     }
     .baixar-importar-buttons:hover {
-        color: var(--branco);
+        color: var(--amarelo);
         background-color: var(--buttonsHover);
     }
     #sessao-baixar {
@@ -59,7 +68,7 @@
         background-color: var(--forte);
     }
     .cliente-titulo {
-        background-color: var(--claro);
+        background-color: var(--amarelo-claro);
     
     }
     .processo {
@@ -75,13 +84,12 @@
 }
 #painel {
     #recebCliente {
-        color: var(--forte);
+        color: var(--marinho);
         background-color: var(--cinza);
-
     }
     .campos {
         border-color: var(--forte);
-        background-color: var(--marinho);
+        background-color: var(--forte);
     }
     .campos > label {
         color: var(--branco);
@@ -89,7 +97,6 @@
     .campos > input {
         color: var(--marinho);
         background-color: var(--branco);
-    
     }
     .campos > select {
         color: var(--marinho);
@@ -98,20 +105,18 @@
     option:focus {
         background-color: var(--cinza);
     }
-    #confirmacao {
-        color: var(--salva);
-    }
     #sub-confirmacao {
-        background-color: var(--claro);
-        color: var(--marinho);
-        border-color: var(--marinho);
+        background-color: var(--concluida);
+        color: var(--salva);
+        border-color: var(--salva);
     }
     .bSalvar, .bVoltar, .button-ver-hists {
-        color: var(--branco);
+        color: var(--amarelo);
         background-color: var(--forte);
     }
     .bSalvar:hover, .bVoltar:hover, .button-ver-hists:hover{
-        color: var(--branco);
+        color: var(--amarelo);
+        border-color: var(--amarelo);
         background-color: var(--buttonsHover);
     }
 }

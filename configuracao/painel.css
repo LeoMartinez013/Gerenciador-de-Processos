@@ -48,7 +48,7 @@ h2 {
 }
 ins {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 main > p {
     
@@ -107,7 +107,18 @@ input:focus, button:focus, select:focus {
     margin: 0.2rem;
 }
 #confirmacao {
-    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+#sub-confirmacao {
+    height: auto;
+    width: 20.4rem;
+    padding: 10px 10px;
+    text-align: center;
+    border: 0.1rem solid black;
+    border-radius: 10px;
+}
+#sub-confirmacao > p {
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
