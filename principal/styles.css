@@ -33,14 +33,19 @@ header > h1 {
     margin-top: 1.2rem;
 }
 #nav {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    
+
     width: 100%;
     height: auto;
 }
+#temas {
+    height: auto;
+    margin: 0.2rem;
+}
 /*BOTÕES BAIXAR-IMPORTAR*/
 #baixar-importar {
-    position: static;
-    float: right;
     display: flex;
     /*float: right*/
     margin: 0.2rem;
@@ -80,11 +85,6 @@ main {
     border-radius: 10px;
     margin: 0.5rem auto;
     flex-grow: 1;
-}
-#container-filtros {
-    width: 100%;
-    border: 1px solid black;
-    padding: 5px;
 }
 #container-criar {
     display: flex;
@@ -128,18 +128,17 @@ main {
 #button-add-processo:active {
     opacity: 0.6;
 }
-/*TABELA*/
-#list-processos {
+#list-processos, #list-processos-concluidos {
     width: 100%;
     max-width: 100%;
-    margin-top: 10px;
 }
-/*TITULO TABELA*/
 #titulo{
     display: grid;
+    font-weight: 500;
     grid-template-columns: 20% 10% 30% 30% 10%;
     font-size: 0.8rem;
     text-align: center;
+    margin-bottom: 5px;
 }
 .cliente-titulo {
     cursor: pointer;
@@ -179,6 +178,25 @@ main {
 .processo:hover .icone {
     opacity: 1;
 }
+#sec-processos, #sec-processos-concluidos {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+#sec-processos {
+    margin-bottom: 5px;
+}
+
+#sec-processos-concluidos > h3 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    height: auto;
+    width: 100%;
+    padding: 0.2rem 0;
+    border-radius: 10px;
+}
+
 /*RODAPÉ*/
 footer {
     text-align: center;

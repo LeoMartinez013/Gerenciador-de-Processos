@@ -40,27 +40,39 @@ function baixarClientesTXT() {
     const blob = new Blob([data], {type: 'text/plain'});
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = url;
+    link.href = url
     link.download = 'clientes.txt';
-    link.click();
-    URL.revokeObjectURL(url);
+    link.click()
+    URL.revokeObjectURL(url)
 }
 // Importar
 function importarClientes(event) {
-    let file = event.target.files[0];
+    let file = event.target.files[0]
     if (file) {
-        let reader = new FileReader();
+        let reader = new FileReader()
 
         reader.onload = function(e) {
+        // Carregar os clientes existentes
+        let clientesExistente = JSON.parse(localStorage.getItem('clientes')) || []
+
         // Adicionar novos clientes à lista existente
-        let novosClientes = JSON.parse(e.target.result);
-        clientes = clientes.concat(novosClientes);
+        let novosClientes = JSON.parse(e.target.result)
+        clientes = clientesExistente.concat(novosClientes)
 
         // Armazenar a lista atualizada de volta no localStorage
-        localStorage.setItem('clientes', JSON.stringify(clientes));
+        localStorage.setItem('clientes', JSON.stringify(clientes))
 
-        window.location.reload();
+        window.location.reload()
         };
-        reader.readAsText(file);
+        reader.readAsText(file)
     }
 }
+
+
+button.addEventListener('click', adicionarNovoProcesso)
+document.addEventListener('DOMContentLoaded', function() {
+  const botaoBaixarJSON = document.querySelector('#opc-baixar-json')
+  const botaoBaixarTXT = document.querySelector('#opc-baixar-txt')
+  botaoBaixarJSON.addEventListener('click', baixarClientesJSON)
+  botaoBaixarTXT.addEventListener('click', baixarClientesTXT)
+});

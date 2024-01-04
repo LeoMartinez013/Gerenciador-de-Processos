@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css">
+    <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
+    <title>Processos</title>
+</head>
+<body id="index" class="geral">
+    <header id="header">
+        <h1>Gerenciador de processos</h1>
+        <nav id="nav">
+            <div id="temas">
+                <select id="selecTema" onchange="mudarTema()">
+                    <option value="azul">Azul</option>
+                    <option value="verde">Verde</option>
+                    <option value="teste">Teste</option>
+                </select>
+            </div>
+            <div id="baixar-importar">
+                <!--BAIXAR-->
+                <div id="sessao-baixar" onmouseleave="setTimeout(() => esconderOpcsBaixar(), 800) ">
+                    <button 
+                        id="button-download-processo" 
+                        class="baixar-importar-buttons"
+                        value="exibir"
+                        onclick="bottaoOpcsBaixar()"
+                    >
+                        Baixar
+                    </button>
+                
+                    <!--TXT-->
+                    <button 
+                        id="opc-baixar-txt" 
+                        class="opcs-baixar"   
+                    >
+                        Baixar em .txt
+                    </button>
+                    <!--JSON-->
+                    <button 
+                        id="opc-baixar-json" 
+                        class="opcs-baixar"
+                    >
+                        Baixar em .json
+                    </button>
+                </div>
+
+                <!--IMPORTAR-->
+                <input 
+                    id="importFile"
+                    style="display: none"
+                    type="file"  
+                    accept=".json, .txt" 
+                    onchange="importarClientes(event)"
+                >
+                <button id="button-import-processo" class="baixar-importar-buttons" onclick="document.getElementById('importFile').click()">Importar</button>
+            </div>
+        </nav>
+    </header>
+    <main>  
+        <!--LISTAGEM-->
+        <div id="container-criar">
+            <select id="input-cliente">
+                <option id="Cliente-1" value="Cliente 1" class="clientes">Cliente 1</option>
+                <option id="Cliente-2" value="Cliente 2" class="clientes">Cliente 2</option>
+                <option id="Cliente-3" value="Cliente 3" class="clientes">Cliente 3</option>
+                <option value="Follow Up - France">Follow Up - France</option>
+            </select>
+            <input id="input-processo" placeholder="PO do processo">
+            <button id="button-add-processo">Adicionar</button>
+        </div>
+        <dialog close></dialog>
+        <div id="titulo">
+            <div>PO</div>
+            <div>BL</div>
+            <div>Etapa</div>
+            <div>Mês de Operação</div>
+            <div> </div>
+        </div>
+        <section id="sec-processos">
+            <div id="list-processos">
+                
+            </div>
+        </section>
+        <section id="sec-processos-concluidos">
+            <h3>Processos desembaraçados</h3>
+            <div id="list-processos-concluidos">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+        <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
+        <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
+    </footer>
+</body>
+<script src="../javascript/scripts.js"></script>
+<script src="../javascript/compart.js"></script>
+<script src="../javascript/mudarTemas.js"></script>
+</html>

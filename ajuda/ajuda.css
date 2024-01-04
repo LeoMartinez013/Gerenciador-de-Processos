@@ -39,6 +39,32 @@ main {
     margin: 0.5rem auto;
     flex-grow: 1;
 }
+section {
+    max-width: 100%;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid;
+    border-radius: 20px;
+    margin: 0.6rem 0;
+    
+    h2 {
+        font-size: 1.2rem;
+        margin: 0.1rem 0;
+    }
+    p, li {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    ul {
+        list-style: decimal inside; 
+    }
+    #guia1 {
+        margin: 0 auto;
+        height: 300px;
+        width: auto;
+        border-radius: 20px;
+        border: 1px solid;
+    }
+}
 footer {
     text-align: center;
     height: 5rem;

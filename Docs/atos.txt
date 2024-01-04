@@ -1,0 +1,9 @@
+Criar PO's;
+Excluir PO's;
+Alterar PO's;
+
+Separar os PO's desembaraçados;
+Baixar listas de PO's 
+Importar listas de PO's 
+
+Alterar cor de tema;

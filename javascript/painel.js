@@ -114,8 +114,8 @@ function salvarConfiguracoes() {
 window.onload = function() {
   if (processo) {
     document.getElementById(`po`).value = processo.po
-    const insOP = document.getElementById('recebOP')
-    insOP.innerText = processo.po
+    const insOP = document.getElementById('recebCliente')
+    insOP.innerText = clienteNome
     document.getElementById(`modal`).value = processo.modal
     document.getElementById(`filial`).value = processo.filial
     document.getElementById(`quantidade`).value = processo.quantidade

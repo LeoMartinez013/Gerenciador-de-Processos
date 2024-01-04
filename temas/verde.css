@@ -1,0 +1,128 @@
+:root {
+    --marinho:  #082607;
+    --forte: #0b5a03;
+    --claro: #57f249;
+    --cinza: #7d9b7a;
+    --branco: #F2F2F2;
+    --preto: #000000;
+    --concluida: #b5d673;
+    --salva: #043b01;
+    --buttonsHover: #2ab60e;
+}
+.geral {
+    background-color: var(--branco);
+    header {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    main {
+        background-color: var(--cinza);
+    }
+    main > p {
+        color: var(--branco);
+        background-color: var(--marinho);
+    }
+    footer {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    footer > p > a{
+        color: var(--branco);
+    }
+    input:focus, button:focus, select:focus {
+        border-color: var(--claro);  /* Altere para a cor desejada */
+    }
+}
+#index {
+    .baixar-importar-buttons {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .baixar-importar-buttons:hover {
+        color: var(--branco);
+        background-color: var(--buttonsHover);
+    }
+    #sessao-baixar {
+        background-color: var(--forte);
+    }
+    .opcs-baixar {
+        background-color: var(--branco);
+        color: var(--marinho);
+        border-color: var(--branco);
+    }
+    #button-add-processo {
+        background-color: var(--forte);
+        color: var(--branco);
+    }
+    #titulo > div {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .cliente-titulo {
+        background-color: rgb(218, 218, 218);
+    
+    }
+    .processo {
+        background-color: var(--branco);
+    }
+    #sec-processos-concluidos > h3 {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .concluido {
+        background-color: var(--concluida);
+    }
+}
+#painel {
+    #recebCliente {
+        color: var(--forte);
+        background-color: var(--cinza);
+
+    }
+    .campos {
+        border-color: var(--forte);
+        background-color: var(--marinho);
+    }
+    .campos > label {
+        color: var(--branco);
+    }
+    .campos > input {
+        color: var(--marinho);
+        background-color: var(--branco);
+    
+    }
+    .campos > select {
+        color: var(--marinho);
+        background-color: var(--branco);
+    }
+    option:focus {
+        background-color: var(--cinza);
+    }
+    #confirmacao {
+        color: var(--salva);
+    }
+    .bSalvar, .bVoltar, .button-ver-hists {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .bSalvar:hover, .bVoltar:hover, .button-ver-hists:hover{
+        color: var(--branco);
+        background-color: var(--buttonsHover);
+    }
+}
+#ajuda {
+    section {
+        border-color: var(--marinho);
+        background-color: var(--branco);
+        color: var(--marinho);
+        h2 {
+
+        }
+        p, li {
+
+        }
+        ul {
+
+        }
+    }
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="painel.css">
-    <link rel="stylesheet" href="../temas/temaClaro.css">
+    <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
     <title>Configuração</title>
 </head>
 <body id="painel" class="geral">
@@ -14,7 +14,7 @@
     <h1>Gerenciador de processos</h1>
 </header>
 <main>
-    <h2>Configurações do Processo: <ins id="recebOP"></ins></h2>
+    <h2>Cliente: <ins id="recebCliente"></ins></h2>
         <div id="caixa1">
             <div class="campos">
                 <!--PO-->
@@ -191,7 +191,7 @@
             <button class="bSalvar" onclick="salvarConfiguracoes() ">
                 Salvar
             </button>
-            <button class="bVoltar" onclick="window.location='../index.html'">
+            <button class="bVoltar" onclick="window.location='../principal/menu.html'">
                 Voltar
             </button>
         </div>
@@ -377,15 +377,17 @@
             <button class="bSalvar" onclick="salvarConfiguracoes() ">
                 Salvar
             </button>
-            <button class="bVoltar" onclick="window.location='../index.html'">
+            <button class="bVoltar" onclick="window.location='../principal/menu.html'">
                 Voltar
             </button>
         </div>
 </main>
 <footer>
-    <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-    <p><a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">https://github.com/LeoMartinez013/Gerenciador-de-Processos</a></p>
-</footer>
-<script src="painel.js"></script>
+        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+        <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
+        <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
+    </footer>
+<script src="../javascript/painel.js"></script>
+<script src="../javascript/mudarTemas.js"></script>
 </body>
 </html>

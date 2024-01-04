@@ -2,129 +2,27 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="temas/temaClaro.css">
-
-    <title>Processos</title>
+    <meta http-equiv="refresh" content="0.0001;url=principal/menu.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            background-color: #2b2b2b;
+            margin: 0px;
+            height: 100vh;
+        }
+        div {
+            color: #d3e6f6;
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 45vh 35%;
+        }
+    </style>
 </head>
-<body id="index" class="geral">
-    
-    <header id="header">
-        <h1>Gerenciador de processos</h1>
-        <nav id="nav">
-            <div id="baixar-importar">
-                <!--BAIXAR-->
-                <div id="sessao-baixar" onmouseleave="setTimeout(() => esconderOpcsBaixar(), 800) ">
-                    <button 
-                        id="button-download-processo" 
-                        class="baixar-importar-buttons"
-                        value="exibir"
-                        onclick="bottaoOpcsBaixar()"
-                    >
-                        Baixar
-                    </button>
-                
-                    <!--TXT-->
-                    <button 
-                        id="opc-baixar-txt" 
-                        class="opcs-baixar"   
-                    >
-                        Baixar em .txt
-                    </button>
-                    <!--JSON-->
-                    <button 
-                        id="opc-baixar-json" 
-                        class="opcs-baixar"
-                    >
-                        Baixar em .json
-                    </button>
-                </div>
-
-                <!--IMPORTAR-->
-                <input 
-                    id="importFile"
-                    style="display: none"
-                    type="file"  
-                    accept=".json, .txt" 
-                    onchange="importarProcessos(event)"
-                >
-                <button id="button-import-processo" class="baixar-importar-buttons" onclick="document.getElementById('importFile').click()">Importar</button>
-            </div>
-        </nav>
-    </header>
-    <main>  
-        <div id="container-filtros">
-            <button id="button-filtros" value="fechado" class="button-filtros-aberto" onclick="buttonFiltros()">Selecionar Filtros</button>
-            <div id="filtros" style="display: none;">
-                <div id="sec-etapas" class="sec-filtros">
-                    <label for="etapa">Etapa</label>
-                    <select name="etapa" id="etapa">
-                        <option value="agatracao" class="opt-etapa">AG. Atração</option>
-                        <option value="embaracado" class="opt-etapa">Embaraçado</option>
-                        <option value="todos" class="opt-etapa">Todos</option>
-                    </select>
-                </div>
-                <div id="sec-modal" class="sec-filtros">
-                    <label for="modal">Modal</label>
-                    <select name="modal" id="modal">
-                        <option value="maritimo" class="opt-modal">Marítimo</option>
-                        <option value="aereo" class="opt-modal">Aéreo</option>
-                        <option value="terrestre" class="opt-modal">Terréstre</option>
-                        <option value="todos" class="opt-modal">Todos</option>
-                    </select>
-                </div>
-                <div id="sec-PO" class="sec-filtros">
-                    <button id="button-PO">Maiores</button>
-                </div>
-                <div id="sec-mesOP" class="sec-filtros">
-                    <label for="mesOP">Mês Operação</label>
-                    <select name="mesOP" id="mesOP" >
-                        <option value="recentes" class="opt-mesOP">Mais recentes</option>
-                        <option value="antigos" class="opt-mesOP">Mais antigos</option>
-                        <option value="especifico" class="opt-mesOP" onselect="especMesOP()">Mês específico</option>
-                    </select>
-                    <input type="month" id="mesOperacao" class="input-mesOP" style="display: none;">
-                </div>
-                <div class="sec-filtros">
-                    <buttton></buttton>
-                </div>
-            </div>
-        </div>
-        <!--LISTAGEM-->
-        <div id="container-criar">
-            <select id="input-cliente">
-                <option id="Cliente-1" value="Cliente 1" class="clientes">Cliente 1</option>
-                <option id="Cliente-2" value="Cliente 2" class="clientes">Cliente 2</option>
-                <option id="Cliente-3" value="Cliente 3" class="clientes">Cliente 3</option>
-                <option value="Follow Up - France">Follow Up - France</option>
-            </select>
-            <input id="input-processo" placeholder="PO do processo aqui">
-            <button id="button-add-processo">Adicionar</button>
-        </div>
-        <dialog close></dialog>
-        <div id="titulo">
-            <div>PO</div>
-            <div>BL</div>
-            <div>Etapa</div>
-            <div>Mês de Operação</div>
-        </div>
-        <div id="list-processos">
-
-        </div>
-        <section id="processos-concluidos" style="border: 0.1rem solid black;">
-            <div>Processos desembaraçados</div>
-        </section>
-    </main>
-    <footer>
-        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-        <p><a href="ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
-        <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
-    </footer>
+<body>
+    <div>
+        carregando página...
+    </div>
 </body>
-<script src="javascript/scripts.js"></script>
-<script src="javascript/compart.js"></script>
-<script src="javascript/concluidos.js"></script>
 </html>
