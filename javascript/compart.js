@@ -50,32 +50,28 @@ function importarClientes(event) {
     let file = event.target.files[0]
     if (file) {
         let reader = new FileReader()
-
         reader.onload = function(e) {
             // Carregar os clientes existentes
             let clientesExistente = JSON.parse(localStorage.getItem('clientes')) || []
-
             // Adicionar novos clientes à lista existente
             let novosClientes = JSON.parse(e.target.result)
-
             novosClientes.forEach(novoCliente => {
                 // Verificar se o cliente já existe
                 let clienteExistente = clientesExistente.find(cliente => cliente.cliente === novoCliente.cliente)
-
                 if (!clienteExistente) {
-                    // Se o cliente não existir, adicione-o à lista
+                    // Se o cliente não existir, adicionar à lista
                     clientesExistente.push(novoCliente)
                 } else {
-                    // Se o cliente já existir, adicione os novos processos à lista de processos existente
+                    // Se o cliente já existir, adicionar os novos processos à lista de processos existente
                     novoCliente.processos.forEach(novoProcesso => {
                         // Verificar se o processo já existe
                         let processoExistente = clienteExistente.processos.find(processo => processo.po === novoProcesso.po)
 
                         if (!processoExistente) {
-                            // Se o processo não existir, adicione-o à lista
+                            // Se o processo não existir, adicionar à lista
                             clienteExistente.processos.push(novoProcesso)
                         } else {
-                            // Se o processo já existir, substitua-o pelo novo processo
+                            // Se o processo já existir, substituir pelo novo processo
                             let index = clienteExistente.processos.indexOf(processoExistente)
                             clienteExistente.processos[index] = novoProcesso
 
@@ -87,10 +83,8 @@ function importarClientes(event) {
                     })
                 }
             })
-
             // Armazenar a lista atualizada de volta no localStorage
             localStorage.setItem('clientes', JSON.stringify(clientesExistente))
-
             window.location.reload()
         };
         reader.readAsText(file)

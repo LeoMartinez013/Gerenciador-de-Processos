@@ -104,7 +104,7 @@ function mostrarClientes() {
         <div id="cliente-nome">${cliente.cliente}</div>
       </div>
       `
-    novaLi = novaLi + `<div class="${clienteNomeClasse}" style="display: none;">` + mostrarProcessos(cliente.cliente) + `</div>`
+    novaLi = novaLi + `<div class="${clienteNomeClasse} efeito-lista" style="display: none;">` + mostrarProcessos(cliente.cliente) + `</div>`
   })
   
   listaCompleta.innerHTML = novaLi;
@@ -146,7 +146,7 @@ function esconderProcessos(clienteNome) {
   const processos = document.querySelectorAll('.' + clienteNomeClasse);
   for (let i = 0; i < processos.length; i++) {
     if (processos[i].style.display == 'none') {
-      processos[i].style.display = 'grid'
+      processos[i].style.display = 'block'
     } else {
       processos[i].style.display = 'none'
     }

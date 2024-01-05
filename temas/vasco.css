@@ -2,7 +2,7 @@
     --marinho: #181717;
     --forte: #3a3a3a;
     --claro: #fa938e;
-    --cinza: #b8b6a2;
+    --cinza: #b6b6b6;
     --branco: #FFFFFF;
     --preto: #000000;
     --concluida: #b5d673;
@@ -18,9 +18,8 @@
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: 100% 100%;
-    #fa938e
     header {
-        color: var(--branco);
+        color: var(--claro);
         background-color: transparent;
         backdrop-filter: blur(20px);
     }
