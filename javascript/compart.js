@@ -52,22 +52,50 @@ function importarClientes(event) {
         let reader = new FileReader()
 
         reader.onload = function(e) {
-        // Carregar os clientes existentes
-        let clientesExistente = JSON.parse(localStorage.getItem('clientes')) || []
+            // Carregar os clientes existentes
+            let clientesExistente = JSON.parse(localStorage.getItem('clientes')) || []
 
-        // Adicionar novos clientes à lista existente
-        let novosClientes = JSON.parse(e.target.result)
-        clientes = clientesExistente.concat(novosClientes)
+            // Adicionar novos clientes à lista existente
+            let novosClientes = JSON.parse(e.target.result)
 
-        // Armazenar a lista atualizada de volta no localStorage
-        localStorage.setItem('clientes', JSON.stringify(clientes))
+            novosClientes.forEach(novoCliente => {
+                // Verificar se o cliente já existe
+                let clienteExistente = clientesExistente.find(cliente => cliente.cliente === novoCliente.cliente)
 
-        window.location.reload()
+                if (!clienteExistente) {
+                    // Se o cliente não existir, adicione-o à lista
+                    clientesExistente.push(novoCliente)
+                } else {
+                    // Se o cliente já existir, adicione os novos processos à lista de processos existente
+                    novoCliente.processos.forEach(novoProcesso => {
+                        // Verificar se o processo já existe
+                        let processoExistente = clienteExistente.processos.find(processo => processo.po === novoProcesso.po)
+
+                        if (!processoExistente) {
+                            // Se o processo não existir, adicione-o à lista
+                            clienteExistente.processos.push(novoProcesso)
+                        } else {
+                            // Se o processo já existir, substitua-o pelo novo processo
+                            let index = clienteExistente.processos.indexOf(processoExistente)
+                            clienteExistente.processos[index] = novoProcesso
+
+                            // Verificar o estado "concluído" do novo processo
+                            if (novoProcesso.concluido !== true) {
+                                clienteExistente.processos[index].concluido = false
+                            }
+                        }
+                    })
+                }
+            })
+
+            // Armazenar a lista atualizada de volta no localStorage
+            localStorage.setItem('clientes', JSON.stringify(clientesExistente))
+
+            window.location.reload()
         };
         reader.readAsText(file)
     }
 }
-
 
 button.addEventListener('click', adicionarNovoProcesso)
 document.addEventListener('DOMContentLoaded', function() {

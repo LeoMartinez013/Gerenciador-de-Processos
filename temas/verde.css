@@ -50,6 +50,9 @@
         color: var(--marinho);
         border-color: var(--branco);
     }
+    .opcs-baixar:hover, .opcs-baixar:focus {
+        background-color: var(--claro);
+    }
     #button-add-processo {
         background-color: var(--forte);
         color: var(--branco);

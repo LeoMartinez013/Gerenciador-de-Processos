@@ -22,6 +22,17 @@ function adicionarNovoProcesso() {
   let clienteNome = inputCliente.value;
   let cliente = clientes.find(c => c.cliente === clienteNome)
 
+  // Verifique se o campo de entrada não está vazio
+  if (input.value.trim() === '') {
+    input.style.backgroundColor = '#f8bab6'
+    input.placeholder = 'PO obrigatório'
+    setTimeout(function() {
+      input.style.backgroundColor = '#FFFFFF'
+      input.placeholder = 'PO do processo'
+    }, 2000);
+    return
+  }
+
   if (!cliente) {
     cliente = {
       cliente: clienteNome,
@@ -29,7 +40,7 @@ function adicionarNovoProcesso() {
     }
     clientes.push(cliente)
   }
-    cliente.processos.push({
+  cliente.processos.push({
     po: input.value,
     concluido: false,
     modal: "Marítimo",
@@ -63,7 +74,9 @@ function adicionarNovoProcesso() {
   input.value = ''
   localStorage.setItem('clientes', JSON.stringify(clientes))
   mostrarClientes()
+  mostrarClientesConcluidos()
 }
+
 //============================================================
 //  PROCESSOS NÃO EMBARAÇADOS/CONCLUIDOS 
 //============================================================
@@ -215,10 +228,6 @@ function esconderProcessosConcluidos(clienteNome) {
   }
 }
 //===========================================================================
-function concluirProcesso(posicao) {
-  meusProcessos[posicao].concluido = !meusProcessos[posicao].concluido
-  localStorage.setItem('meusProcessos', JSON.stringify(meusProcessos))
-}
 
 function deletarProcesso(clienteNome, posicao) {
   let cliente = clientes.find(c => c.cliente === clienteNome)

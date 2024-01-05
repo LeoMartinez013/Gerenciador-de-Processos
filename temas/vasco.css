@@ -18,6 +18,7 @@
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: 100% 100%;
+    #fa938e
     header {
         color: var(--branco);
         background-color: transparent;
@@ -58,6 +59,9 @@
         background-color: var(--branco);
         color: var(--marinho);
         border-color: var(--branco);
+    }
+    .opcs-baixar:hover, .opcs-baixar:focus {
+        background-color: var(--claro);
     }
     #button-add-processo {
         background-color: var(--forte);
