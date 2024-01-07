@@ -2,34 +2,86 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
+    <link rel="stylesheet" href="config.css">
     <title>Configurações</title>
 </head>
-<body>
+<body id="config" class="geral">
 <header>
-    <nav>
-        <div class="container-abas">
-            <button class="abas-button"></button>
-        </div>
-        <div class="container-abas">
-            <button class="abas-button"></button>
-        </div>
-        <div class="container-abas">
-            <button class="abas-button"></button>
-        </div>
-    </nav>
+    <h1>Configurações</h1>
 </header>
-<main id="aba1" class="abas">
-    
-</main>
-<main id="aba2" class="abas">
+<nav>
+</nav>
+<main>
+    <!--Clientes-->
+    <section id="section-1-1">
+        <p>Gerencie os clientes já registrados</p>
+        
+        <!--lugar que recebe a lista-->
+        <div id="sub-section-1" class="sub-sections">
+            
+            <div id="cliente1" class="clientes">
+                <div>
+                    <input type="checkbox" name="selecionar-$" id="selecionar-${clienteNome}" class="selecoes">
+                </div>
+                <div id="clienteNome-${configs.cliente}" class="clientesNome">
+                ${configs.cliente}
+                </div>
+                <div id="excluir-${clienteNome}" class="excluir">
+                Excluir
+                </div>
+                <div id="configurar-${clienteNome} class="configurar">
+                Configurar
+                </div>
+                <div id="mudarNome-${clienteNome}" class="mudarNome">
+                Mudar nome
+                </div>
+            </div>
+            <div id="${clienteNome}-filiais" style="display: none">
+                <div>
+                    
+                </div>
+            </div>
+            <div id="cliente1-mudarNome" style="display: none">
 
-</main>
-<main id="aba3" class="abas">
-
+            </div>
+            
+        </div>
+        <div id="sub-section-1-2" class="sub-sections">
+            <button id="excluir-selecionados" onclick="excluirSelecionados()">
+                Excluir <span id="cont-selecionados">0</span>Selecionados
+            </button>
+        </div>
+    </section>
+    <!--Criar Cliente-->
+    <section id="section-2">
+        <p>Ou registre um cliente novo</p>
+        <div id="sub-section-2-1">
+            <input type="text" name="input-cliente" id="input-cliente">
+            <button id="button-criar">Criar cliente</button>
+        </div> 
+        <div id="sub-section-2-2">
+            <input type="text" name="" id="filial-1" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-2" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-3" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-4" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-5" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-6" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-7" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-8" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-9" class="filiais" placeholder="Filial">
+            <input type="text" name="" id="filial-10" class="filiais" placeholder="Filial">
+        </div>
+    </section>
 </main>
 <footer>
-
+    <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+    <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
+    <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
 </footer>
 </body>
+<script src="../javascript/mudarTemas.js"></script>
+<script src="../javascript/config.js"></script>
 </html>

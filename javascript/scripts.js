@@ -12,7 +12,9 @@ window.onload = function() {
   console.log('CONCLUÍDOS===================================')
   mostrarClientesConcluidos()
 }
-//  Criação de processos
+//============================================================
+//  CRIAÇÃO DE PROCESSOS
+//============================================================
 function adicionarNovoProcesso() {
   let dataAtual = new Date()
   let year = dataAtual.getFullYear()
@@ -76,12 +78,11 @@ function adicionarNovoProcesso() {
   mostrarClientes()
   mostrarClientesConcluidos()
 }
-
 //============================================================
 //  PROCESSOS NÃO EMBARAÇADOS/CONCLUIDOS 
 //============================================================
 function mostrarClientes() {
-  let novaLi = ''
+  let novaLinha = ''
 
   clientes.forEach((cliente, posicao) => {
     // Verifique se o cliente tem processos
@@ -97,17 +98,17 @@ function mostrarClientes() {
     // Substitua os espaços por sublinhados
     let clienteNomeClasse = cliente.cliente.replace(/ /g, '_')
     console.log(cliente.cliente + ':')
-    novaLi =
-      novaLi +
+    novaLinha =
+      novaLinha +
       `
       <div class="cliente-titulo" onclick="esconderProcessos('${cliente.cliente}')">
         <div id="cliente-nome">${cliente.cliente}</div>
       </div>
       `
-    novaLi = novaLi + `<div class="${clienteNomeClasse} efeito-lista" style="display: none;">` + mostrarProcessos(cliente.cliente) + `</div>`
+    novaLinha = novaLinha + `<div class="${clienteNomeClasse} efeito-lista" style="display: none;">` + mostrarProcessos(cliente.cliente) + `</div>`
   })
   
-  listaCompleta.innerHTML = novaLi;
+  listaCompleta.innerHTML = novaLinha;
 }
 
 function mostrarProcessos(clienteNome) {
@@ -115,7 +116,7 @@ function mostrarProcessos(clienteNome) {
   if (!cliente) return ''
 
   // Substitua os espaços por sublinhados
-  let novaLi = ""
+  let novaLinha = ""
 
   cliente.processos.forEach((item, posicao) => {
     // Verifique se o processo está concluído
@@ -123,14 +124,14 @@ function mostrarProcessos(clienteNome) {
       return; // Continue para o próximo processo se este estiver concluído
     }
 
-    novaLi =
-      novaLi +
+    novaLinha =
+      novaLinha +
       `
       <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../painel/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
         <div class="po c1">${item.po}</div>
         <div class="bl c2"> ${item.bl || 'Vazio'}</div>
         <div class="etapa c3"> ${item.etapa || 'Vazio'}</div>
-        <div class="mesOperacao c4"> ${item.mesOperacao || 'Vazio'}</div>
+        <div class="mesOperacao c4"> ${converterData(item.mesOperacao) || 'Vazio'}</div>
         <div class="c5">
           <img class="icone" src="../assets/trash.png" alt="excluir-processo" onclick="event.stopPropagation(); deletarProcesso('${clienteNome}', ${posicao})">
         </div>
@@ -138,7 +139,7 @@ function mostrarProcessos(clienteNome) {
       `
       console.log(item)
   })
-  return novaLi;
+  return novaLinha;
 }
 function esconderProcessos(clienteNome) {
   let clienteNomeClasse = clienteNome.replace(/ /g, '_');
@@ -156,7 +157,7 @@ function esconderProcessos(clienteNome) {
 //  PROCESSOS EMBARAÇADOS/CONCLUIDOS 
 //============================================================
 function mostrarClientesConcluidos() {
-  let novaLi = ''
+  let novaLinha = ''
 
   clientes.forEach((cliente, posicao) => {
     // Verifique se o cliente tem processos
@@ -171,17 +172,17 @@ function mostrarClientesConcluidos() {
     // Substitua os espaços por sublinhados e adicione um sufixo
     let clienteNomeClasse = cliente.cliente.replace(/ /g, '_') + '_concluido'
     console.log(cliente.cliente + ':')
-    novaLi =
-      novaLi +
+    novaLinha =
+      novaLinha +
       `
       <div class="cliente-titulo" onclick="esconderProcessosConcluidos('${cliente.cliente}')">
         <div id="cliente-nome">${cliente.cliente}</div>
       </div>
       `
-    novaLi = novaLi + `<div class="${clienteNomeClasse}" style="display: none;">` + mostrarProcessosConcluidos(cliente.cliente) + `</div>`
+    novaLinha = novaLinha + `<div class="${clienteNomeClasse}" style="display: none;">` + mostrarProcessosConcluidos(cliente.cliente) + `</div>`
   })
   
-  listaConcluida.innerHTML = novaLi; // Atualize a seção de processos concluídos
+  listaConcluida.innerHTML = novaLinha; // Atualize a seção de processos concluídos
 }
 
 function mostrarProcessosConcluidos(clienteNome) {
@@ -189,7 +190,7 @@ function mostrarProcessosConcluidos(clienteNome) {
   if (!cliente) return ''
 
   // Substitua os espaços por sublinhados
-  let novaLi = ""
+  let novaLinha = ""
   
   cliente.processos.forEach((item, posicao) => {
     // Verifique se o processo está concluído
@@ -197,14 +198,14 @@ function mostrarProcessosConcluidos(clienteNome) {
       return; // Continue para o próximo processo se este não estiver concluído
     }
 
-    novaLi =
-      novaLi +
+    novaLinha =
+      novaLinha +
       `
       <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../painel/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
         <div class="po c1">${item.po}</div>
         <div class="bl c2"> ${item.bl || 'Vazio'}</div>
         <div class="etapa c3"> ${item.etapa || 'Vazio'}</div>
-        <div class="mesOperacao c4"> ${item.mesOperacao || 'Vazio'}</div>
+        <div class="mesOperacao c4"> ${converterData(item.mesOperacao) || 'Vazio'}</div>
         <div class="c5">
           <img class="icone" src="../assets/trash.png" alt="excluir-processo" onclick="event.stopPropagation(); deletarProcesso('${clienteNome}', ${posicao})">
         </div>
@@ -212,7 +213,7 @@ function mostrarProcessosConcluidos(clienteNome) {
       `
       console.log(item)
   })
-  return novaLi;
+  return novaLinha;
 }
 function esconderProcessosConcluidos(clienteNome) {
   // Substitua os espaços por sublinhados e adicione um sufixo
@@ -227,18 +228,26 @@ function esconderProcessosConcluidos(clienteNome) {
     }
   }
 }
-//===========================================================================
+//============================================================
+//  GERAL
+//============================================================
+function converterData(mesOperacao) {
+  let meses = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+  let partes = mesOperacao.split('-');
+  return `${meses[parseInt(partes[1]) - 1]}/${partes[0]}`;
+}
 
 function deletarProcesso(clienteNome, posicao) {
   let cliente = clientes.find(c => c.cliente === clienteNome)
+
   if (cliente) {
-    cliente.processos.splice(posicao, 1)
+    if (confirm(`Você deseja excluir o PO ${cliente.processos[posicao].po} de ${clienteNome}?`) == true) {
+      cliente.processos.splice(posicao, 1)
+    }
   }
 
   localStorage.setItem('clientes', JSON.stringify(clientes))
   mostrarClientes();
   mostrarClientesConcluidos()
 }
-
-
-//========================================================
+//============================================================

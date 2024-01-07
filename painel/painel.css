@@ -20,17 +20,15 @@ body {
 }
 /*CABEÇALHO*/
 header {
-    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 3rem;
-    height: 5.5rem; 
+    height: 4rem; 
     width: 100%;
 }
 header > h1 {
     font-size: 1.5rem;
-    width: auto;
-    margin: 0 auto ;
-    margin-top: 1.2rem;
+    height: auto;
 }
 /*CORPO*/
 main {

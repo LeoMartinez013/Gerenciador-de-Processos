@@ -5,9 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
 }
-a {
-    text-decoration: underline;
-}
 body {
     margin: 0px;
     padding: 0px;
@@ -20,38 +17,85 @@ body {
 }
 /*CABEÇALHO*/
 header {
-    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 20px;
-    height: 90px; 
+    height: 4rem; 
     width: 100%;
 }
 header > h1 {
     font-size: 1.5rem;
-    width: auto;
-    margin: 0 auto ;
-    margin-top: 1.2rem;
+    height: auto;
 }
-#nav {
+nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
 
     width: 100%;
-
-    max-width: 900px;
-    margin: 0 auto;
     height: auto;
 }
 /*CORPO*/
 main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3%;
     width: 100%;
     max-width: 900px;
-    padding: 2% 3%;
+    padding: 2% 2%;
     border-radius: 10px;
     margin: 0.5rem auto;
     flex-grow: 1;
 }
+section {
+    background-color: #f2f2f2;
+    padding: 0.3rem 0.9rem;
+    border-radius: 10px;
+}
+section > p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.clientes {
+    display: grid;
+    grid-template-columns: 10% 30% 20% 20% 20%;
+    text-align: center;
+}
+#excluir-selecionados {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+}
+#excluir-selecionados > span {
+    font-weight: 600;
+    margin: 0 2px;
+}
+.clientes > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid black;
+    font-size: 0.9rem;
+}
+
+#sub-section-2-1 {
+    display: grid;
+    grid-template-columns: 70% 27%;
+    gap: 3%;
+    margin-bottom: 0.5rem;
+}
+
+#sub-section-2-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 3px;
+    
+}
+.filiais {
+    width: 100%;
+}
+
 /*RODAPÉ*/
 footer {
     text-align: center;

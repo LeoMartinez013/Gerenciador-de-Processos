@@ -23,6 +23,10 @@
         background-color: transparent;
         backdrop-filter: blur(20px);
     }
+    nav {
+        background-color: transparent;
+        backdrop-filter: blur(20px);
+    }
     main {
         background-color: var(--cinza);
     }
@@ -43,15 +47,21 @@
     }
 }
 #index {
-    .baixar-importar-buttons, #temas > select {
-        color: var(--amarelo);
+    #container-config {
+        border-color: var(--amarelo);
         background-color: var(--forte);
     }
-    .baixar-importar-buttons:hover {
-        color: var(--amarelo);
-        background-color: var(--buttonsHover);
+    .baixar-importar-buttons, #temas > select {
+        color: var(--branco);
+        background-color: var(--forte);
+        border-color: var(--amarelo);
     }
-    #sessao-baixar {
+    .baixar-importar-buttons:hover {
+        color: var(--branco);
+        background-color: var(--buttonsHover);
+        border-color: var(--amarelo);
+    }
+    #opcs-baixar-container, #sessao-baixar {
         background-color: var(--forte);
     }
     .opcs-baixar {

@@ -4,48 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
     <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
+    <link rel="shortcut icon" href="../assets/icon-menu.png" type="image/x-icon">
     <title>Processos</title>
 </head>
 <body id="index" class="geral">
     <header id="header">
         <h1>Gerenciador de processos</h1>
-        <nav id="nav">
-            <div id="temas">
-                <select id="selecTema" onchange="mudarTema()">
-                    <option value="nada">Temas</option>
-                    <option value="azul">Azul</option>
-                    <option value="verde">Verde</option>
-                    <option value="vasco">Vasco</option>
-                </select>
+    </header>
+    <nav id="nav">
+            <div id="nav-left">
+                <div id="container-config" 
+                    onclick="window.location='../config/config.html'">
+                    <img id="icon-config" src="../assets/icon-config-branco.png" alt="">
+                </div>
+                <div id="temas">
+                    <select id="selecTema" onchange="mudarTema()">
+                        <option value="nada" disabled selected hidden>Temas</option>
+                        <option value="azul">Azul</option>
+                        <option value="verde">Verde</option>
+                        <option value="vasco">Vasco</option>
+                    </select>
+                </div>
+                
             </div>
-            <div id="baixar-importar">
+            <div id="nav-right">
                 <!--BAIXAR-->
-                <div id="sessao-baixar" onmouseleave="setTimeout(() => esconderOpcsBaixar(), 800) ">
+                <div id="sessao-baixar" 
+                    onmouseleave="setTimeout(() => esconderOpcsBaixar(), 1000)"
+                    >
                     <button 
                         id="button-download-processo" 
                         class="baixar-importar-buttons"
                         value="exibir"
-                        onclick="bottaoOpcsBaixar()"
+                        onclick="bottaoOpcsBaixar()" 
                     >
                         Baixar
                     </button>
-                
-                    <!--TXT-->
-                    <button 
-                        id="opc-baixar-txt" 
-                        class="opcs-baixar"   
-                    >
-                        Baixar em .txt
-                    </button>
-                    <!--JSON-->
-                    <button 
-                        id="opc-baixar-json" 
-                        class="opcs-baixar"
-                    >
-                        Baixar em .json
-                    </button>
+                    <div id="opcs-baixar-container">
+                        <!--TXT-->
+                        <button 
+                            id="opc-baixar-txt" 
+                            class="opcs-baixar"   
+                        >
+                            Baixar em .txt
+                        </button>
+                        <!--JSON-->
+                        <button 
+                            id="opc-baixar-json" 
+                            class="opcs-baixar"
+                        >
+                            Baixar em .json
+                        </button>
+                    </div>
                 </div>
 
                 <!--IMPORTAR-->
@@ -59,7 +71,6 @@
                 <button id="button-import-processo" class="baixar-importar-buttons" onclick="document.getElementById('importFile').click()">Importar</button>
             </div>
         </nav>
-    </header>
     <main>  
         <!--LISTAGEM-->
         <div id="container-criar">

@@ -15,6 +15,9 @@
         color: var(--branco);
         background-color: var(--forte);
     }
+    nav {
+        background-color: var(--forte);
+    }
     main {
         background-color: var(--cinza);
     }
@@ -34,6 +37,10 @@
     }
 }
 #index {
+    #container-config {
+        border-color: var(--forte);
+        background-color: var(--forte);
+    }
     .baixar-importar-buttons, #temas > select {
         color: var(--branco);
         background-color: var(--forte);
@@ -42,7 +49,7 @@
         color: var(--branco);
         background-color: var(--buttonsHover);
     }
-    #sessao-baixar {
+    #opcs-baixar-container, #sessao-baixar {
         background-color: var(--forte);
     }
     .opcs-baixar {
