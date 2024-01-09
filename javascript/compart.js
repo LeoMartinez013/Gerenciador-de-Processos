@@ -25,23 +25,39 @@ function bottaoOpcsBaixar() {
 }
 // Baixar como .json
 function baixarClientesJSON() {
+    let dataAtual = new Date()
+    let year = dataAtual.getFullYear()
+    let month = dataAtual.getMonth() + 1
+    let day = dataAtual.getDay()
+    if (day < 10) day = '0' + day
+    if (month < 10) month = '0' + month
+    let dia = `${month}-${month}-${year}`
+
     const data = JSON.stringify(clientes, null, 2);
     const blob = new Blob([data], {type: 'application/json'});
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'clientes.json';
+    link.download = 'clientes-' + dia +'.json';
     link.click();
     URL.revokeObjectURL(url);
 }
 // Baixar como .txt
 function baixarClientesTXT() {
+    let dataAtual = new Date()
+    let year = dataAtual.getFullYear()
+    let month = dataAtual.getMonth() + 1
+    let day = dataAtual.getDay()
+    if (day < 10) day = '0' + day
+    if (month < 10) month = '0' + month
+    let dia = `${month}-${month}-${year}`
+
     const data = JSON.stringify(clientes, null, 2);
     const blob = new Blob([data], {type: 'text/plain'});
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url
-    link.download = 'clientes.txt';
+    link.download = 'clientes-' + dia +'.txt';
     link.click()
     URL.revokeObjectURL(url)
 }

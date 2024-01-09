@@ -1,126 +1,198 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
 }
 body {
-    margin: 0px;
-    padding: 0px;
-    min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
 
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+  display: none;
+  z-index: 900;
+  user-select: none;
 }
 /*CABEÇALHO*/
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem; 
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 100%;
 }
 header > h1 {
-    font-size: 1.5rem;
-    height: auto;
+  font-size: 1.5rem;
+  height: auto;
 }
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 /*CORPO*/
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3%;
-    width: 100%;
-    max-width: 900px;
-    padding: 2% 2%;
-    border-radius: 10px;
-    margin: 0.5rem auto;
-    flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3%;
+  width: 100%;
+  max-width: 900px;
+  padding: 2% 2%;
+  border-radius: 10px;
+  margin: 0.5rem auto;
+  flex-grow: 1;
 }
 section {
-    background-color: #f2f2f2;
-    padding: 0.3rem 0.9rem;
-    border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 0.3rem 0.9rem;
+  border-radius: 10px;
 }
 section > p {
-    text-align: center;
-    margin: 0.5rem 0;
+  text-align: center;
+  margin: 0.5rem 0;
 }
-
+#section-1 {
+  padding-bottom: 1rem;
+}
 .clientes {
-    display: grid;
-    grid-template-columns: 10% 30% 20% 20% 20%;
-    text-align: center;
-}
-#excluir-selecionados {
-    display: flex;
-    flex-direction: row;
-    font-size: 1rem;
-}
-#excluir-selecionados > span {
-    font-weight: 600;
-    margin: 0 2px;
+  display: grid;
+  grid-template-columns: 40% 17% 17% 26%;
+  text-align: center;
+
+  border: 0.1rem solid black;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 .clientes > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0.1rem solid black;
-    font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+.clientesNome {
+  overflow-x: hidden;
+}
+.excluir {
+  border-left: 0.1rem solid black;
+  border-right: 0.1rem solid black;
+  cursor: pointer;
+  user-select: none;
+}
+.mudarFiliais {
+  border-right: 0.1rem solid black;
+  cursor: pointer;
+  user-select: none;
+}
+.mudarNome {
+  cursor: pointer;
+}
+.cliente-filiais {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+
+  background-color: blueviolet;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+.cliente-filiais > input,
+.cliente-filiais > button {
+  width: 10rem;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+.caixa-mudarNome {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  z-index: 901;
+}
+.caixa-mudarNome > p {
+  text-align: center;
+}
+.mudarNome-input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+#mudarNome-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+#mudarNome-buttons > button {
+  width: 7rem;
 }
 
 #sub-section-2-1 {
-    display: grid;
-    grid-template-columns: 70% 27%;
-    gap: 3%;
-    margin-bottom: 0.5rem;
+  display: grid;
+  grid-template-columns: 70% 27%;
+  gap: 3%;
+  margin-bottom: 0.5rem;
 }
-
+#sub-section-2-1 > input {
+  padding-left: 5px;
+}
 #sub-section-2-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: 3px;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 3px;
+}
+#sub-section-2-2 > input {
+  padding-left: 5px;
 }
 .filiais {
-    width: 100%;
+  width: 100%;
 }
 
 /*RODAPÉ*/
 footer {
-    text-align: center;
-    height: 5rem;
-    width: 100%;
+  text-align: center;
+  height: 5rem;
+  width: 100%;
 
-    padding: 1.2rem 0;
-    margin: 1rem 0 0 0;
+  padding: 1.2rem 0;
+  margin: 1rem 0 0 0;
 }
 footer > p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
-@media screen and (max-width: 900px){
-    main {
-        border-radius: 0;
-    }
+@media screen and (max-width: 900px) {
+  main {
+    border-radius: 0;
+  }
 }
-@media screen and (max-width: 600px){
-
+@media screen and (max-width: 600px) {
 }
-@media screen and (max-width: 400px){
-    header {
-        height: 4.6rem;
-    }
-    header > h1 {
-        font-size: 1rem;
-    }
+@media screen and (max-width: 400px) {
+  header {
+    height: 4.6rem;
+  }
+  header > h1 {
+    font-size: 1rem;
+  }
 }

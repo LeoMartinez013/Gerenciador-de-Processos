@@ -10,7 +10,74 @@ let processo
 if (cliente) {
   processo = cliente.processos[posicao]
 }
+window.onload = function() {
+  if (processo) {
+    document.getElementById(`po`).value = processo.po
+    const insOP = document.getElementById('recebCliente')
+    insOP.innerText = clienteNome
+    document.getElementById(`modal`).value = processo.modal
+    document.getElementById(`filial`).value = processo.filial
+    baixarFiliais()
+    document.getElementById(`quantidade`).value = processo.quantidade
+    document.getElementById(`produto`).value = processo.produto
+    document.getElementById(`etb`).value = processo.etb
+    document.getElementById(`navio`).value = processo.navio
+    document.getElementById(`container`).value = processo.container
+    document.getElementById(`bl`).value = processo.bl
+    document.getElementById(`li`).value = processo.li
+    document.getElementById(`lcpo`).value = processo.lcpo
+    document.getElementById(`descarga`).value = processo.descarga
+    document.getElementById(`apresDcts`).value = processo.apresDcts
+    document.getElementById(`inspecaoMAPA`).value = processo.inspecaoMAPA
+    document.getElementById(`deferimento`).value = processo.deferimento
+    document.getElementById(`registroDI`).value = processo.registroDI
+    document.getElementById(`numDI`).value = processo.numDI
+    document.getElementById(`desembaraco`).value = processo.desembaraco
+    document.getElementById(`envNFs`).value = processo.envNFs
+    document.getElementById(`dctsTransporte`).value = processo.dctsTransporte
+    document.getElementById(`mesOperacao`).value = processo.mesOperacao
+    document.getElementById(`etapa`).value = processo.etapa
+    
+    for (let i = 0; i < 30; i++) {
+      if(processo.historico[i]){
+        // Supondo que a data e o texto estejam separados por um espaço
+        let parts = processo.historico[i].split(" ")
+        
+        // Encontra os inputs correspondentes
+        let dateInput = document.getElementById('dateH' + (i + 1))
+        let textInput = document.getElementById('textH' + (i + 1))
 
+        // Preenche os inputs com os valores correspondentes
+        dateInput.value = parts[0]
+        textInput.value = parts.slice(1).join(' ')
+      }
+    }
+    
+  }
+  const inputs = document.getElementsByTagName('input')
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value !== "" && inputs[i].value !== "undefined") {
+      inputs[i].classList.add('preenchido')
+    } else {
+      inputs[i].classList.add('nao_preenchido')
+    }
+  }
+}
+function baixarFiliais() {
+  let filiais = JSON.parse(localStorage.getItem('configs'))
+  let clienteAtual = filiais.clientes.find(c => c.cliente === cliente.cliente)
+  let linhaFiliais = ''
+  clienteAtual.filiais.forEach((filial, posicao) => {
+    if (!filial == ''){
+      linhaFiliais =
+      linhaFiliais +
+      `
+      <option value="${filial}">${filial}</option>
+      `
+    }
+  })
+  document.querySelector('#filial').innerHTML = linhaFiliais
+}
 function verHists1() {
   let caixa1 = document.getElementById('caixa3')
   let caixa2 = document.getElementById('caixa4')
@@ -111,64 +178,7 @@ function salvarConfiguracoes() {
 }
 
 // Função para preencher os campos de entrada com os valores do processo quando a página é carregada
-window.onload = function() {
-  if (processo) {
-    document.getElementById(`po`).value = processo.po
-    const insOP = document.getElementById('recebCliente')
-    insOP.innerText = clienteNome
-    document.getElementById(`modal`).value = processo.modal
-    document.getElementById(`filial`).value = processo.filial
-    document.getElementById(`quantidade`).value = processo.quantidade
-    document.getElementById(`produto`).value = processo.produto
-    document.getElementById(`etb`).value = processo.etb
-    document.getElementById(`navio`).value = processo.navio
-    document.getElementById(`container`).value = processo.container
-    document.getElementById(`bl`).value = processo.bl
-    document.getElementById(`li`).value = processo.li
-    document.getElementById(`lcpo`).value = processo.lcpo
-    document.getElementById(`descarga`).value = processo.descarga
-    document.getElementById(`apresDcts`).value = processo.apresDcts
-    document.getElementById(`inspecaoMAPA`).value = processo.inspecaoMAPA
-    document.getElementById(`deferimento`).value = processo.deferimento
-    document.getElementById(`registroDI`).value = processo.registroDI
-    document.getElementById(`numDI`).value = processo.numDI
-    document.getElementById(`desembaraco`).value = processo.desembaraco
-    document.getElementById(`envNFs`).value = processo.envNFs
-    document.getElementById(`dctsTransporte`).value = processo.dctsTransporte
-    document.getElementById(`mesOperacao`).value = processo.mesOperacao
-    document.getElementById(`etapa`).value = processo.etapa
-    
-    for (let i = 0; i < 30; i++) {
-      if(processo.historico[i]){
-        // Supondo que a data e o texto estejam separados por um espaço
-        let parts = processo.historico[i].split(" ")
-        
-        // Encontra os inputs correspondentes
-        let dateInput = document.getElementById('dateH' + (i + 1))
-        let textInput = document.getElementById('textH' + (i + 1))
 
-        // Preenche os inputs com os valores correspondentes
-        dateInput.value = parts[0]
-        textInput.value = parts.slice(1).join(' ')
-      }
-    }
-    
-  }
-  const inputs = document.getElementsByTagName('input')
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value !== "" && inputs[i].value !== "undefined") {
-      inputs[i].classList.add('preenchido')
-    } else {
-      inputs[i].classList.add('nao_preenchido')
-    }
-  }
-  //  preenche os valores vazios por "vazio"
-  /*for (let prop in processo) {
-    if (processo[prop] === "" || processo[prop] === "undefined") {
-      processo[prop] = "vazio"
-    }
-  }*/
-}
 
 // Função para adicionar a posição ao parâmetro de consulta da URL antes da página ser descarregada
 window.onbeforeunload = function() {

@@ -7,6 +7,7 @@ var clientes = [];
 
 window.onload = function() {
   clientes = JSON.parse(localStorage.getItem('clientes')) || [];
+  baixarOptionsClientes()
   console.log('NÃO CONCLUÍDOS===================================')
   mostrarClientes()
   console.log('CONCLUÍDOS===================================')
@@ -15,6 +16,18 @@ window.onload = function() {
 //============================================================
 //  CRIAÇÃO DE PROCESSOS
 //============================================================
+function baixarOptionsClientes() {
+  let configs = JSON.parse(localStorage.getItem('configs'));
+  let options = ''
+  configs.clientes.forEach((cliente, posicao) => {
+    options =
+      options +
+      `
+      <option value="${cliente.cliente}">${cliente.cliente}</option>
+      `
+  })
+  inputCliente.innerHTML = options
+}
 function adicionarNovoProcesso() {
   let dataAtual = new Date()
   let year = dataAtual.getFullYear()
@@ -189,7 +202,6 @@ function mostrarProcessosConcluidos(clienteNome) {
   let cliente = clientes.find(c => c.cliente === clienteNome)
   if (!cliente) return ''
 
-  // Substitua os espaços por sublinhados
   let novaLinha = ""
   
   cliente.processos.forEach((item, posicao) => {

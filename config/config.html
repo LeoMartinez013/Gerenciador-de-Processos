@@ -9,6 +9,7 @@
     <title>Configurações</title>
 </head>
 <body id="config" class="geral">
+<div id="overlay" class="overlay"></div>
 <header>
     <h1>Configurações</h1>
 </header>
@@ -16,63 +17,31 @@
 </nav>
 <main>
     <!--Clientes-->
-    <section id="section-1-1">
+    <section id="section-1">
         <p>Gerencie os clientes já registrados</p>
-        
-        <!--lugar que recebe a lista-->
-        <div id="sub-section-1" class="sub-sections">
-            
-            <div id="cliente1" class="clientes">
-                <div>
-                    <input type="checkbox" name="selecionar-$" id="selecionar-${clienteNome}" class="selecoes">
-                </div>
-                <div id="clienteNome-${configs.cliente}" class="clientesNome">
-                ${configs.cliente}
-                </div>
-                <div id="excluir-${clienteNome}" class="excluir">
-                Excluir
-                </div>
-                <div id="configurar-${clienteNome} class="configurar">
-                Configurar
-                </div>
-                <div id="mudarNome-${clienteNome}" class="mudarNome">
-                Mudar nome
-                </div>
-            </div>
-            <div id="${clienteNome}-filiais" style="display: none">
-                <div>
-                    
-                </div>
-            </div>
-            <div id="cliente1-mudarNome" style="display: none">
-
-            </div>
-            
-        </div>
-        <div id="sub-section-1-2" class="sub-sections">
-            <button id="excluir-selecionados" onclick="excluirSelecionados()">
-                Excluir <span id="cont-selecionados">0</span>Selecionados
-            </button>
+        <div id="sub-section-1-1" class="sub-sections">
+            <!--lugar que recebe a lista-->
         </div>
     </section>
     <!--Criar Cliente-->
     <section id="section-2">
         <p>Ou registre um cliente novo</p>
         <div id="sub-section-2-1">
-            <input type="text" name="input-cliente" id="input-cliente">
-            <button id="button-criar">Criar cliente</button>
+            <input type="text" name="input-cliente" id="input-cliente" placeholder="Nome do cliente">
+            <button id="button-criar" onclick="adicionarNovoCliente()">Criar cliente</button>
         </div> 
         <div id="sub-section-2-2">
-            <input type="text" name="" id="filial-1" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-2" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-3" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-4" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-5" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-6" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-7" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-8" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-9" class="filiais" placeholder="Filial">
-            <input type="text" name="" id="filial-10" class="filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-0" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-1" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-2" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-3" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-4" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-5" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-6" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-7" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-8" class="novas-filiais" placeholder="Filial">
+            <input type="text" value="" id="nova-filial-9" class="novas-filiais" placeholder="Filial">
+            
         </div>
     </section>
 </main>
