@@ -13,21 +13,29 @@ window.onload = function() {
   console.log('CONCLUÍDOS===================================')
   mostrarClientesConcluidos()
 }
-//============================================================
-//  CRIAÇÃO DE PROCESSOS
-//============================================================
+
 function baixarOptionsClientes() {
   let configs = JSON.parse(localStorage.getItem('configs'));
   let options = ''
+  let cont = 0
+  if ( configs.clientes == '') {
+    console.log('Sem clientes registrados')
+    options = options +  `
+      <option value="nada" disabled selected hidden>Sem clientes registrados</option>`
+  }
   configs.clientes.forEach((cliente, posicao) => {
     options =
       options +
       `
       <option value="${cliente.cliente}">${cliente.cliente}</option>
       `
+      
   })
   inputCliente.innerHTML = options
 }
+//============================================================
+//  CRIAÇÃO DE PROCESSOS
+//============================================================
 function adicionarNovoProcesso() {
   let dataAtual = new Date()
   let year = dataAtual.getFullYear()
@@ -38,12 +46,14 @@ function adicionarNovoProcesso() {
   let cliente = clientes.find(c => c.cliente === clienteNome)
 
   // Verifique se o campo de entrada não está vazio
-  if (input.value.trim() === '') {
+  if (input.value.trim() === '' || inputCliente.value.trim() === '') {
     input.style.backgroundColor = '#f8bab6'
     input.placeholder = 'PO obrigatório'
+    inputCliente.style.backgroundColor = '#f8bab6'
     setTimeout(function() {
       input.style.backgroundColor = '#FFFFFF'
       input.placeholder = 'PO do processo'
+      inputCliente.style.backgroundColor = '#FFFFFF'
     }, 2000);
     return
   }

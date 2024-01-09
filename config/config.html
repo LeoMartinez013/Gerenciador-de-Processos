@@ -14,7 +14,10 @@
     <h1>Configurações</h1>
 </header>
 <nav>
-</nav>
+    <div id="voltar" onclick="window.location='../principal/menu.html'">
+        <img src="../assets/icon-voltar.png" alt="voltar">
+    </div>
+</nav> 
 <main>
     <!--Clientes-->
     <section id="section-1">
@@ -30,6 +33,7 @@
             <input type="text" name="input-cliente" id="input-cliente" placeholder="Nome do cliente">
             <button id="button-criar" onclick="adicionarNovoCliente()">Criar cliente</button>
         </div> 
+        
         <div id="sub-section-2-2">
             <input type="text" value="" id="nova-filial-0" class="novas-filiais" placeholder="Filial">
             <input type="text" value="" id="nova-filial-1" class="novas-filiais" placeholder="Filial">
@@ -41,7 +45,6 @@
             <input type="text" value="" id="nova-filial-7" class="novas-filiais" placeholder="Filial">
             <input type="text" value="" id="nova-filial-8" class="novas-filiais" placeholder="Filial">
             <input type="text" value="" id="nova-filial-9" class="novas-filiais" placeholder="Filial">
-            
         </div>
     </section>
 </main>

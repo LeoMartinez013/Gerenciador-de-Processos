@@ -10,58 +10,59 @@ window.onload = function() {
 }
 
 function mostrarClientes() {
-    if (!configs || !configs.clientes) {
-      console.erro('configs ou configs.clientes está indefinido!' + configs.clientes + configs);
-      return;
-    }
-    let novaLinha = ''
-    console.log('Listando clientes:')
+  let novaLinha = ''
+  console.log('Listando clientes:')
 
-    configs.clientes.forEach((cliente, posicao) => {
-      let clienteNome = cliente.cliente.replace(/ /g, '-')
-      console.log(' - ' + cliente.cliente)
-      novaLinha =
-        novaLinha +
-        `
-        <div id="cliente-${clienteNome}" class="clientes">
-          <!--<div>
-            <input type="checkbox" name="selecionar-${clienteNome}" id="selecionar-${clienteNome}" class="selecoes">
-          </div>-->
-          <div id="clienteNome-${clienteNome}" class="clientesNome">
-            ${cliente.cliente}
-          </div>
-          <div id="excluir-${clienteNome}" class="excluir" onclick="excluirCliente('${cliente.cliente}', ${posicao})">
-            Excluir
-          </div>
-          <div id="mudarFiliais-${clienteNome}" class="mudarFiliais" onclick="esconderFiliais('${clienteNome}')">
-            Filiais
-          </div>
-          <div id="mudarNome-${clienteNome}" class="mudarNome" onclick="esconderMudarNome('${clienteNome}')">
-            Mudar nome
-          </div>
+  configs.clientes.forEach((cliente, posicao) => {
+    let clienteNome = cliente.cliente.replace(/ /g, '-')
+    console.log(' - ' + cliente.cliente)
+    novaLinha =
+      novaLinha +
+      `
+      <div id="cliente-${clienteNome}" class="clientes">
+        <!--<div>
+          <input type="checkbox" name="selecionar-${clienteNome}" id="selecionar-${clienteNome}" class="selecoes">
+        </div>-->
+        <div id="clienteNome-${clienteNome}" class="clientesNome">
+          ${cliente.cliente}
         </div>
-        <div id="${clienteNome}-filiais" class="cliente-filiais" style="display: none">
-          ` + mostrarFiliais(cliente.cliente) + `
-          <button id="button-atualizarCliente-${clienteNome}" 
-                  class="buttons-atualizarCliente"
-                  onclick=""
-                  style="display: none">Salvar alterações</button>
+        <div id="excluir-${clienteNome}" class="excluir" onclick="excluirCliente('${cliente.cliente}', ${posicao})">
+          Excluir
         </div>
-        <div id="caixa-mudarNome-${clienteNome}" class="caixa-mudarNome" style="display: none;">
-          <p>Insira o novo nome do cliente "${cliente.cliente}"</p>
-          <input type="text" id="mudarNome-input-${clienteNome}" class="mudarNome-input">
-          <div id="mudarNome-buttons">
-            <button id="mudarNome-salvar" onclick="salvarNovoNome('${cliente.cliente}', '${clienteNome}', ${posicao})">Salvar</button>
-            <button id="mudarNome-cancelar" onclick="esconderMudarNome('${clienteNome}')">Cancelar</button>
-          </div>
+        <div id="mudarFiliais-${clienteNome}" class="mudarFiliais" onclick="esconderFiliais('${clienteNome}')">
+          Filiais
         </div>
-        `
-    }) 
+        <div id="mudarNome-${clienteNome}" class="mudarNome" onclick="esconderMudarNome('${clienteNome}')">
+          Mudar nome
+        </div>
+      </div>
+      <div id="${clienteNome}-filiais" class="cliente-filiais" style="display: none">
+        ` + mostrarFiliais(cliente.cliente) + `
+        <button 
+          id="button-atualizarCliente-${clienteNome}" 
+          class="buttons-atualizarCliente"
+          style="display: none"
+          onclick="atualizarFiliais('${cliente.cliente}', '${clienteNome}')">
+          
+          Salvar alterações
+        </button>
+      </div>
+      <div id="caixa-mudarNome-${clienteNome}" class="caixa-mudarNome" style="display: none;">
+        <p>Insira o novo nome do cliente "${cliente.cliente}"</p>
+        <input type="text" id="mudarNome-input-${clienteNome}" class="mudarNome-input" placeholder="${cliente.cliente}" value="${cliente.cliente}">
+        <div id="mudarNome-buttons">
+          <button id="mudarNome-salvar" onclick="atualizarNome('${cliente.cliente}', '${clienteNome}')">Salvar</button>
+          <button id="mudarNome-cancelar" onclick="esconderMudarNome('${clienteNome}')">Cancelar</button>
+        </div>
+      </div>
+      `
+  }) 
 
-    listaClientes.innerHTML = novaLinha
+  listaClientes.innerHTML = novaLinha
 }
-function mostrarFiliais(clienteNome) {
-  let cliente = configs.clientes.find(c => c.cliente === clienteNome)
+function mostrarFiliais(clienteReceb) {
+  let cliente = configs.clientes.find(c => c.cliente === clienteReceb)
+  let clienteNome = cliente.cliente.replace(/ /g, '-')
   let linhaFiliais = ''
   let contFiliais = 0
   cliente.filiais.forEach((filial, posicao) => {
@@ -71,8 +72,7 @@ function mostrarFiliais(clienteNome) {
       <input type="text" 
         value="${filial}" 
         id="${clienteNome}-filial-${contFiliais+1}-input" 
-        class="filiais-input" 
-        placeholder="${filial}">
+        class="filiais-input">
       `
     contFiliais++
   })
@@ -106,17 +106,36 @@ function esconderMudarNome(clienteNome) {
     overlay.style.display = 'none'; 
   }
 }
-
-function salvarAlterações(clienteReceb, clienteNome, posicao) {
-  const novoNome = document.querySelector('#mudarNome-input-' + clienteNome)
+function atualizarFiliais(clienteReceb, clienteNome) {
   let cliente = configs.clientes.find(c => c.cliente === clienteReceb)
-  
+  let novaFilial
   if (cliente) {
-    cliente = novoNome
+    console.log('Atualizando filiais de ' + cliente.cliente)
+    for (let i = 0; i < cliente.filiais.length; i++) {
+       novaFilial = document.querySelector('#' + clienteNome + '-filial-' + (i+1) + '-input').value
+       console.log(novaFilial)
+        cliente.filiais[i] = novaFilial
+        console.log('Atualizando filial ' + (i+1) + ' para ' + novaFilial)
+    }
   }
   localStorage.setItem('configs', JSON.stringify(configs))
   mostrarClientes();
 }
+
+function atualizarNome(clienteReceb, clienteNome) {
+  let cliente = configs.clientes.find(c => c.cliente === clienteReceb)
+  if (cliente) {
+    let novoNome = document.querySelector('#mudarNome-input-' + clienteNome).value
+    if (novoNome && novoNome.trim() !== '') {
+      console.log('Atualizando nome do cliente ' + cliente.cliente + ' para ' + novoNome)
+      cliente.cliente = novoNome
+    }
+  }
+  esconderMudarNome(clienteNome)
+  localStorage.setItem('configs', JSON.stringify(configs))
+  mostrarClientes();
+}
+
 
 function excluirCliente(clienteNome, posicao) {
   let cliente = configs.clientes.find(c => c.cliente === clienteNome)

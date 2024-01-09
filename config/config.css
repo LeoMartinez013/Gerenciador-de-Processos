@@ -42,9 +42,24 @@ header > h1 {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: left;
 
   width: 100%;
+  height: auto;
+  padding: 0.2rem 10%;
+}
+#voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 2rem;
+  border: 0.15rem solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#voltar > img{
+  width: 25px;
   height: auto;
 }
 /*CORPO*/
@@ -56,7 +71,7 @@ main {
   max-width: 900px;
   padding: 2% 2%;
   border-radius: 10px;
-  margin: 0.5rem auto;
+  margin:  0.5rem auto;
   flex-grow: 1;
 }
 section {
@@ -108,7 +123,6 @@ section > p {
   justify-content: center;
   gap: 2px;
 
-  background-color: blueviolet;
   border-radius: 0 0 5px 5px;
   padding: 5px 0;
   margin-bottom: 10px;
@@ -127,7 +141,7 @@ section > p {
   transform: translate(-50%, -50%);
   width: 25rem;
   padding: 20px;
-  border: 1px solid black;
+  border: 0.2rem solid;
   border-radius: 10px;
   background-color: #f2f2f2;
   z-index: 901;
@@ -137,15 +151,19 @@ section > p {
 }
 .mudarNome-input {
   display: block;
-  width: 100%;
-  margin: 10px 0;
+  width: 80%;
+  padding-left: 2rem;
+  margin: 10px auto;
 }
 #mudarNome-buttons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
 }
 #mudarNome-buttons > button {
   width: 7rem;
+  font-weight: 500;
 }
 
 #sub-section-2-1 {
@@ -187,6 +205,9 @@ footer > p {
   }
 }
 @media screen and (max-width: 600px) {
+  nav {
+    padding: 0.2rem 5%;
+  }
 }
 @media screen and (max-width: 400px) {
   header {

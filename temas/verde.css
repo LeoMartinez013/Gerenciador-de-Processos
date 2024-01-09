@@ -125,6 +125,38 @@
         background-color: var(--buttonsHover);
     }
 }
+#config {
+    #voltar {
+        background-color: var(--forte);
+        border-color: var(--branco);
+    }
+    .cliente-filiais {
+        background-color: var(--forte);
+    }
+    #mudarNome-cancelar,
+    #mudarNome-salvar {
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #mudarNome-cancelar {
+        background-color: #ec5555;
+        border: 1px solid #7c0000;
+    }
+    #mudarNome-cancelar:hover {
+        background-color: #f10e0e;
+    }
+    #mudarNome-salvar {
+        background-color: #55ec61;
+        border: 1px solid #007009;
+    }
+    #mudarNome-salvar:hover {   
+        background-color: #0edb20;
+    }
+    .caixa-mudarNome {
+        background-color: var(--branco);
+        border-color: var(--forte);
+    }
+}
 #ajuda {
     section {
         border-color: var(--marinho);
