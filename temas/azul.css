@@ -75,7 +75,7 @@
     .processo {
         background-color: var(--branco);
     }
-    #sec-processos-concluidos > h3 {
+    h3 {
         color: var(--branco);
         background-color: var(--forte);
     }
