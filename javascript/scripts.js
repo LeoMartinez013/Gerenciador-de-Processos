@@ -3,6 +3,7 @@ const input = document.querySelector('#input-processo')
 const button = document.querySelector('#button-add-processo')
 const listaCompleta = document.querySelector('#list-processos')
 const listaConcluida = document.querySelector('#list-processos-concluidos')
+var configs = JSON.parse(localStorage.getItem('configs')) || [];
 var clientes = [];
 
 window.onload = function() {
@@ -15,9 +16,7 @@ window.onload = function() {
 }
 
 function baixarOptionsClientes() {
-  let configs = JSON.parse(localStorage.getItem('configs'));
   let options = ''
-  let cont = 0
   if ( configs.clientes == '') {
     console.log('Sem clientes registrados')
     options = options +  `
@@ -29,7 +28,6 @@ function baixarOptionsClientes() {
       `
       <option value="${cliente.cliente}">${cliente.cliente}</option>
       `
-      
   })
   inputCliente.innerHTML = options
 }
@@ -54,7 +52,7 @@ function adicionarNovoProcesso() {
       input.style.backgroundColor = '#FFFFFF'
       input.placeholder = 'PO do processo'
       inputCliente.style.backgroundColor = '#FFFFFF'
-    }, 2000);
+    }, 2000)
     return
   }
 
@@ -88,7 +86,7 @@ function adicionarNovoProcesso() {
     envNFs: "",
     dctsTransporte: "",
     mesOperacao: mesAtual, // Mês atual
-    etapa: "AG. Atração",
+    etapa: "",
     historico: [
       "", "", "", "", "", "", "", "", "", "", 
       "", "", "", "", "",   "", "", "", "", "", 
@@ -153,7 +151,7 @@ function mostrarProcessos(clienteNome) {
       <div class="processo ${item.concluido && 'concluido' || 'nao_concluido'}" onclick="window.location='../painel/painel.html?posicao=${posicao}&cliente=${clienteNome}'">
         <div class="po c1">${item.po}</div>
         <div class="bl c2"> ${item.bl || 'Vazio'}</div>
-        <div class="etapa c3"> ${item.etapa || 'Vazio'}</div>
+        <div class="etapa c3"> ${item.etapa || 'Novo'}</div>
         <div class="mesOperacao c4"> ${converterData(item.mesOperacao) || 'Vazio'}</div>
         <div class="c5">
           <img class="icone" src="../assets/trash.png" alt="excluir-processo" onclick="event.stopPropagation(); deletarProcesso('${clienteNome}', ${posicao})">
@@ -263,7 +261,11 @@ function deletarProcesso(clienteNome, posicao) {
   let cliente = clientes.find(c => c.cliente === clienteNome)
 
   if (cliente) {
-    if (confirm(`Você deseja excluir o PO ${cliente.processos[posicao].po} de ${clienteNome}?`) == true) {
+    if (configs.avisos) {
+      if (confirm(`Você deseja excluir o PO ${cliente.processos[posicao].po} de ${clienteNome}?`) == true) {
+        cliente.processos.splice(posicao, 1)
+      }
+    } else {
       cliente.processos.splice(posicao, 1)
     }
   }

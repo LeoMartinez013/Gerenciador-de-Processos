@@ -46,7 +46,7 @@ nav {
 
   width: 100%;
   height: auto;
-  padding: 0.2rem 10%;
+  padding: 0.2rem 5%;
 }
 #voltar {
   display: flex;
@@ -63,10 +63,16 @@ nav {
   height: auto;
 }
 /*CORPO*/
+
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 3%;
+  /*grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));*/
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto minmax(10rem, 1fr);
+  grid-template-areas: 
+    "section3 section2"
+    "section1 section1";
+  gap: 2%;
   width: 100%;
   max-width: 900px;
   padding: 2% 2%;
@@ -74,18 +80,24 @@ main {
   margin:  0.5rem auto;
   flex-grow: 1;
 }
+#section-1 {
+  grid-area: section1;
+}
+#section-2 {
+  grid-area: section2;
+}
+#section-3 {
+  grid-area: section3;
+}
 section {
   background-color: #f2f2f2;
-  padding: 0.3rem 0.9rem;
+  padding: 0.5rem 0.9rem 0.9rem 0.9rem;
   border-radius: 10px;
 }
 section > p {
   text-align: center;
-  margin: 0.5rem 0;
 }
-#section-1 {
-  padding-bottom: 1rem;
-}
+
 .clientes {
   display: grid;
   grid-template-columns: 40% 17% 17% 26%;
@@ -165,7 +177,9 @@ section > p {
   width: 7rem;
   font-weight: 500;
 }
-
+#section-2 > p {
+  margin-bottom: 0.3rem;
+}
 #sub-section-2-1 {
   display: grid;
   grid-template-columns: 70% 27%;
@@ -174,6 +188,16 @@ section > p {
 }
 #sub-section-2-1 > input {
   padding-left: 5px;
+  font-size: 0.9rem;
+  border: 0.1rem solid black;
+  border-radius: 5px;
+}
+#button-criar {
+  font-weight: 600;
+  padding: 0.2rem;
+  border: 0.1rem solid;
+  border-radius: 5px;
+  cursor: pointer;
 }
 #sub-section-2-2 {
   display: grid;
@@ -182,11 +206,71 @@ section > p {
 }
 #sub-section-2-2 > input {
   padding-left: 5px;
+  font-size: 0.9rem;
+  border: 0.1rem solid black;
+  border-radius: 5px;
 }
 .filiais {
   width: 100%;
 }
+#sub-section-3-1 {
+  margin: 0.2rem 0;    
+}
+#sub-section-3-1 > div {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  font-size: 1rem;
+}
+#config-avisos > label {
+  text-align: left;
+}
+#receber-avisos {
+  height: 1.2rem;
+  width: 1.2rem;
+  justify-self: left;
+}
+#cont-add-etapa {
+  display: grid;
+  grid-template-columns: 60% 38%;
+  gap: 2%;
+  margin: 0.4rem 0 0.5rem 0;
+}
+#input-etapa {
+  border: 0.1rem solid black;
+  height: 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+#button-etapa {
+  font-weight: 600;
+  height: 1.5rem;
+  border: 0.1rem solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cont-etapas {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr;
 
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  border: 0.1rem solid #000000;
+  border-radius: 5px;
+  margin-bottom: 0.2rem;
+}
+.etapa {
+  text-align: center;
+}
+.cont-excluir-etapa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.excluir-etapa {
+  height: 1.1rem;
+  width: auto;
+}
 /*RODAPÉ*/
 footer {
   text-align: center;
@@ -202,6 +286,18 @@ footer > p {
 @media screen and (max-width: 900px) {
   main {
     border-radius: 0;
+  }
+}
+@media screen and (max-width: 750px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+      
+      "section3"
+      "section2"
+      "section1"
+      ;
   }
 }
 @media screen and (max-width: 600px) {

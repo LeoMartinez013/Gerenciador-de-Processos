@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
-    <link rel="stylesheet" href="config.css">
-    <title>Configurações</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
+  <link rel="stylesheet" href="config.css">
+  <title>Configurações</title>
 </head>
+
 <body id="config" class="geral">
-<div id="overlay" class="overlay"></div>
-<header>
+  <div id="overlay" class="overlay"></div>
+  <header>
     <h1>Configurações</h1>
-</header>
-<nav>
+  </header>
+  <nav>
     <div id="voltar" onclick="window.location='../principal/menu.html'">
-        <img src="../assets/icon-voltar.png" alt="voltar">
+      <img src="../assets/icon-voltar.png" alt="voltar">
     </div>
-</nav> 
-<main>
+  </nav>
+  <main>
     <!--Clientes-->
     <section id="section-1">
-        <p>Gerencie os clientes já registrados</p>
-        <div id="sub-section-1-1" class="sub-sections">
-            <!--lugar que recebe a lista-->
-        </div>
+      <p>Gerencie os clientes já registrados</p>
+      <div id="sub-section-1-1" class="sub-sections">
+        <!--lugar que recebe a lista-->
+      </div>
     </section>
     <!--Criar Cliente-->
     <section id="section-2">
-        <p>Ou registre um cliente novo</p>
-        <div id="sub-section-2-1">
-            <input type="text" name="input-cliente" id="input-cliente" placeholder="Nome do cliente">
-            <button id="button-criar" onclick="adicionarNovoCliente()">Criar cliente</button>
-        </div> 
-        
-        <div id="sub-section-2-2">
-            <input type="text" value="" id="nova-filial-0" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-1" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-2" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-3" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-4" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-5" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-6" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-7" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-8" class="novas-filiais" placeholder="Filial">
-            <input type="text" value="" id="nova-filial-9" class="novas-filiais" placeholder="Filial">
-        </div>
+      <p>Registre um cliente novo</p>
+      <div id="sub-section-2-1">
+        <input type="text" name="input-cliente" id="input-cliente" placeholder="Nome do cliente">
+        <button id="button-criar" onclick="adicionarNovoCliente()">Criar cliente</button>
+      </div>
+
+      <div id="sub-section-2-2">
+        <input type="text" value="" id="nova-filial-0" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-1" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-2" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-3" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-4" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-5" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-6" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-7" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-8" class="novas-filiais" placeholder="Filial">
+        <input type="text" value="" id="nova-filial-9" class="novas-filiais" placeholder="Filial">
+      </div>
     </section>
-</main>
-<footer>
+    <section id="section-3">
+      <p>Defina suas preferências gerais</p>
+      <div id="sub-section-3-1">
+        <div id="config-avisos">
+          <label for="">Mostrar avisos de exclusão?</label>
+          <input type="checkbox" name="receber-avisos" id="receber-avisos" class="checkbox" onclick="verifReceberAvisos(2)">
+        </div>
+      </div>
+      <div id="sub-section-3-2">
+        <div id="cont-add-etapa">
+          <input type="text" name="input-etapa" value="" id="input-etapa">
+          <button id="button-etapa" onchange="criarEtapa()">Adicionar etapa</button>
+        </div>
+        <div id="mostrar-etapas">
+          
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
     <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-    <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
-    <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
-</footer>
+    <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos"
+        target="_blank">Contato</a></p>
+    <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez
+        Almeida</a></p>
+  </footer>
 </body>
 <script src="../javascript/mudarTemas.js"></script>
 <script src="../javascript/config.js"></script>
+
 </html>

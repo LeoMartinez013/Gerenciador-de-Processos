@@ -1,14 +1,28 @@
 const listaClientes = document.querySelector('#sub-section-1-1')
 const inputAddCliente  = document.querySelector('#input-cliente')
-var configs = { clientes: [] };
+const checkbox = document.querySelector('#receber-avisos')
+const inputAddEtapa = document.querySelector('#input-etapa')
+const etapas = document.querySelector('#mostrar-etapas')
+
+var configs = {
+  avisos: true,
+  etapas: [],  
+  clientes: [] 
+};
 window.onload = function() {
   var storedConfigs = JSON.parse(localStorage.getItem('configs'));
   if (storedConfigs) {
     configs = storedConfigs;
   }
+
   mostrarClientes()
+  mostrarEtapas()
+  checkbox.checked = configs.avisos
 }
 
+//=============================================================
+//  SECTION 1
+//=============================================================
 function mostrarClientes() {
   let novaLinha = ''
   console.log('Listando clientes:')
@@ -121,7 +135,7 @@ function atualizarFiliais(clienteReceb, clienteNome) {
   localStorage.setItem('configs', JSON.stringify(configs))
   mostrarClientes();
 }
-
+// Função para atualizar um valor de configs.clientes
 function atualizarNome(clienteReceb, clienteNome) {
   let cliente = configs.clientes.find(c => c.cliente === clienteReceb)
   if (cliente) {
@@ -135,19 +149,83 @@ function atualizarNome(clienteReceb, clienteNome) {
   localStorage.setItem('configs', JSON.stringify(configs))
   mostrarClientes();
 }
-
-
+// Função para excluir um valor de configs.clientes[]
 function excluirCliente(clienteNome, posicao) {
   let cliente = configs.clientes.find(c => c.cliente === clienteNome)
   if (cliente) {
-    if (confirm(`Você deseja excluir o Cliente ${clienteNome}?`) == true) {
+    if (configs.avisos) {
+      if (confirm(`Você deseja excluir o Cliente ${clienteNome}?`) == true) {
+        configs.clientes.splice(posicao, 1)
+      }
+    } else {
       configs.clientes.splice(posicao, 1)
     }
+    
   }
 
   localStorage.setItem('configs', JSON.stringify(configs))
   mostrarClientes();
 }
+//=============================================================
+//  SECTION 3
+//=============================================================
+//  Função para mudar o valor de configs.avisos
+function verifReceberAvisos() {
+  configs.avisos = checkbox.checked
+
+  localStorage.setItem('configs', JSON.stringify(configs))
+}
+// Função para adicionar novos valores de configs.etapas[]
+function criarEtapa() {
+  console.log('teste')
+  if (inputAddEtapa.value.trim() === '') {
+    inputAddEtapa.style.backgroundColor = '#f8bab6'
+    setTimeout(function() {
+      inputAddEtapa.style.backgroundColor = '#FFFFFF'
+    }, 2000)
+    return
+  }
+  let verificar = configs.etapas.find(etapa => etapa === inputAddEtapa.value)
+  if (!verificar) {
+    configs.etapas.push(inputAddEtapa.value)
+  }
+  localStorage.setItem('configs', JSON.stringify(configs))
+  mostrarEtapas()
+}
+// Função para mostrar todas os valores de configs.etapas[]
+function mostrarEtapas() {
+  let etapaID = ''
+  let linhas = ''
+  let contEtapas = 0
+  configs.etapas.forEach((etapa, posicao) => {
+    etapaID = etapa.replace(/ /g, '-')
+    linhas =
+      linhas +
+      `
+      <div id="cont-etapa-${etapaID}" class="cont-etapas">
+        <div id="etapa-${etapaID}" class="etapa">${etapa}</div>
+        <div onclick="excluirEtapa('${etapa}', ${posicao})" class="cont-excluir-etapa">
+          <img src="../assets/trash.png" alt="" id="excluir-${etapaID}" class="excluir-etapa">
+        </div>
+      </div>
+      `
+    contEtapas++
+  })
+  etapas.innerHTML = linhas
+}
+// Função para excluir um valor de configs.etapas[]
+function excluirEtapa(etapaReceb, posicao) {
+  let etapa = configs.etapas.find(etapa => etapa === etapaReceb)
+  if (etapa) {
+    configs.etapas.splice(posicao, 1)
+  }
+  localStorage.setItem('configs', JSON.stringify(configs))
+  mostrarEtapas();
+}
+//=============================================================
+//  SECTION 2
+//=============================================================
+// Função para adicionar um novo valor a configs.clientes[]
 function adicionarNovoCliente() {
   let clienteNome = inputAddCliente.value;
   if (inputAddCliente.value.trim() === '') {
@@ -202,3 +280,4 @@ function adicionarNovoCliente() {
   }
   mostrarClientes()
 }
+

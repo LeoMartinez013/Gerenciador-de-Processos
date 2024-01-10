@@ -126,6 +126,19 @@
     }
 }
 #config {
+    section {
+        background-color: var(--branco);
+    }
+    #button-criar, 
+    #button-etapa {
+        background-color: var(--claro);
+        color: var(--marinho);
+        border-color: var(--marinho);
+    }
+    #button-criar:hover,
+    #button-etapa:hover {
+        background-color: var(--buttonsHover);
+    }
     #voltar {
         background-color: var(--forte);
         border-color: var(--branco);

@@ -37,7 +37,7 @@ window.onload = function() {
     document.getElementById(`dctsTransporte`).value = processo.dctsTransporte
     document.getElementById(`mesOperacao`).value = processo.mesOperacao
     document.getElementById(`etapa`).value = processo.etapa
-    
+    baixarEtapas()
     for (let i = 0; i < 30; i++) {
       if(processo.historico[i]){
         // Supondo que a data e o texto estejam separados por um espaço
@@ -64,8 +64,8 @@ window.onload = function() {
   }
 }
 function baixarFiliais() {
-  let filiais = JSON.parse(localStorage.getItem('configs'))
-  let clienteAtual = filiais.clientes.find(c => c.cliente === cliente.cliente)
+  let baixar = JSON.parse(localStorage.getItem('configs'))
+  let clienteAtual = baixar.clientes.find(c => c.cliente === cliente.cliente)
   let linhaFiliais = ''
   clienteAtual.filiais.forEach((filial, posicao) => {
     if (!filial == ''){
@@ -77,6 +77,20 @@ function baixarFiliais() {
     }
   })
   document.querySelector('#filial').innerHTML = linhaFiliais
+}
+function baixarEtapas() {
+  let baixar = JSON.parse(localStorage.getItem('configs'))
+  let linhaEtapas = ''
+  baixar.etapas.forEach((etapa, posicao) => {
+    if (!filial == ''){
+      linhaEtapas =
+      linhaEtapas +
+      `
+      <option value="${etapa}">${etapa}</option>
+      `
+    }
+  })
+  document.querySelector('#etapa').innerHTML = linhaEtapas
 }
 function verHists1() {
   let caixa1 = document.getElementById('caixa3')
@@ -176,9 +190,6 @@ function salvarConfiguracoes() {
   confirmacao.style.display = 'flex'
   setTimeout(() => confirmacao.style.display = 'none', 2000)
 }
-
-// Função para preencher os campos de entrada com os valores do processo quando a página é carregada
-
 
 // Função para adicionar a posição ao parâmetro de consulta da URL antes da página ser descarregada
 window.onbeforeunload = function() {
