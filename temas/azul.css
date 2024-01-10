@@ -7,7 +7,7 @@
     --preto: #000000;
     --concluida: #b5d673;
     --salva: #043b01;
-    --buttonsHover: #0e27b6;
+    --buttonsHover: #3453ff;
 }
 .geral {
     background-color: var(--branco);
@@ -126,6 +126,37 @@
     }
 }
 #config {
+    section {
+        background-color: var(--branco);
+    }
+    #button-criar, 
+    #button-etapa {
+        background-color: var(--claro);
+        color: var(--marinho);
+        border-color: var(--marinho);
+    }
+    #button-criar:hover,
+    #button-etapa:hover {
+        background-color: var(--buttonsHover);
+    }
+    #voltar {
+        background-color: var(--forte);
+        border-color: var(--branco);
+    }
+    .clientes {
+        color: var(--branco);
+        border-color: var(--claro);
+        background-color: var(--forte);
+    }
+    .excluir,
+    .mudarFiliais {
+        border-color: var(--claro);
+    }
+    .excluir:hover,
+    .mudarFiliais:hover,
+    .mudarNome:hover {
+        background-color: var(--buttonsHover);
+    }
     #voltar {
         background-color: var(--forte);
         border-color: var(--branco);

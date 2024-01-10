@@ -117,13 +117,13 @@ section > p {
   overflow-x: hidden;
 }
 .excluir {
-  border-left: 0.1rem solid black;
-  border-right: 0.1rem solid black;
+  border-left: 0.1rem solid;
+  border-right: 0.1rem solid;
   cursor: pointer;
   user-select: none;
 }
 .mudarFiliais {
-  border-right: 0.1rem solid black;
+  border-right: 0.1rem solid;
   cursor: pointer;
   user-select: none;
 }
@@ -214,7 +214,7 @@ section > p {
   width: 100%;
 }
 #sub-section-3-1 {
-  margin: 0.2rem 0;    
+  margin: 0.5rem 0;    
 }
 #sub-section-3-1 > div {
   display: grid;
@@ -222,12 +222,21 @@ section > p {
   font-size: 1rem;
 }
 #config-avisos > label {
-  text-align: left;
+  font-size: 0.9rem;
+  text-align: center;
 }
 #receber-avisos {
+  all: unset;
   height: 1.2rem;
   width: 1.2rem;
   justify-self: left;
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#receber-avisos:checked {
+  background-image: url(../assets/checked.png);
+  background-size: cover;
 }
 #cont-add-etapa {
   display: grid;

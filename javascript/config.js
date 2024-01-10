@@ -172,7 +172,7 @@ function excluirCliente(clienteNome, posicao) {
 //  Função para mudar o valor de configs.avisos
 function verifReceberAvisos() {
   configs.avisos = checkbox.checked
-
+  console.log('avisos atualizado para: ' + checkbox.checked)
   localStorage.setItem('configs', JSON.stringify(configs))
 }
 // Função para adicionar novos valores de configs.etapas[]

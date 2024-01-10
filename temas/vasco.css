@@ -134,9 +134,36 @@
     }
 }
 #config {
+    section {
+        background-color: var(--branco);
+    }
+    #button-criar, 
+    #button-etapa {
+        background-color: var(--marinho);
+        color: var(--branco);
+        border-color: var(--amarelo);
+    }
+    #button-criar:hover,
+    #button-etapa:hover {
+        background-color: var(--buttonsHover);
+    }
     #voltar {
         background-color: var(--forte);
         border-color: var(--amarelo);
+    }
+    .clientes {
+        color: var(--branco);
+        border-color: var(--claro);
+        background-color: var(--marinho);
+    }
+    .excluir,
+    .mudarFiliais {
+        border-color: var(--claro);
+    }
+    .excluir:hover,
+    .mudarFiliais:hover,
+    .mudarNome:hover {
+        background-color: var(--buttonsHover);
     }
     .cliente-filiais {
         background-color: var(--forte);
@@ -163,6 +190,9 @@
     .caixa-mudarNome {
         background-color: var(--branco);
         border-color: var(--forte);
+    }
+    #receber-avisos {
+        border-color: var(--marinho);
     }
 }
 #ajuda {
