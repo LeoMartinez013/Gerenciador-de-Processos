@@ -20,7 +20,7 @@ function baixarOptionsClientes() {
   if ( configs.clientes == '') {
     console.log('Sem clientes registrados')
     options = options +  `
-      <option value="nada" disabled selected hidden>Sem clientes registrados</option>`
+      <option value="" disabled selected hidden>Sem clientes registrados</option>`
   }
   configs.clientes.forEach((cliente, posicao) => {
     options =
