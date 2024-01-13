@@ -1,111 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="menu.css">
-    <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
-    <link rel="shortcut icon" href="../assets/icon-menu.png" type="image/x-icon">
-    <title>Processos</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="menu.css">
+  <link class="temaProjeto" rel="stylesheet" href="../temas/azul.css">
+  <link rel="shortcut icon" href="../assets/icon-menu.png" type="image/x-icon">
+  <title>Processos</title>
 </head>
+
 <body id="index" class="geral">
-    <header id="header">
-        <h1>Gerenciador de processos</h1>
-    </header>
-    <nav id="nav">
-            <div id="nav-left">
-                <div id="container-config" 
-                    onclick="window.location='../config/config.html'">
-                    <img id="icon-config" src="../assets/icon-config-branco.png" alt="">
-                </div>
-                <div id="temas">
-                    <select id="selecTema" onchange="mudarTema()">
-                        <option value="nada" disabled selected hidden>Temas</option>
-                        <option value="azul">Azul</option>
-                        <option value="verde">Verde</option>
-                        <option value="vasco">Vasco</option>
-                    </select>
-                </div>
-            </div>
-            <div id="nav-right">
-                <!--BAIXAR-->
-                <div id="sessao-baixar" 
-                    onmouseleave="setTimeout(() => esconderOpcsBaixar(), 1000)"
-                    >
-                    <button 
-                        id="button-download-processo" 
-                        class="baixar-importar-buttons"
-                        value="exibir"
-                        onclick="bottaoOpcsBaixar()" 
-                    >
-                        Baixar
-                    </button>
-                    <div id="opcs-baixar-container">
-                        <!--TXT-->
-                        <button 
-                            id="opc-baixar-txt" 
-                            class="opcs-baixar"   
-                        >
-                            Baixar em .txt
-                        </button>
-                        <!--JSON-->
-                        <button 
-                            id="opc-baixar-json" 
-                            class="opcs-baixar"
-                        >
-                            Baixar em .json
-                        </button>
-                    </div>
-                </div>
-
-                <!--IMPORTAR-->
-                <input 
-                    id="importFile"
-                    style="display: none"
-                    type="file"  
-                    accept=".json, .txt" 
-                    onchange="importarClientes(event)"
-                >
-                <button id="button-import-processo" class="baixar-importar-buttons" onclick="document.getElementById('importFile').click()">Importar</button>
-            </div>
-        </nav>
-    <main>  
-        <!--LISTAGEM-->
-        <div id="container-criar" >
-            <select id="input-cliente">
-            </select>
-            <input id="input-processo" placeholder="PO do processo">
-            <button id="button-add-processo">Adicionar</button>
+  <header id="header">
+    <h1>Gerenciador de processos</h1>
+  </header>
+  <nav id="nav">
+    <div id="nav-left">
+      <div id="container-config" onclick="window.location='../config/config.html'">
+        <img id="icon-config" src="../assets/icon-config-branco.png" alt="">
+      </div>
+      <div id="temas">
+        <select id="selecTema" onchange="mudarTema()">
+          <option value="nada" disabled selected hidden>Temas</option>
+          <option value="azul">Azul</option>
+          <option value="verde">Verde</option>
+          <option value="vasco">Vasco</option>
+        </select>
+      </div>
+    </div>
+    <div id="nav-right">
+      <!--BAIXAR-->
+      <div id="sessao-baixar" onmouseleave="setTimeout(() => esconderOpcsBaixar(), 1000)">
+        <button id="button-download-processo" class="baixar-importar-buttons" value="exibir"
+          onclick="bottaoOpcsBaixar()">
+          Baixar
+        </button>
+        <div id="opcs-baixar-container">
+          <!--TXT-->
+          <button id="opc-baixar-txt" class="opcs-baixar">
+            Baixar em .txt
+          </button>
+          <!--JSON-->
+          <button id="opc-baixar-json" class="opcs-baixar">
+            Baixar em .json
+          </button>
         </div>
-        <dialog close ></dialog><!--apenas curiosidade-->
-        <div id="titulo">
-            <div>PO</div>
-            <div>BL</div>
-            <div>Etapa</div>
-            <div>Mês de Operação</div>
-            <div> </div>
-        </div>
-        <section id="sec-processos">
-            <h3>Processos não desembaraçados</h3>
-            <div id="list-processos">
-                
-            </div>
-        </section>
-        <section id="sec-processos-concluidos">
-            <h3>Processos desembaraçados</h3>
-            <div id="list-processos-concluidos">
+      </div>
 
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
-        <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos" target="_blank">Contato</a></p>
-        <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez Almeida</a></p>
-    </footer>
+      <!--IMPORTAR-->
+      <input id="importFile" style="display: none" type="file" accept=".json, .txt" onchange="importarClientes(event)">
+      <button id="button-import-processo" class="baixar-importar-buttons"
+        onclick="document.getElementById('importFile').click()">Importar</button>
+    </div>
+  </nav>
+  <main>
+    <!--LISTAGEM-->
+    <div id="container-criar">
+      <select id="input-cliente">
+      </select>
+      <input id="input-processo" placeholder="PO do processo">
+      <button id="button-add-processo">Adicionar</button>
+    </div>
+    <dialog close></dialog><!--apenas curiosidade-->
+    <div id="titulo">
+      <div>PO</div>
+      <div>BL</div>
+      <div>Etapa</div>
+      <div>Mês de Operação</div>
+      <div> </div>
+    </div>
+    <section id="sec-processos">
+      <h3>Processos não desembaraçados</h3>
+      <div id="list-processos">
+
+      </div>
+    </section>
+    <section id="sec-processos-concluidos">
+      <h3>Processos desembaraçados</h3>
+      <div id="list-processos-concluidos">
+
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Os dados fornecidos são de uso exclusivo do navegador do usuário.</p>
+    <p><a href="../ajuda/ajuda.html">Ajuda</a> | <a href="https://github.com/LeoMartinez013/Gerenciador-de-Processos"
+        target="_blank">Contato</a></p>
+    <p>Todos os direitos reservados a <a href="https://github.com/LeoMartinez013" target="_blank">Leonardo Martinez
+        Almeida</a></p>
+  </footer>
 </body>
 <script src="../javascript/scripts.js"></script>
 <script src="../javascript/compart.js"></script>
 <script src="../javascript/mudarTemas.js"></script>
+
 </html>
