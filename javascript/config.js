@@ -8,7 +8,7 @@ var configs = {
   avisos: true,
   etapas: [],  
   clientes: [] 
-};
+}
 window.onload = function() {
   var storedConfigs = JSON.parse(localStorage.getItem('configs'));
   if (storedConfigs) {

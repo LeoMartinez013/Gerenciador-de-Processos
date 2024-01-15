@@ -61,6 +61,8 @@ function baixarClientesTXT() {
     link.click()
     URL.revokeObjectURL(url)
 }
+
+
 // Importar
 function importarClientes(event) {
     let file = event.target.files[0]
@@ -107,7 +109,6 @@ function importarClientes(event) {
     }
 }
 
-button.addEventListener('click', adicionarNovoProcesso)
 document.addEventListener('DOMContentLoaded', function() {
   const botaoBaixarJSON = document.querySelector('#opc-baixar-json')
   const botaoBaixarTXT = document.querySelector('#opc-baixar-txt')
