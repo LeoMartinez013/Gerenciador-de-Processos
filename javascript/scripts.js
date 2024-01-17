@@ -16,6 +16,7 @@ window.onload = function() {
 }
 
 function baixarOptionsClientes() {
+  console.log('> baixando clientes')
   let options = ''
   if ( configs.clientes == '') {
     console.log('Sem clientes registrados')
@@ -35,6 +36,7 @@ function baixarOptionsClientes() {
 //  CRIAÇÃO DE PROCESSOS
 //============================================================
 function adicionarNovoProcesso() {
+  console.log('> criando processo')
   let dataAtual = new Date()
   let year = dataAtual.getFullYear()
   let month = dataAtual.getMonth() + 1
