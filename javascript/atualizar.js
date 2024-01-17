@@ -17,7 +17,9 @@ request.onload = function() {
     console.log('Erro ao acessar a API do GitHub: ' + request.status);
   }
   if (versaoAtual == title) {
-    console.log('100% atualizado')
+    console.log('100% atualizado.')
+  } else {
+    console.log('Existe uma nova atualização disponível.')
   }
 }
 
