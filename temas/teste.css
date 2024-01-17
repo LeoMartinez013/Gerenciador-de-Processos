@@ -1,0 +1,134 @@
+:root {
+    --pastel-verde: #CDD5C6;
+    --pastel-rosa: #FBF2ED;
+    --pastel-azul: #B7BCBF;
+    --pastel-laranja: #E8D4C6;
+    --pastel-amarelo: #FFE2C3;
+    --pastel-roxo: #D1C6E8;
+    --pastel-vermelho: #E8C6C6;
+    --escuro-verde: #4A5A3C;
+    --escuro-rosa: #9A5A5A;
+    --escuro-azul: #3C4A5A;
+    --escuro-laranja: #9A6F5A;
+    --escuro-amarelo: #9A8F5A;
+    --escuro-roxo: #6F5A9A;
+    --escuro-vermelho: #9A5A6F;
+}
+
+.geral {
+    background-color: var(--pastel-rosa);
+    header {
+        color: var(--pastel-vermelho);
+        background-color: var(--escuro-azul);
+    }
+    main {
+        background-color: var(--pastel-azul);
+    }
+    main > p {
+        color: var(--escuro-azul);
+        background-color: var(--pastel-azul);
+    }
+    footer {
+        color: var(--pastel-vermelho);
+        background-color: var(--escuro-azul);
+    }
+    footer > p > a{
+        color: var(--pastel-roxo);
+    }
+    input:focus, button:focus, select:focus {
+        border-color: var(--pastel-laranja);  /* Altere para a cor desejada */
+    }
+}
+#index {
+    .baixar-importar-buttons {
+        color: var(--pastel-verde);
+        background-color: var(--escuro-verde);
+    }
+    .baixar-importar-buttons:hover {
+        color: var(--);
+        background-color: #0e46b6;
+    }
+    #sessao-baixar {
+        background-color: var(--forte);
+    }
+    .opcs-baixar {
+        background-color: var(--branco);
+        color: var(--marinho);
+        border-color: var(--branco);
+    }
+    #button-add-processo {
+        background-color: var(--forte);
+        color: var(--branco);
+    }
+    #titulo > div {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .cliente-titulo {
+        background-color: rgb(218, 218, 218);
+    
+    }
+    .processo {
+        background-color: var(--branco);
+    }
+    #sec-processos-concluidos > h3 {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .concluido {
+        background-color: var(--concluida);
+    }
+}
+#painel {
+    #recebCliente {
+        color: var(--forte);
+        background-color: var(--cinza);
+
+    }
+    .campos {
+        border-color: var(--forte);
+        background-color: var(--marinho);
+    }
+    .campos > label {
+        color: var(--branco);
+    }
+    .campos > input {
+        color: var(--marinho);
+        background-color: var(--branco);
+    
+    }
+    .campos > select {
+        color: var(--marinho);
+        background-color: var(--branco);
+    }
+    option:focus {
+        background-color: var(--cinza);
+    }
+    #confirmacao {
+        color: var(--salva);
+    }
+    .bSalvar, .bVoltar, .button-ver-hists {
+        color: var(--branco);
+        background-color: var(--forte);
+    }
+    .bSalvar:hover, .bVoltar:hover, .button-ver-hists:hover{
+        color: var(--branco);
+        background-color: hsl(220, 95%, 63%);
+    }
+}
+#ajuda {
+    section {
+        border-color: var(--marinho);
+        background-color: var(--branco);
+        color: var(--marinho);
+        h2 {
+
+        }
+        p, li {
+
+        }
+        ul {
+
+        }
+    }
+}

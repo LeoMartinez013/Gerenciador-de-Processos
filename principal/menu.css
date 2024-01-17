@@ -1,298 +1,290 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
 }
 a {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 body {
-  margin: 0px;
-  padding: 0px;
-  min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
 
-  width: 100%;
+    width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  
+    display: flex;
+    flex-direction: column;
 }
-
- 
 /*CABEÇALHO*/
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4rem;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem; 
+    width: 100%;
 }
 h1 {
-  font-size: 1.5rem;
-  height: auto;
+    font-size: 1.5rem;
+    height: auto;
 }
 nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 #nav-left {
-  display: flex;
+    display: flex;
 }
 #temas {
-  height: auto;
-  margin: 0.2rem;
+    height: auto;
+    margin: 0.2rem;
 }
 #temas > select {
-  height: 2rem;
-  width: 6rem;
-  font-weight: 600;
-  padding: 5px;
-  border-radius: 10px;
-  border: 2px solid;
-  cursor: pointer;
+    height: 2rem;
+    width: 6rem;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid;
+    cursor: pointer;
 }
 #container-config {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  height: 2rem;
-  width: auto;
-  padding: 5px;
-  border: 2px solid;
-  border-radius: 10px;
-  margin: 0.2rem;
+    height: 2rem;
+    width: auto;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 0.2rem;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 #icon-config {
-  height: 1.7rem;
-  width: auto;
+    height: 1.7rem;
+    width: auto;
 }
 /*BOTÕES BAIXAR-IMPORTAR*/
 #nav-right {
-  display: flex;
-  /*float: right*/
-  margin: 0.2rem;
+    display: flex;
+    /*float: right*/
+    margin: 0.2rem;
 }
 .baixar-importar-buttons {
-  height: 2rem;
-  width: 7rem;
-  font-weight: 600;
-  padding: 5px;
-  border-radius: 10px;
-  border: 2px solid;
-  cursor: pointer;
+    height: 2rem;
+    width: 7rem;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid;
+    cursor: pointer;
 }
 #sessao-baixar {
-  position: relative; /* Adicione esta linha */
-  border-radius: 10px;
-  flex-direction: column;
-  z-index: 10;
+    position: relative; /* Adicione esta linha */
+    border-radius: 10px;
+    flex-direction: column;
+    z-index: 10;
 }
 #opcs-baixar-container {
-  position: absolute; /* Adicione esta linha */
-  width: 7rem;
+    position: absolute; /* Adicione esta linha */
+    width: 7rem;
 }
 .opcs-baixar {
-  display: none;
-  cursor: pointer;
-  font-size: 0.7rem;
-  font-weight: 600;
-  width: 90%;
-  padding: 5px 9%;
-  border: 2px solid;
-  border-radius: 20px;
-  margin: 5%;
+    display: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 90%;
+    padding: 5px 9%;
+    border: 2px solid;
+    border-radius: 20px;
+    margin: 5%;
 }
 #button-import-processo {
-  margin-left: 3px;
+    margin-left: 3px;
 }
 /*CORPO*/
 main {
-  width: 100%;
-  max-width: 900px;
-  padding: 2% 3%;
-  border-radius: 10px;
-  margin: 0.5rem auto;
-  flex-grow: 1;
+    width: 100%;
+    max-width: 900px;
+    padding: 2% 3%;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+    flex-grow: 1;
 }
 #container-criar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
 }
 /*CLIENTE*/
 #input-cliente {
-  font-size: 1rem;
-  width: 30%;
-  height: 2rem;
-  padding-left: 0.7rem;
-  border-radius: 5px;
-  padding: 0;
+    font-size: 1rem;
+    width: 30%;
+    height: 2rem;
+    padding-left: 0.7rem;
+    border-radius: 5px;
+    padding: 0;
 }
 /*CAIXA NOME*/
 #input-processo {
-  font-size: 1rem;
-  width: 40%;
-  height: 2rem;
-  padding-left: 0.7rem;
-  border: 0;
-  border-radius: 5px;
+    font-size: 1rem;
+    width: 40%;
+    height: 2rem;
+    padding-left: 0.7rem;
+    border: 0;
+    border-radius: 5px;
 }
 /*BOTÃO ADICIONAR*/
 #button-add-processo {
-  cursor: pointer;
+    cursor: pointer;
+    
+    font-size: 100%;
+    font-weight: 700;
 
-  font-size: 100%;
-  font-weight: 700;
-
-  width: 20%;
-  height: 2rem;
-  border: none;
-  border-radius: 5px;
+    width: 20%;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
 }
 #button-add-processo:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 #button-add-processo:active {
-  opacity: 0.6;
+    opacity: 0.6;
 }
-#list-processos,
-#list-processos-concluidos {
-  width: 100%;
-  max-width: 100%;
+#list-processos, #list-processos-concluidos {
+    width: 100%;
+    max-width: 100%;
 }
-#titulo {
-  display: grid;
-  font-weight: 500;
-  grid-template-columns: 20% 10% 30% 30% 10%;
-  font-size: 0.8rem;
-  text-align: center;
-  margin-bottom: 5px;
+#titulo{
+    display: grid;
+    font-weight: 500;
+    grid-template-columns: 20% 10% 30% 30% 10%;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 5px;
 }
 .cliente-titulo {
-  cursor: pointer;
-  font-weight: 600;
-  height: 2rem;
-  padding: 0.3rem 2rem;
-  border-radius: 10px;
-  margin: 3px 0;
+    cursor: pointer;
+    font-weight: 600;
+    height: 2rem;
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+    margin: 3px 0;
 }
 .processo {
-  display: grid;
-  grid-template-columns: 20% 10% 30% 30% 10%;
+    display: grid;
+    grid-template-columns: 20% 10% 30% 30% 10%;
 
-  border-radius: 10px;
+    border-radius: 10px;
 
-  font-size: 0.9rem;
-  height: 2.1rem;
-  text-align: center;
-  margin: 2px 0;
-  cursor: pointer;
+    font-size: 0.9rem;
+    height: 2.1rem;
+    text-align: center;
+    margin: 2px 0;
+    cursor: pointer;
 }
-.c1,
-.c2,
-.c3,
-.c4 {
-  overflow: hidden;
-  height: auto;
-  max-height: calc(100% - 0.4rem);
-  padding: 0.4rem;
+.c1, .c2, .c3, .c4 {
+    overflow: hidden;
+    height: auto;
+    max-height: calc(100% - 0.4rem);
+    padding: 0.4rem;
 }
 .c5 {
-  padding: 0.15rem;
+    padding: 0.15rem;
 }
 .icone {
-  height: 1.7rem;
-  width: 1.7rem;
-  opacity: 0;
-  transition: opacity 0.2s ease-in;
+    height: 1.7rem;
+    width: 1.7rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
 }
 .processo:hover .icone {
-  opacity: 1;
+    opacity: 1;
 }
-#sec-processos,
-#sec-processos-concluidos {
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  margin: 0.5rem 0;
+#sec-processos, #sec-processos-concluidos {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin: 0.5rem 0;
 }
 #sec-processos {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 h3 {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  height: auto;
-  width: 100%;
-  padding: 0.2rem 0;
-  border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    height: auto;
+    width: 100%;
+    padding: 0.2rem 0;
+    border-radius: 10px;
 }
 
 /*RODAPÉ*/
 footer {
-  text-align: center;
-  height: 5rem;
-  width: 100%;
+    text-align: center;
+    height: 5rem;
+    width: 100%;
 
-  padding: 1.2rem 0;
-  margin: 1rem 0 0 0;
+    padding: 1.2rem 0;
+    margin: 1rem 0 0 0;
 }
 footer > p {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
-@media screen and (max-width: 900px) {
-  main {
-    border-radius: 0;
-  }
+@media screen and (max-width: 900px){
+    main {
+        border-radius: 0;
+    }
 }
-@media screen and (max-width: 600px) {
-  #titulo {
-    font-size: 0.8rem;
-  }
-  .processo {
-    font-size: 0.8rem;
-  }
+@media screen and (max-width: 600px){
+    #titulo {
+        font-size: 0.8rem;
+    }
+    .processo {
+        font-size: 0.8rem;
+    }
 }
-@media screen and (max-width: 400px) {
-  header {
-    height: 4.6rem;
-  }
-  header > h1 {
-    font-size: 1rem;
-  }
-  #baixar-importar {
-    text-align: center;
-  }
-  #baixar-importar > button {
-    height: 1.6rem;
-    width: 4rem;
-    font-size: 0.6rem;
-  }
-  .input-processo {
-    font-size: 0.8rem;
-    height: 1.7rem;
-  }
-  .button-add-processo {
-    font-size: 0.8rem;
-    overflow: hidden;
-    height: 1.7rem;
-  }
-  #titulo {
-    font-size: 0.5rem;
-  }
-  .processo {
-    height: auto;
-    font-size: 0.6rem;
-  }
+@media screen and (max-width: 400px){
+    header {
+        height: 4.6rem;
+    }
+    header > h1 {
+        font-size: 1rem;
+    }
+    #baixar-importar {
+        text-align: center;
+    }
+    #baixar-importar > button {
+        height: 1.6rem;
+        width: 4rem;
+        font-size: 0.6rem;
+    }
+    .input-processo {
+        font-size: 0.8rem;
+        height: 1.7rem;
+    }
+    .button-add-processo {
+        font-size: 0.8rem;
+        overflow: hidden;
+        height: 1.7rem;  
+    }
+    #titulo {
+        font-size: 0.5rem;
+    }
+    .processo {
+        height: auto;
+        font-size: 0.6rem;
+    }
 }
