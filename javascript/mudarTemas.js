@@ -5,12 +5,12 @@ document.querySelector('.temaProjeto').href = '../temas/' + tema + '.css'
 
 // Função para mudar o tema
 function mudarTema() {
-		var temaSelecionado = document.querySelector('#selecTema').value;
-		if (temaSelecionado === 'nada'){
-				return
-		}
-		localStorage.setItem('tema', JSON.stringify(temaSelecionado))
-		document.querySelector('.temaProjeto').href ='../temas/' + temaSelecionado + '.css'
+	var temaSelecionado = document.querySelector('#selecTema').value;
+	if (temaSelecionado === 'nada'){
+			return
+	}
+	localStorage.setItem('tema', JSON.stringify(temaSelecionado))
+	document.querySelector('.temaProjeto').href ='../temas/' + temaSelecionado + '.css'
 }
 
 // Adiciona o evento de mudança ao elemento select
